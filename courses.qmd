@@ -1,0 +1,12 @@
+---
+title: "Courses"
+
+---
+
+
+
+relavent courses taken
+
+
+- Real Analysis
+- Statis

@@ -1,16 +1,72 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "about",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Kwanhee Yoon",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 3\n\n[1] 4"
+    "text": "Here is my project 1"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "projects.html#project-1",
+    "href": "projects.html#project-1",
+    "title": "Kwanhee Yoon",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\nrunif(10)\n\n [1] 0.3022030 0.6586602 0.9166003 0.0284716 0.4881024 0.7901190 0.6703287\n [8] 0.9779283 0.0274782 0.1488083"
+    "text": "Here is my project 1"
+  },
+  {
+    "objectID": "projects.html#project-2",
+    "href": "projects.html#project-2",
+    "title": "Kwanhee Yoon",
+    "section": "Project 2",
+    "text": "Project 2\nHere is my project 2"
+  },
+  {
+    "objectID": "projects/02-project.html",
+    "href": "projects/02-project.html",
+    "title": "Project 2",
+    "section": "",
+    "text": "Some complicated statistics project\n\nrnorm(100) |&gt; hist()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Kwanhee Yoon",
+    "section": "",
+    "text": "Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.\nDOWNLOAD cv"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Kwanhee Yoon",
+    "section": "Education",
+    "text": "Education\nUniversity of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul, MN B.A in Economics | Sept 2007 - June 2011"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Kwanhee Yoon",
+    "section": "Experience",
+    "text": "Experience\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Spet 2012 - April 2018"
+  },
+  {
+    "objectID": "courses.html",
+    "href": "courses.html",
+    "title": "Courses",
+    "section": "",
+    "text": "relavent courses taken\n\nReal Analysis\nStatis"
+  },
+  {
+    "objectID": "projects/01-project.html",
+    "href": "projects/01-project.html",
+    "title": "Project 1",
+    "section": "",
+    "text": "Some complicated statistics project\n\nrunif(10)\n\n [1] 0.5930269 0.9961190 0.2013656 0.6961486 0.2949533 0.2315394 0.2480172\n [8] 0.9073837 0.6591197 0.4458303"
+  },
+  {
+    "objectID": "projects/03-project.html",
+    "href": "projects/03-project.html",
+    "title": "Project 3",
+    "section": "",
+    "text": "Some complicated statistics project\n\nrnorm(100) |&gt; hist()\n\n\n\n\n\n\n\nrnorm(100) |&gt; mean()\n\n[1] 0.008860239"
   }
 ]
