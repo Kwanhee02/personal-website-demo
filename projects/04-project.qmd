@@ -1,5 +1,5 @@
 ---
-title: "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)"
+title: "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)(STATS 101C)"
 format:
   html:
     toc: false

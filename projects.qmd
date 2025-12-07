@@ -1,15 +1,18 @@
 ---
-toc: false
+title: "Projects"
+format:
+  html:
+    toc: false
 listing:
-  - id: project-listing
-    contents:
-      - "/projects/*.qmd"
-    sort: false
-    sort-ui: false
-    filter-ui: true
-    type: table
-    fields:
-      - title
-    categories: false
+  contents:
+    - "/projects/*.qmd"
+  type: table
+  sort: false
+  sort-ui: false
+  filter-ui: true
+  fields: 
+    - title
+  categories: false
 ---
+
 
