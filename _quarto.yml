@@ -21,6 +21,7 @@ format:
       - cosmo
     css: styles.css
     toc: true
+    math: true       
     
     
 

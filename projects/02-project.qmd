@@ -1,11 +1,84 @@
 ---
-title: Project 2
+title: "Project 2 — How Music Influences Physical Performance (STATS 101B)"
+format:
+  html:
+    toc: false
 ---
 
-Some complicated statistics project
+## Overview
+
+Can **music actually change your physical performance** — even when everything else is held constant?
+
+To answer this, we designed a controlled experiment using a  
+**Randomized Complete Block Design (RCBD)** where participants performed a strength task  
+under **five different music genres**:
+
+🎻 Classical  🎧 Pop  🎸 Rock  🎷 Jazz  🎤 Hip-hop
+
+Each participant experienced *every* genre, allowing us to isolate the *pure effect of music*  
+on physical performance while blocking for age differences.
+
+This project explores whether the rhythm, intensity, or emotional tone of music  
+can meaningfully improve (or impair) measurable strength output.
+
+---
+
+## Key Findings at a Glance
+
+### 🎵 1. Yes — Music *does* influence physical performance  
+Our ANOVA results showed a **statistically significant** difference in mean performance across genres.  
+Not all music is equal — some genres consistently boosted reps, others held people back.
+
+### 👥 2. Age matters too  
+Age group (used as a blocking factor) was also significant.  
+That means different age ranges responded differently to the same music —  
+a fascinating interaction that the full report explores in detail.
+
+### ⬆ 3. Which genres performed best?  
+Tukey HSD pairwise tests revealed surprising contrasts.  
+Some music types that participants *expected* to be energizing… were not.  
+Others quietly outperformed the rest.
+
+(Full rankings and statistical comparisons are in the PDF!)
+
+### 📈 4. Strong model diagnostics  
+Our RCBD model passed all major assumption checks:
+
+- Residuals were approximately normal  
+- Variance was stable across treatments  
+- No signs of influential outliers  
+
+This means the conclusions are statistically reliable — not noise.
+
+---
+
+## Why you might want to read the full report
+
+The complete PDF answers questions like:
+
+- Which **specific** genre produced the highest mean performance?  
+- How large were the differences? Small? Moderate? Dramatic?  
+- Did older and younger participants react to music in the same way?  
+- Were the results driven by rhythm, intensity, or something else?  
+- How certain are we statistically — what do the confidence intervals say?  
+
+It also includes:
+
+- Full ANOVA tables  
+- Tukey HSD comparison plots  
+- Diagnostic visuals (Residual plots, Q-Q plots, etc.)  
+- Detailed interpretation + limitations  
+- Discussion about psychological + physiological explanations  
+
+This is not just a stats report — it's a surprising story about how humans respond to sound.
+
+---
+
+## 📄 Want the full analysis?
+
+All results, plots, explanations, and model comparisons are available in the full PDF.
+
+👉 **[Click here to download the complete report](STATS%20101B%20Project.pdf)**  
 
 
-```{r}
-rnorm(100) |> hist()
-
-```
+---

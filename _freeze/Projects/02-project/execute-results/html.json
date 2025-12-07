@@ -1,5 +1,5 @@
 {
-  "hash": "38e278042803c40e18eee4851cce4d7d",
+  "hash": "197cb182317722dac796e95b2cba7407",
   "result": {
     "engine": "knitr",
     "markdown": "---\ntitle: Project 2\n---\n\nSome complicated statistics project\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrnorm(100) |> hist()\n```\n\n::: {.cell-output-display}\n![](02-project_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n",

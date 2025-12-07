@@ -69,11 +69,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -113,9 +142,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -138,13 +165,90 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>relavent courses taken</p>
+<section id="coursework-overview" class="level1">
+<h1>🎓 Coursework Overview</h1>
+<p>A curated list of all <strong>mathematics, statistics, and computer science</strong> courses<br>
+completed at <strong>Pasadena City College (2022–2024)</strong> and <strong>UCLA (2024–Present)</strong>.<br>
+These courses form the core of my preparation for advanced study in Statistics &amp; Data Science.</p>
+<hr>
+</section>
+<section id="mathematics-computer-science-pcc" class="level1">
+<h1>📘 Mathematics &amp; Computer Science (PCC)</h1>
+<section id="mathematics-foundation" class="level3">
+<h3 class="anchored" data-anchor-id="mathematics-foundation">Mathematics Foundation</h3>
 <ul>
-<li>Real Analysis</li>
-<li>Statis</li>
+<li>Single Variable Calculus I (MATH 5A)<br>
+</li>
+<li>Single Variable Calculus II (MATH 5B)<br>
+</li>
+<li>Multivariable Calculus (MATH 5C)<br>
+</li>
+<li>Differential Equations (MATH 55)<br>
+</li>
+<li>Linear Algebra (MATH 10)</li>
 </ul>
+</section>
+<section id="computer-science" class="level3">
+<h3 class="anchored" data-anchor-id="computer-science">Computer Science</h3>
+<ul>
+<li>Fundamentals of Computer Science (CS 002)</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="statistics-data-science-pcc" class="level1">
+<h1>📊 Statistics &amp; Data Science (PCC)</h1>
+<ul>
+<li>Elementary Statistics (STAT 050)</li>
+</ul>
+<hr>
+</section>
+<section id="ucla-statistics-major-coursework" class="level1">
+<h1>🐻 UCLA Statistics Major Coursework</h1>
+<section id="programming-applied-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="programming-applied-statistics">Programming &amp; Applied Statistics</h3>
+<ul>
+<li>Introduction to Statistical Programming with R (STATS 20)</li>
+<li>Community or Corporate Internships in Statistics (STATS 195)</li>
+</ul>
+</section>
+<section id="probability-inference-and-mathematical-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="probability-inference-and-mathematical-statistics">Probability, Inference, and Mathematical Statistics</h3>
+<ul>
+<li>Introduction to Probability (STATS 100A)<br>
+</li>
+<li>Introduction to Mathematical Statistics (STATS 100B)<br>
+</li>
+<li>Linear Models (STATS 100C)</li>
+</ul>
+</section>
+<section id="regression-experiments-and-data-mining" class="level3">
+<h3 class="anchored" data-anchor-id="regression-experiments-and-data-mining">Regression, Experiments, and Data Mining</h3>
+<ul>
+<li>Introduction to Data Analysis and Regression (STATS 101A)</li>
+<li>Introduction to Design and Analysis of Experiments (STATS 101B)</li>
+<li>Introduction to Statistical Models and Data Mining (STATS 101C)</li>
+</ul>
+</section>
+<section id="computational-theoretical-methods" class="level3">
+<h3 class="anchored" data-anchor-id="computational-theoretical-methods">Computational &amp; Theoretical Methods</h3>
+<ul>
+<li>Introduction to Computational Statistics with R (STATS 102A)</li>
+<li>Introduction to Computation and Optimization for Statistics (STATS 102B)</li>
+<li>Introduction to Monte Carlo Methods (STATS 102C)</li>
+</ul>
+</section>
+<section id="advanced-electives" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-electives">Advanced Electives</h3>
+<ul>
+<li>Statistical Models in Finance (STATS C183)</li>
+</ul>
+<hr>
 
 
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

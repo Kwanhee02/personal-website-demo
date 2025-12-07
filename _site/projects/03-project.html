@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 3 – Kwanhee Yoon</title>
+<title>Project 3 — U.S. Election Winner Classification (STATS 101C) – Kwanhee Yoon</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -104,11 +69,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -148,15 +142,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 3</h1>
+<h1 class="title">Project 3 — U.S. Election Winner Classification (STATS 101C)</h1>
 </div>
 
 
@@ -173,23 +165,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Some complicated statistics project</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">100</span>) <span class="sc">|&gt;</span> <span class="fu">hist</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="03-project_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">100</span>) <span class="sc">|&gt;</span> <span class="fu">mean</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.008860239</code></pre>
-</div>
-</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Using demographic, economic, and population composition data from the <strong>U.S. Census</strong>,<br>
+this project predicts <strong>whether each U.S. county voted for Biden or Trump in 2020</strong>.<br>
+We focused on building clean preprocessing pipelines and comparing several<br>
+machine-learning models to find the most reliable classifier.</p>
+<hr>
+</section>
+<section id="key-insights-preview" class="level2">
+<h2 class="anchored" data-anchor-id="key-insights-preview">Key Insights (Preview)</h2>
+<ul>
+<li>Most Census features were <strong>heavily right-skewed</strong>, so we used normalization<br>
+and, when appropriate, log transformations.</li>
+<li>No single variable clearly separated Biden vs.&nbsp;Trump counties —<br>
+<strong>meaningful patterns only emerged in multivariate models</strong>.</li>
+<li>After comparing Logistic Regression, KNN, and XGBoost workflows,<br>
+<strong>generic XGBoost performed best</strong>, achieving <strong>ROC-AUC ≈ 0.973</strong><br>
+with stable cross-validation.</li>
+<li>Final test accuracy was about <strong>0.944</strong>, while training accuracy was 1.000,<br>
+revealing <strong>mild overfitting</strong> that we discuss in the report.</li>
+</ul>
+<hr>
+</section>
+<section id="want-the-full-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="want-the-full-analysis">Want the full analysis?</h2>
+<p>The full project report includes:</p>
+<ul>
+<li>EDA on skewness, demographics, and county patterns<br>
+</li>
+<li>Preprocessing pipelines (generic vs.&nbsp;log)<br>
+</li>
+<li>Model comparison tables (Logistic Regression, KNN, XGBoost)<br>
+</li>
+<li>ROC curves, diagnostics, and discussion of overfitting<br>
+</li>
+<li>The complete R workflow used to train and evaluate the models</li>
+</ul>
+<p>📄 <strong>Full Project Report (PDF)</strong><br>
+👉 <a href="Team 10 Classification Project Report.pdf">Open PDF</a></p>
 
 
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

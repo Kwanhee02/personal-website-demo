@@ -1,0 +1,72 @@
+---
+title: "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)"
+format:
+  html:
+    toc: false
+---
+
+## Overview
+
+This project predicts **monthly Amazon spending (log_total)** for each  
+**state × year × month** from 2018–2022, using survey data and order records  
+from about 5,000 Amazon customers. The response is modeled on the **log10 scale**,  
+and the main predictors include:
+
+- Time and geography (year, month, state)
+- Customer demographics (age, income, gender, household counts, etc.)
+- Customer engagement (Amazon usage by customer and household)
+- **Engineered features** from order-level data:
+  - `month_est`: estimated monthly spending from category means
+  - `month_var_ratio`: price stability score for categories
+  - `bin1_count`–`bin5_count`: counts of items by price tier
+  - `month_est_low_var`: spending using only low-variance categories
+
+These features are aggregated into **train_expanded** and **test_expanded** to  
+predict state-level monthly sales across 2018–2022.
+
+---
+
+## Key Insights (Preview)
+
+- The target **log_total** is roughly unimodal after log10 transformation,  
+  supporting RMSE on the log scale as the main metric.
+- Nearly all 30 numeric predictors are **strongly right-skewed**, which motivated  
+  experiments with log-transformed recipes (though tree models did not require them).
+- EDA shows that engineered features such as **`month_est`**,  
+  **`month_est_low_var`**, and **bin counts** are highly correlated with log_total.
+- Two preprocessing recipes were compared:
+  - a **generic recipe** (dummy variables, median imputation, month as factor)
+  - an **interaction recipe** adding 2-way and 3-way interactions among  
+    `month_est`, `month_var_ratio`, and `month_est_low_var`.
+- Across six candidate models (linear regression, random forest, XGBoost with both recipes),  
+  the **Generic XGBoost model** achieved the best performance with  
+  **CV RMSE ≈ 0.0927** and a **small standard error (~0.0025)**,  
+  beating both random forest and linear regression.
+- Adding explicit interaction terms **did not improve** XGBoost’s performance,  
+  indicating that the tree-based model already captures nonlinear interactions.
+
+---
+
+## Want the full analysis?
+
+The full regression report includes:
+
+- Detailed EDA:
+  - Histograms of log_total and predictor distributions
+  - Month-by-month boxplots and scatterplots of engineered features
+  - Correlation ranking of top numeric predictors
+- A step-by-step explanation of the **feature engineering pipeline**  
+  from raw order-level and customer data
+- Full comparison of:
+  - Generic vs. interaction recipes
+  - Linear regression, random forest, and XGBoost models
+- Cross-validation tables and plots for **RMSE and standard errors**
+- A discussion of the **final tuned XGBoost model**:
+  - Chosen hyperparameters
+  - Strengths, weaknesses, and risks of overfitting
+  - Ideas for future improvements (larger tuning grids, ensembles, time-aware CV,  
+    and additional lagged features)
+- An appendix with **fully annotated R scripts** used for the Kaggle submission
+
+📄 **Full Project Report (PDF)**  
+👉 [Open PDF](Team%2010%20Regression%20Project%20Report.pdf)

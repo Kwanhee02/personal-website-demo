@@ -1,11 +1,48 @@
 ---
-title: Project 1
+title: "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)"
+format:
+  html:
+    toc: false
 ---
 
-Some complicated statistics project
+## Overview
 
+A statistical modeling project predicting **daily wind speed** in Szeged, Hungary\
+using four meteorological variables (Temperature, Humidity, Visibility, Pressure)\
+from **10 years of daily weather data (2006–2016)**.
 
-```{r}
-runif(10)
+The goal was to build, compare, and interpret multiple linear regression models\
+and determine which weather factors significantly influence wind speed.
 
-```
+------------------------------------------------------------------------
+
+## Key Insights (Preview)
+
+-   Humidity and Pressure were strong, statistically significant predictors.\
+-   Visibility showed **no significance** in predicting wind speed.\
+-   The final model explained **18% of wind speed variation** (R² = 0.18).\
+-   Diagnostic checks confirmed:
+    -   mostly normal residuals\
+    -   mild heteroscedasticity\
+    -   no influential outliers\
+    -   no multicollinearity (VIF \< 2)
+
+This summary highlights only the main findings —\
+the full modeling process, diagnostics, and detailed interpretation\
+are included in the complete PDF report.
+
+------------------------------------------------------------------------
+
+## Want the full analysis?
+
+The complete report includes:
+
+-   Exploratory data analysis\
+-   Model comparison (full vs reduced)\
+-   Residual diagnostics\
+-   Mathematical interpretation of coefficients\
+-   Discussion of modeling assumptions\
+-   Study limitations and future improvements
+
+📄 **Download Full Project Report (PDF)**\
+👉 [Click here to read the full analysis](STATS%20101A%20Project.pdf)

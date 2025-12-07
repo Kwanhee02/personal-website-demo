@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kwanhee Yoon</title>
+<title>Project 4 — Amazon State-Level Monthly Sales Prediction (Regression) – Kwanhee Yoon</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -98,7 +99,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -108,7 +109,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Kwanhee Yoon</span>
     </a>
   </div>
@@ -119,15 +120,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./courses.html"> 
+    <a class="nav-link" href="../courses.html"> 
 <span class="menu-text">Courses</span></a>
   </li>  
 </ul>
@@ -143,66 +144,117 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="profile_pic.jpg" class="about-image
-  rounded " style="width: 20em;">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Kwanhee Yoon</h1>
+<h1 class="title">Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://github.com/kwanhee02" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://www.linkedin.com/in/kwanhee-yoon-762312335" class="about-link" rel="" target="">
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="mailto:kwanhee02@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-inbox-fill"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Hello, my name is <strong>Kwanhee Yoon</strong>, and I am currently studying <strong>Statistics &amp; Data Science at UCLA</strong>.<br>
-My academic interests focus on <strong>statistical modeling, computational methods, and data-driven problem solving</strong>.<br>
-Through upper-division coursework—including probability, mathematical statistics, regression,<br>
-experimental design, optimization, and Monte Carlo methods—I have built a strong foundation in both<br>
-the theory and practical applications of modern statistical analysis.</p>
-<p>Alongside my studies, I work as a <strong>Data Analyst at Novastar Basketball</strong>, where I collect, validate,<br>
-and refine real-time game statistics. This role has strengthened my skills in data accuracy,<br>
-analytical workflows, and applied modeling in fast-paced environments. I also support operational<br>
-infrastructure as an <strong>Assistant Manager at ASUCLA</strong>, improving documentation, inventory processes,<br>
-and coordination across teams.</p>
-<p>You can view my full CV below:<br>
-<strong>DOWNLOAD</strong> <a href="cv.pdf">cv</a></p>
-<section id="education" class="level1">
-<h1>Education</h1>
-<p><strong>University of California, Los Angeles (UCLA)</strong> | Los Angeles, CA<br>
-B.A. in Statistics &amp; Data Science | <em>Expected 2026</em></p>
-<p><strong>Pasadena City College (PCC)</strong> | Pasadena, CA<br>
-Associate in Science (A.S.) — Natural Sciences | <em>2020 – 2024</em></p>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This project predicts <strong>monthly Amazon spending (log_total)</strong> for each<br>
+<strong>state × year × month</strong> from 2018–2022, using survey data and order records<br>
+from about 5,000 Amazon customers. The response is modeled on the <strong>log10 scale</strong>,<br>
+and the main predictors include:</p>
+<ul>
+<li>Time and geography (year, month, state)</li>
+<li>Customer demographics (age, income, gender, household counts, etc.)</li>
+<li>Customer engagement (Amazon usage by customer and household)</li>
+<li><strong>Engineered features</strong> from order-level data:
+<ul>
+<li><code>month_est</code>: estimated monthly spending from category means</li>
+<li><code>month_var_ratio</code>: price stability score for categories</li>
+<li><code>bin1_count</code>–<code>bin5_count</code>: counts of items by price tier</li>
+<li><code>month_est_low_var</code>: spending using only low-variance categories</li>
+</ul></li>
+</ul>
+<p>These features are aggregated into <strong>train_expanded</strong> and <strong>test_expanded</strong> to<br>
+predict state-level monthly sales across 2018–2022.</p>
+<hr>
 </section>
-<section id="experience" class="level1">
-<h1>Experience</h1>
-<p><strong>Novastar Basketball</strong> | Data Analyst Intern | <em>June 2024 – Present</em></p>
-<p><strong>ASUCLA (UCLA Bookstore – Central Receiving Center)</strong> | HumanResources Assistant Manager | <em>Sept 2024 – Present</em></p>
-<p><strong>Republic of Korea Army</strong> | Administrative Specialist (HR Clerk) | <em>2020 – 2022</em></p>
-<p><strong>SOOSUNGSPCITI LTD.</strong> | Safety Management Intern | <em>2018 – 2019</em></p>
+<section id="key-insights-preview" class="level2">
+<h2 class="anchored" data-anchor-id="key-insights-preview">Key Insights (Preview)</h2>
+<ul>
+<li>The target <strong>log_total</strong> is roughly unimodal after log10 transformation,<br>
+supporting RMSE on the log scale as the main metric.</li>
+<li>Nearly all 30 numeric predictors are <strong>strongly right-skewed</strong>, which motivated<br>
+experiments with log-transformed recipes (though tree models did not require them).</li>
+<li>EDA shows that engineered features such as <strong><code>month_est</code></strong>,<br>
+<strong><code>month_est_low_var</code></strong>, and <strong>bin counts</strong> are highly correlated with log_total.</li>
+<li>Two preprocessing recipes were compared:
+<ul>
+<li>a <strong>generic recipe</strong> (dummy variables, median imputation, month as factor)</li>
+<li>an <strong>interaction recipe</strong> adding 2-way and 3-way interactions among<br>
+<code>month_est</code>, <code>month_var_ratio</code>, and <code>month_est_low_var</code>.</li>
+</ul></li>
+<li>Across six candidate models (linear regression, random forest, XGBoost with both recipes),<br>
+the <strong>Generic XGBoost model</strong> achieved the best performance with<br>
+<strong>CV RMSE ≈ 0.0927</strong> and a <strong>small standard error (~0.0025)</strong>,<br>
+beating both random forest and linear regression.</li>
+<li>Adding explicit interaction terms <strong>did not improve</strong> XGBoost’s performance,<br>
+indicating that the tree-based model already captures nonlinear interactions.</li>
+</ul>
+<hr>
+</section>
+<section id="want-the-full-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="want-the-full-analysis">Want the full analysis?</h2>
+<p>The full regression report includes:</p>
+<ul>
+<li>Detailed EDA:
+<ul>
+<li>Histograms of log_total and predictor distributions</li>
+<li>Month-by-month boxplots and scatterplots of engineered features</li>
+<li>Correlation ranking of top numeric predictors</li>
+</ul></li>
+<li>A step-by-step explanation of the <strong>feature engineering pipeline</strong><br>
+from raw order-level and customer data</li>
+<li>Full comparison of:
+<ul>
+<li>Generic vs.&nbsp;interaction recipes</li>
+<li>Linear regression, random forest, and XGBoost models</li>
+</ul></li>
+<li>Cross-validation tables and plots for <strong>RMSE and standard errors</strong></li>
+<li>A discussion of the <strong>final tuned XGBoost model</strong>:
+<ul>
+<li>Chosen hyperparameters</li>
+<li>Strengths, weaknesses, and risks of overfitting</li>
+<li>Ideas for future improvements (larger tuning grids, ensembles, time-aware CV,<br>
+and additional lagged features)</li>
+</ul></li>
+<li>An appendix with <strong>fully annotated R scripts</strong> used for the Kaggle submission</li>
+</ul>
+<p>📄 <strong>Full Project Report (PDF)</strong><br>
+👉 <a href="Team 10 Regression Project Report.pdf">Open PDF</a></p>
 
 
 
 </section>
-</main></div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

@@ -1,12 +1,42 @@
 ---
-title: Project 3
+title: "Project 3 — U.S. Election Winner Classification (STATS 101C)"
+format:
+  html:
+    toc: false
 ---
 
-Some complicated statistics project
+## Overview
 
+Using demographic, economic, and population composition data from the **U.S. Census**,  
+this project predicts **whether each U.S. county voted for Biden or Trump in 2020**.  
+We focused on building clean preprocessing pipelines and comparing several  
+machine-learning models to find the most reliable classifier.
 
-```{r}
-rnorm(100) |> hist()
-rnorm(100) |> mean()
+---
 
-```
+## Key Insights (Preview)
+
+- Most Census features were **heavily right-skewed**, so we used normalization  
+  and, when appropriate, log transformations.
+- No single variable clearly separated Biden vs. Trump counties —  
+  meaningful patterns only appeared in multivariate models.
+- After comparing Logistic Regression, KNN, and XGBoost workflows,  
+  **generic XGBoost performed best**, achieving **ROC-AUC ≈ 0.973**  
+  with stable cross-validation.
+- Final test accuracy was about **0.944**, while training accuracy was **1.000**,  
+  revealing overfitting that we discuss in the report.
+
+---
+
+## Want the full analysis?
+
+The full project report includes:
+
+- EDA on skewness, demographics, and county patterns  
+- Preprocessing pipelines (generic vs. log)  
+- Model comparison tables (Logistic Regression, KNN, XGBoost)  
+- ROC curves, diagnostics, and discussion of overfitting  
+- The complete R workflow used to train and evaluate the models  
+
+📄 **Full Project Report (PDF)**  
+👉 [Open PDF](Team%2010%20Classification%20Project%20Report.pdf)

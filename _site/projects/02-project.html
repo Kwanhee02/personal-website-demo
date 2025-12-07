@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 2 – Kwanhee Yoon</title>
+<title>Project 2 — How Music Influences Physical Performance (STATS 101B) – Kwanhee Yoon</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -104,11 +69,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -148,15 +142,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 2</h1>
+<h1 class="title">Project 2 — How Music Influences Physical Performance (STATS 101B)</h1>
 </div>
 
 
@@ -173,19 +165,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Some complicated statistics project</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">100</span>) <span class="sc">|&gt;</span> <span class="fu">hist</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="02-project_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Can <strong>music actually change your physical performance</strong> — even when everything else is held constant?</p>
+<p>To answer this, we designed a controlled experiment using a<br>
+<strong>Randomized Complete Block Design (RCBD)</strong> where participants performed a strength task<br>
+under <strong>five different music genres</strong>:</p>
+<p>🎻 Classical  🎧 Pop  🎸 Rock  🎷 Jazz  🎤 Hip-hop</p>
+<p>Each participant experienced <em>every</em> genre, allowing us to isolate the <em>pure effect of music</em><br>
+on physical performance while blocking for age differences.</p>
+<p>This project explores whether the rhythm, intensity, or emotional tone of music<br>
+can meaningfully improve (or impair) measurable strength output.</p>
+<hr>
+</section>
+<section id="key-findings-at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="key-findings-at-a-glance">Key Findings at a Glance</h2>
+<section id="yes-music-does-influence-physical-performance" class="level3">
+<h3 class="anchored" data-anchor-id="yes-music-does-influence-physical-performance">🎵 1. Yes — Music <em>does</em> influence physical performance</h3>
+<p>Our ANOVA results showed a <strong>statistically significant</strong> difference in mean performance across genres.<br>
+Not all music is equal — some genres consistently boosted reps, others held people back.</p>
+</section>
+<section id="age-matters-too" class="level3">
+<h3 class="anchored" data-anchor-id="age-matters-too">👥 2. Age matters too</h3>
+<p>Age group (used as a blocking factor) was also significant.<br>
+That means different age ranges responded differently to the same music —<br>
+a fascinating interaction that the full report explores in detail.</p>
+</section>
+<section id="which-genres-performed-best" class="level3">
+<h3 class="anchored" data-anchor-id="which-genres-performed-best">⬆ 3. Which genres performed best?</h3>
+<p>Tukey HSD pairwise tests revealed surprising contrasts.<br>
+Some music types that participants <em>expected</em> to be energizing… were not.<br>
+Others quietly outperformed the rest.</p>
+<p>(Full rankings and statistical comparisons are in the PDF!)</p>
+</section>
+<section id="strong-model-diagnostics" class="level3">
+<h3 class="anchored" data-anchor-id="strong-model-diagnostics">📈 4. Strong model diagnostics</h3>
+<p>Our RCBD model passed all major assumption checks:</p>
+<ul>
+<li>Residuals were approximately normal<br>
+</li>
+<li>Variance was stable across treatments<br>
+</li>
+<li>No signs of influential outliers</li>
+</ul>
+<p>This means the conclusions are statistically reliable — not noise.</p>
+<hr>
+</section>
+</section>
+<section id="why-you-might-want-to-read-the-full-report" class="level2">
+<h2 class="anchored" data-anchor-id="why-you-might-want-to-read-the-full-report">Why you might want to read the full report</h2>
+<p>The complete PDF answers questions like:</p>
+<ul>
+<li>Which <strong>specific</strong> genre produced the highest mean performance?<br>
+</li>
+<li>How large were the differences? Small? Moderate? Dramatic?<br>
+</li>
+<li>Did older and younger participants react to music in the same way?<br>
+</li>
+<li>Were the results driven by rhythm, intensity, or something else?<br>
+</li>
+<li>How certain are we statistically — what do the confidence intervals say?</li>
+</ul>
+<p>It also includes:</p>
+<ul>
+<li>Full ANOVA tables<br>
+</li>
+<li>Tukey HSD comparison plots<br>
+</li>
+<li>Diagnostic visuals (Residual plots, Q-Q plots, etc.)<br>
+</li>
+<li>Detailed interpretation + limitations<br>
+</li>
+<li>Discussion about psychological + physiological explanations</li>
+</ul>
+<p>This is not just a stats report — it’s a surprising story about how humans respond to sound.</p>
+<hr>
+</section>
+<section id="want-the-full-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="want-the-full-analysis">📄 Want the full analysis?</h2>
+<p>All results, plots, explanations, and model comparisons are available in the full PDF.</p>
+<p>👉 <strong><a href="STATS 101B Project.pdf">Click here to download the complete report</a></strong></p>
+<hr>
 
 
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

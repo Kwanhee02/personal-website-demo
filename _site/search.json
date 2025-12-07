@@ -21,52 +21,136 @@
     "text": "Project 2\nHere is my project 2"
   },
   {
-    "objectID": "projects/02-project.html",
-    "href": "projects/02-project.html",
-    "title": "Project 2",
+    "objectID": "projects/03-project.html",
+    "href": "projects/03-project.html",
+    "title": "Project 3 — U.S. Election Winner Classification (STATS 101C)",
     "section": "",
-    "text": "Some complicated statistics project\n\nrnorm(100) |&gt; hist()"
+    "text": "Using demographic, economic, and population composition data from the U.S. Census,\nthis project predicts whether each U.S. county voted for Biden or Trump in 2020.\nWe focused on building clean preprocessing pipelines and comparing several\nmachine-learning models to find the most reliable classifier."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Kwanhee Yoon",
+    "objectID": "projects/03-project.html#overview",
+    "href": "projects/03-project.html#overview",
+    "title": "Project 3 — U.S. Election Winner Classification (STATS 101C)",
     "section": "",
-    "text": "Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.\nDOWNLOAD cv"
+    "text": "Using demographic, economic, and population composition data from the U.S. Census,\nthis project predicts whether each U.S. county voted for Biden or Trump in 2020.\nWe focused on building clean preprocessing pipelines and comparing several\nmachine-learning models to find the most reliable classifier."
   },
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Kwanhee Yoon",
-    "section": "Education",
-    "text": "Education\nUniversity of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul, MN B.A in Economics | Sept 2007 - June 2011"
+    "objectID": "projects/03-project.html#key-insights-preview",
+    "href": "projects/03-project.html#key-insights-preview",
+    "title": "Project 3 — U.S. Election Winner Classification (STATS 101C)",
+    "section": "Key Insights (Preview)",
+    "text": "Key Insights (Preview)\n\nMost Census features were heavily right-skewed, so we used normalization\nand, when appropriate, log transformations.\nNo single variable clearly separated Biden vs. Trump counties —\nmeaningful patterns only emerged in multivariate models.\nAfter comparing Logistic Regression, KNN, and XGBoost workflows,\ngeneric XGBoost performed best, achieving ROC-AUC ≈ 0.973\nwith stable cross-validation.\nFinal test accuracy was about 0.944, while training accuracy was 1.000,\nrevealing mild overfitting that we discuss in the report."
   },
   {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Kwanhee Yoon",
-    "section": "Experience",
-    "text": "Experience\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Spet 2012 - April 2018"
+    "objectID": "projects/03-project.html#want-the-full-analysis",
+    "href": "projects/03-project.html#want-the-full-analysis",
+    "title": "Project 3 — U.S. Election Winner Classification (STATS 101C)",
+    "section": "Want the full analysis?",
+    "text": "Want the full analysis?\nThe full project report includes:\n\nEDA on skewness, demographics, and county patterns\n\nPreprocessing pipelines (generic vs. log)\n\nModel comparison tables (Logistic Regression, KNN, XGBoost)\n\nROC curves, diagnostics, and discussion of overfitting\n\nThe complete R workflow used to train and evaluate the models\n\n📄 Full Project Report (PDF)\n👉 Open PDF"
+  },
+  {
+    "objectID": "projects/01-project.html",
+    "href": "projects/01-project.html",
+    "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
+    "section": "",
+    "text": "A statistical modeling project predicting daily wind speed in Szeged, Hungary\nusing four meteorological variables (Temperature, Humidity, Visibility, Pressure)\nfrom 10 years of daily weather data (2006–2016).\nThe goal was to build, compare, and interpret multiple linear regression models\nand determine which weather factors significantly influence wind speed."
+  },
+  {
+    "objectID": "projects/01-project.html#overview",
+    "href": "projects/01-project.html#overview",
+    "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
+    "section": "",
+    "text": "A statistical modeling project predicting daily wind speed in Szeged, Hungary\nusing four meteorological variables (Temperature, Humidity, Visibility, Pressure)\nfrom 10 years of daily weather data (2006–2016).\nThe goal was to build, compare, and interpret multiple linear regression models\nand determine which weather factors significantly influence wind speed."
+  },
+  {
+    "objectID": "projects/01-project.html#key-insights-preview",
+    "href": "projects/01-project.html#key-insights-preview",
+    "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
+    "section": "Key Insights (Preview)",
+    "text": "Key Insights (Preview)\n\nHumidity and Pressure were strong, statistically significant predictors.\n\nVisibility showed no significance in predicting wind speed.\n\nThe final model explained 18% of wind speed variation (R² = 0.18).\n\nDiagnostic checks confirmed:\n\nmostly normal residuals\n\nmild heteroscedasticity\n\nno influential outliers\n\nno multicollinearity (VIF &lt; 2)\n\n\nThis summary highlights only the main findings —\nthe full modeling process, diagnostics, and detailed interpretation\nare included in the complete PDF report."
+  },
+  {
+    "objectID": "projects/01-project.html#want-the-full-analysis",
+    "href": "projects/01-project.html#want-the-full-analysis",
+    "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
+    "section": "Want the full analysis?",
+    "text": "Want the full analysis?\nThe complete report includes:\n\nExploratory data analysis\n\nModel comparison (full vs reduced)\n\nResidual diagnostics\n\nMathematical interpretation of coefficients\n\nDiscussion of modeling assumptions\n\nStudy limitations and future improvements\n\n📄 Download Full Project Report (PDF)\n👉 Click here to read the full analysis"
   },
   {
     "objectID": "courses.html",
     "href": "courses.html",
     "title": "Courses",
     "section": "",
-    "text": "relavent courses taken\n\nReal Analysis\nStatis"
+    "text": "🎓 Coursework Overview\nA curated list of all mathematics, statistics, and computer science courses\ncompleted at Pasadena City College (2022–2024) and UCLA (2024–Present).\nThese courses form the core of my preparation for advanced study in Statistics & Data Science.\n\n\n\n📘 Mathematics & Computer Science (PCC)\n\nMathematics Foundation\n\nSingle Variable Calculus I (MATH 5A)\n\nSingle Variable Calculus II (MATH 5B)\n\nMultivariable Calculus (MATH 5C)\n\nDifferential Equations (MATH 55)\n\nLinear Algebra (MATH 10)\n\n\n\nComputer Science\n\nFundamentals of Computer Science (CS 002)\n\n\n\n\n\n📊 Statistics & Data Science (PCC)\n\nElementary Statistics (STAT 050)\n\n\n\n\n🐻 UCLA Statistics Major Coursework\n\nProgramming & Applied Statistics\n\nIntroduction to Statistical Programming with R (STATS 20)\nCommunity or Corporate Internships in Statistics (STATS 195)\n\n\n\nProbability, Inference, and Mathematical Statistics\n\nIntroduction to Probability (STATS 100A)\n\nIntroduction to Mathematical Statistics (STATS 100B)\n\nLinear Models (STATS 100C)\n\n\n\nRegression, Experiments, and Data Mining\n\nIntroduction to Data Analysis and Regression (STATS 101A)\nIntroduction to Design and Analysis of Experiments (STATS 101B)\nIntroduction to Statistical Models and Data Mining (STATS 101C)\n\n\n\nComputational & Theoretical Methods\n\nIntroduction to Computational Statistics with R (STATS 102A)\nIntroduction to Computation and Optimization for Statistics (STATS 102B)\nIntroduction to Monte Carlo Methods (STATS 102C)\n\n\n\nAdvanced Electives\n\nStatistical Models in Finance (STATS C183)"
   },
   {
-    "objectID": "projects/01-project.html",
-    "href": "projects/01-project.html",
-    "title": "Project 1",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Kwanhee Yoon",
     "section": "",
-    "text": "Some complicated statistics project\n\nrunif(10)\n\n [1] 0.5930269 0.9961190 0.2013656 0.6961486 0.2949533 0.2315394 0.2480172\n [8] 0.9073837 0.6591197 0.4458303"
+    "text": "Hello, my name is Kwanhee Yoon, and I am currently studying Statistics & Data Science at UCLA.\nMy academic interests focus on statistical modeling, computational methods, and data-driven problem solving.\nThrough upper-division coursework—including probability, mathematical statistics, regression,\nexperimental design, optimization, and Monte Carlo methods—I have built a strong foundation in both\nthe theory and practical applications of modern statistical analysis.\nAlongside my studies, I work as a Data Analyst at Novastar Basketball, where I collect, validate,\nand refine real-time game statistics. This role has strengthened my skills in data accuracy,\nanalytical workflows, and applied modeling in fast-paced environments. I also support operational\ninfrastructure as an Assistant Manager at ASUCLA, improving documentation, inventory processes,\nand coordination across teams.\nYou can view my full CV below:\nDOWNLOAD cv\n\nEducation\nUniversity of California, Los Angeles (UCLA) | Los Angeles, CA\nB.A. in Statistics & Data Science | Expected 2026\nPasadena City College (PCC) | Pasadena, CA\nAssociate in Science (A.S.) — Natural Sciences | 2020 – 2024\n\n\nExperience\nNovastar Basketball | Data Analyst Intern | June 2024 – Present\nASUCLA (UCLA Bookstore – Central Receiving Center) | HumanResources Assistant Manager | Sept 2024 – Present\nRepublic of Korea Army | Administrative Specialist (HR Clerk) | 2020 – 2022\nSOOSUNGSPCITI LTD. | Safety Management Intern | 2018 – 2019"
   },
   {
-    "objectID": "projects/03-project.html",
-    "href": "projects/03-project.html",
-    "title": "Project 3",
+    "objectID": "projects/02-project.html",
+    "href": "projects/02-project.html",
+    "title": "Project 2 — How Music Influences Physical Performance (STATS 101B)",
     "section": "",
-    "text": "Some complicated statistics project\n\nrnorm(100) |&gt; hist()\n\n\n\n\n\n\n\nrnorm(100) |&gt; mean()\n\n[1] 0.008860239"
+    "text": "Can music actually change your physical performance — even when everything else is held constant?\nTo answer this, we designed a controlled experiment using a\nRandomized Complete Block Design (RCBD) where participants performed a strength task\nunder five different music genres:\n🎻 Classical  🎧 Pop  🎸 Rock  🎷 Jazz  🎤 Hip-hop\nEach participant experienced every genre, allowing us to isolate the pure effect of music\non physical performance while blocking for age differences.\nThis project explores whether the rhythm, intensity, or emotional tone of music\ncan meaningfully improve (or impair) measurable strength output."
+  },
+  {
+    "objectID": "projects/02-project.html#overview",
+    "href": "projects/02-project.html#overview",
+    "title": "Project 2 — How Music Influences Physical Performance (STATS 101B)",
+    "section": "",
+    "text": "Can music actually change your physical performance — even when everything else is held constant?\nTo answer this, we designed a controlled experiment using a\nRandomized Complete Block Design (RCBD) where participants performed a strength task\nunder five different music genres:\n🎻 Classical  🎧 Pop  🎸 Rock  🎷 Jazz  🎤 Hip-hop\nEach participant experienced every genre, allowing us to isolate the pure effect of music\non physical performance while blocking for age differences.\nThis project explores whether the rhythm, intensity, or emotional tone of music\ncan meaningfully improve (or impair) measurable strength output."
+  },
+  {
+    "objectID": "projects/02-project.html#key-findings-at-a-glance",
+    "href": "projects/02-project.html#key-findings-at-a-glance",
+    "title": "Project 2 — How Music Influences Physical Performance (STATS 101B)",
+    "section": "Key Findings at a Glance",
+    "text": "Key Findings at a Glance\n\n🎵 1. Yes — Music does influence physical performance\nOur ANOVA results showed a statistically significant difference in mean performance across genres.\nNot all music is equal — some genres consistently boosted reps, others held people back.\n\n\n👥 2. Age matters too\nAge group (used as a blocking factor) was also significant.\nThat means different age ranges responded differently to the same music —\na fascinating interaction that the full report explores in detail.\n\n\n⬆ 3. Which genres performed best?\nTukey HSD pairwise tests revealed surprising contrasts.\nSome music types that participants expected to be energizing… were not.\nOthers quietly outperformed the rest.\n(Full rankings and statistical comparisons are in the PDF!)\n\n\n📈 4. Strong model diagnostics\nOur RCBD model passed all major assumption checks:\n\nResiduals were approximately normal\n\nVariance was stable across treatments\n\nNo signs of influential outliers\n\nThis means the conclusions are statistically reliable — not noise."
+  },
+  {
+    "objectID": "projects/02-project.html#why-you-might-want-to-read-the-full-report",
+    "href": "projects/02-project.html#why-you-might-want-to-read-the-full-report",
+    "title": "Project 2 — How Music Influences Physical Performance (STATS 101B)",
+    "section": "Why you might want to read the full report",
+    "text": "Why you might want to read the full report\nThe complete PDF answers questions like:\n\nWhich specific genre produced the highest mean performance?\n\nHow large were the differences? Small? Moderate? Dramatic?\n\nDid older and younger participants react to music in the same way?\n\nWere the results driven by rhythm, intensity, or something else?\n\nHow certain are we statistically — what do the confidence intervals say?\n\nIt also includes:\n\nFull ANOVA tables\n\nTukey HSD comparison plots\n\nDiagnostic visuals (Residual plots, Q-Q plots, etc.)\n\nDetailed interpretation + limitations\n\nDiscussion about psychological + physiological explanations\n\nThis is not just a stats report — it’s a surprising story about how humans respond to sound."
+  },
+  {
+    "objectID": "projects/02-project.html#want-the-full-analysis",
+    "href": "projects/02-project.html#want-the-full-analysis",
+    "title": "Project 2 — How Music Influences Physical Performance (STATS 101B)",
+    "section": "📄 Want the full analysis?",
+    "text": "📄 Want the full analysis?\nAll results, plots, explanations, and model comparisons are available in the full PDF.\n👉 Click here to download the complete report"
+  },
+  {
+    "objectID": "projects/04-project.html",
+    "href": "projects/04-project.html",
+    "title": "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)",
+    "section": "",
+    "text": "This project predicts monthly Amazon spending (log_total) for each\nstate × year × month from 2018–2022, using survey data and order records\nfrom about 5,000 Amazon customers. The response is modeled on the log10 scale,\nand the main predictors include:\n\nTime and geography (year, month, state)\nCustomer demographics (age, income, gender, household counts, etc.)\nCustomer engagement (Amazon usage by customer and household)\nEngineered features from order-level data:\n\nmonth_est: estimated monthly spending from category means\nmonth_var_ratio: price stability score for categories\nbin1_count–bin5_count: counts of items by price tier\nmonth_est_low_var: spending using only low-variance categories\n\n\nThese features are aggregated into train_expanded and test_expanded to\npredict state-level monthly sales across 2018–2022."
+  },
+  {
+    "objectID": "projects/04-project.html#overview",
+    "href": "projects/04-project.html#overview",
+    "title": "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)",
+    "section": "",
+    "text": "This project predicts monthly Amazon spending (log_total) for each\nstate × year × month from 2018–2022, using survey data and order records\nfrom about 5,000 Amazon customers. The response is modeled on the log10 scale,\nand the main predictors include:\n\nTime and geography (year, month, state)\nCustomer demographics (age, income, gender, household counts, etc.)\nCustomer engagement (Amazon usage by customer and household)\nEngineered features from order-level data:\n\nmonth_est: estimated monthly spending from category means\nmonth_var_ratio: price stability score for categories\nbin1_count–bin5_count: counts of items by price tier\nmonth_est_low_var: spending using only low-variance categories\n\n\nThese features are aggregated into train_expanded and test_expanded to\npredict state-level monthly sales across 2018–2022."
+  },
+  {
+    "objectID": "projects/04-project.html#key-insights-preview",
+    "href": "projects/04-project.html#key-insights-preview",
+    "title": "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)",
+    "section": "Key Insights (Preview)",
+    "text": "Key Insights (Preview)\n\nThe target log_total is roughly unimodal after log10 transformation,\nsupporting RMSE on the log scale as the main metric.\nNearly all 30 numeric predictors are strongly right-skewed, which motivated\nexperiments with log-transformed recipes (though tree models did not require them).\nEDA shows that engineered features such as month_est,\nmonth_est_low_var, and bin counts are highly correlated with log_total.\nTwo preprocessing recipes were compared:\n\na generic recipe (dummy variables, median imputation, month as factor)\nan interaction recipe adding 2-way and 3-way interactions among\nmonth_est, month_var_ratio, and month_est_low_var.\n\nAcross six candidate models (linear regression, random forest, XGBoost with both recipes),\nthe Generic XGBoost model achieved the best performance with\nCV RMSE ≈ 0.0927 and a small standard error (~0.0025),\nbeating both random forest and linear regression.\nAdding explicit interaction terms did not improve XGBoost’s performance,\nindicating that the tree-based model already captures nonlinear interactions."
+  },
+  {
+    "objectID": "projects/04-project.html#want-the-full-analysis",
+    "href": "projects/04-project.html#want-the-full-analysis",
+    "title": "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)",
+    "section": "Want the full analysis?",
+    "text": "Want the full analysis?\nThe full regression report includes:\n\nDetailed EDA:\n\nHistograms of log_total and predictor distributions\nMonth-by-month boxplots and scatterplots of engineered features\nCorrelation ranking of top numeric predictors\n\nA step-by-step explanation of the feature engineering pipeline\nfrom raw order-level and customer data\nFull comparison of:\n\nGeneric vs. interaction recipes\nLinear regression, random forest, and XGBoost models\n\nCross-validation tables and plots for RMSE and standard errors\nA discussion of the final tuned XGBoost model:\n\nChosen hyperparameters\nStrengths, weaknesses, and risks of overfitting\nIdeas for future improvements (larger tuning grids, ensembles, time-aware CV,\nand additional lagged features)\n\nAn appendix with fully annotated R scripts used for the Kaggle submission\n\n📄 Full Project Report (PDF)\n👉 Open PDF"
   }
 ]

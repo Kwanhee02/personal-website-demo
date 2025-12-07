@@ -1,8 +1,8 @@
 {
-  "hash": "619316ed8e15162f5fdd13884c05b207",
+  "hash": "5dd5d214d6781cfb0bb60a317d7a70d6",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: Project 3\n---\n\nSome complicated statistics project\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrnorm(100) |> hist()\n```\n\n::: {.cell-output-display}\n![](03-project_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n\n```{.r .cell-code}\nrnorm(100) |> mean()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 0.008860239\n```\n\n\n:::\n:::\n",
+    "markdown": "---\ntitle: Project 3\n---\n\nSome complicated statistics project\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrnorm(100) |> hist()\n```\n\n::: {.cell-output-display}\n![](03-project_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n\n```{.r .cell-code}\nrnorm(100) |> mean()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 0.04177042\n```\n\n\n:::\n:::\n",
     "supporting": [
       "03-project_files"
     ],

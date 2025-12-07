@@ -15,20 +15,41 @@ about:
 toc: false
 ---
 
-Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.
+Hello, my name is **Kwanhee Yoon**, and I am currently studying **Statistics & Data Science at UCLA**.  
+My academic interests focus on **statistical modeling, computational methods, and data-driven problem solving**.  
+Through upper-division coursework—including probability, mathematical statistics, regression,  
+experimental design, optimization, and Monte Carlo methods—I have built a strong foundation in both  
+the theory and practical applications of modern statistical analysis.
 
-DOWNLOAD [cv](/cv.pdf)
+Alongside my studies, I work as a **Data Analyst at Novastar Basketball**, where I collect, validate,  
+and refine real-time game statistics. This role has strengthened my skills in data accuracy,  
+analytical workflows, and applied modeling in fast-paced environments. I also support operational  
+infrastructure as an **Assistant Manager at ASUCLA**, improving documentation, inventory processes,  
+and coordination across teams.
 
-## Education
 
-University of California, San Diego | San Diego, CA
-PhD in Mathematics | Sept 2011 - June 2015
+You can view my full CV below:  
+**DOWNLOAD** [cv](cv.pdf)
 
-Macalester College | St. Paul, MN
-B.A in Economics | Sept 2007 - June 2011
+# Education
 
-## Experience
 
-Wengo Analytics | Head Data Scientist | April 2018 - present
+**University of California, Los Angeles (UCLA)** | Los Angeles, CA  
+B.A. in Statistics & Data Science | *Expected 2026*
 
-GeoScynce | Chief Analyst | Spet 2012 - April 2018
+**Pasadena City College (PCC)** | Pasadena, CA  
+Associate in Science (A.S.) — Natural Sciences | *2020 – 2024*
+
+
+# Experience
+
+**Novastar Basketball** | Data Analyst Intern | *June 2024 – Present*  
+
+
+**ASUCLA (UCLA Bookstore – Central Receiving Center)** | HumanResources Assistant Manager | *Sept 2024 – Present*  
+
+
+**Republic of Korea Army** | Administrative Specialist (HR Clerk) | *2020 – 2022*  
+
+
+**SOOSUNGSPCITI LTD.** | Safety Management Intern | *2018 – 2019*  
