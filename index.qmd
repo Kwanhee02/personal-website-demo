@@ -17,7 +17,7 @@ toc: false
 
 Hello, my name is **Kwanhee Yoon**, and I am currently studying **Statistics & Data Science at UCLA**.  My academic interests focus on **statistical modeling, computational methods, and data-driven problem solving**. Through upper-division coursework—including probability, mathematical statistics, regression, experimental design, optimization, and Monte Carlo methods—I have built a strong foundation in both the theory and practical applications of modern statistical analysis.
 
-Alongside my studies, I work as a **Data Analyst at Novastar Basketball**, where I collect, validate, and refine real-time game statistics. This role has strengthened my skills in data accuracy, analytical workflows, and applied modeling in fast-paced environments. I also support operational infrastructure as an **Assistant Manager at ASUCLA**, improving documentation, inventory processes, and coordination across teams.
+Alongside my studies, I work as a **Data Analyst at Novastar Basketball**, where I collect, validate, and refine real-time game statistics. This role has strengthened my skills in data accuracy, analytical workflows, and applied modeling in fast-paced environments. I also support operational infrastructure as an **Human Resources Assistant Manager at ASUCLA**, improving documentation, inventory processes, and coordination across teams.
 
 
 You can view my full CV below:  
