@@ -15,9 +15,9 @@ about:
 toc: false
 ---
 
-Hello, my name is **Kwanhee Yoon**, and I am currently studying **Statistics & Data Science at UCLA**.  My academic interests focus on **statistical modeling, computational methods, and data-driven problem solving**. Through upper-division coursework—including probability, mathematical statistics, regression, experimental design, optimization, and Monte Carlo methods—I have built a strong foundation in both the theory and practical applications of modern statistical analysis.
+Hello, my name is **Kwanhee Yoon**, and I recently graduated from **UCLA** with a degree in **Statistics & Data Science**. My academic interests focus on **statistical modeling, computational methods, and data-driven problem solving**. Through upper-division coursework—including probability, mathematical statistics, regression, experimental design, optimization, and Monte Carlo methods—I have built a strong foundation in both the theory and practical applications of modern statistical analysis.
 
-Alongside my studies, I work as a **Data Analyst at Novastar Basketball**, where I collect, validate, and refine real-time game statistics. This role has strengthened my skills in data accuracy, analytical workflows, and applied modeling in fast-paced environments. I also support operational infrastructure as an **Human Resources Assistant Manager at ASUCLA**, improving documentation, inventory processes, and coordination across teams.
+I have experience working as a **Data Analyst at Novastar Basketball**, where I collected, validated, and refined real-time game statistics. This role strengthened my skills in data accuracy, analytical workflows, and applied modeling in fast-paced environments. I also supported operational infrastructure as an **Human Resources Assistant Manager at ASUCLA**, improving documentation, inventory processes, and coordination across teams.
 
 
 You can view my full CV below:  
@@ -27,7 +27,7 @@ You can view my full CV below:
 
 
 **University of California, Los Angeles (UCLA)** | Los Angeles, CA  
-B.A. in Statistics & Data Science | *Expected 2026*
+B.A. in Statistics & Data Science | *Graduated March 2026*
 
 **Pasadena City College (PCC)** | Pasadena, CA  
 Associate in Science (A.S.) — Natural Sciences | *2020 Feb – 2024 June*
@@ -35,10 +35,10 @@ Associate in Science (A.S.) — Natural Sciences | *2020 Feb – 2024 June*
 
 # Experience
 
-**Novastar Basketball** | Data Analyst Intern | *June 2025 – Present*  
+**Novastar Basketball** | Data Analyst Intern | *June 2025 – 2026 March*
 
 
-**ASUCLA (UCLA Bookstore – Central Receiving Center)** | HumanResources Assistant Manager | *June 2024 – Present*  
+**ASUCLA (UCLA Bookstore – Central Receiving Center)** | Human Resources Assistant Manager | *June 2024 – 2026 March*
 
 
 **Republic of Korea Army** | Administrative Specialist (HR Clerk) | *2020 Nov – 2022 May*  
