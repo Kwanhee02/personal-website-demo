@@ -1,0 +1,435 @@
+---
+title: "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)"
+format:
+  html:
+    toc: true
+---
+
+[**← 한국어 버전**](05-project.html)
+
+# Where Are Airbnb Listings Concentrated in Los Angeles County, and What Are Those Communities Like?
+
+A high number of Airbnb listings
+does not necessarily mean
+that a community has a high concentration relative to its size.
+
+Larger communities may naturally contain
+more listings simply because
+they have more housing.
+
+**Beyond Airbnb: An Archive of Airbnb in Los Angeles County**
+was a UCLA Digital Humanities team project
+that combined Inside Airbnb data
+with U.S. Census Bureau data
+to examine Airbnb's spatial distribution
+alongside housing, demographic,
+income, and educational characteristics.
+
+Rather than stopping at
+
+“Where are the most Airbnb listings?”
+
+the project asked:
+
+**How does the geographic pattern change
+when community size is taken into account,
+and what demographic and socioeconomic characteristics
+appear in the communities where listings are concentrated?**
+
+---
+
+## My Role
+
+My roles in this project were:
+
+**Data Specialist · Data Visualization Specialist · Editor**
+
+As a Data Specialist,
+I contributed to preparing raw project data
+for analysis through data cleaning,
+variable review,
+and exploratory analysis.
+
+As a Data Visualization Specialist,
+I developed and refined
+Tableau visualizations used to communicate
+the project's geographic and demographic patterns.
+
+The visualization process emphasized
+readability,
+interpretability,
+and iterative improvement
+so that audiences without a technical statistics background
+could understand the results.
+
+As an Editor,
+I reviewed and improved
+analytical explanations,
+visualization descriptions,
+and final presentation text.
+
+My role therefore covered both
+the analytical and communication sides
+of the project.
+
+---
+
+## Two Different Data Sources
+
+The project combined
+two primary data sources.
+
+### Inside Airbnb
+
+We used the Los Angeles
+`listings.csv.gz` file from Inside Airbnb.
+
+According to the project website,
+the archived dataset used for the analysis
+was updated on December 4, 2025.
+
+The original listing file contained 85 columns.
+
+For the project,
+the dataset was cleaned and reduced
+to 10 columns relevant to the research questions
+and visualizations.
+
+The data included information related to:
+
+- Listing location
+- Neighborhood
+- Latitude and longitude
+- Room type
+- Availability
+- Listing and host attributes
+
+### U.S. Census Bureau American Community Survey
+
+Inside Airbnb data describe the listings,
+but they do not provide
+a demographic profile of the residents
+living in the communities that contain them.
+
+We therefore used
+**American Community Survey (ACS)** data
+at the **County Census Division (CCD)** level.
+
+The main tables were:
+
+- DP05 — Demographic and Housing Estimates
+- S1901 — Income in the Past 12 Months
+- S1501 — Educational Attainment
+
+These data provided information
+on population characteristics,
+age,
+income,
+education,
+poverty-related measures,
+and housing units.
+
+---
+
+## The Main Data Challenge: Different Geographic Units
+
+The two datasets
+could not be joined directly.
+
+Inside Airbnb listings spanned
+**266 distinct neighborhoods**.
+
+The Census data used for the project,
+however,
+divided Los Angeles County into
+**20 CCDs**.
+
+This meant the two sources used
+different geographic structures:
+
+**Inside Airbnb → Neighborhood**
+
+**ACS → CCD**
+
+To address this mismatch,
+the team created custom mapping code
+that assigned each of the 266 neighborhoods
+to its corresponding CCD.
+
+This allowed every Airbnb listing
+in the final dataset
+to be connected with Census information
+for the same geographic area.
+
+The data were cleaned and combined
+using **R and RStudio**,
+and the resulting dataset
+was used for visualizations in **Tableau**.
+
+---
+
+## Where Were the Most Airbnb Listings?
+
+The first analysis compared
+the raw number of Airbnb listings
+by neighborhood.
+
+The project reported:
+
+- Long Beach — 1,906 listings
+- Hollywood — 1,758
+- Venice — 1,529
+- Santa Monica — 1,243
+
+The listing data showed
+clear geographic clustering
+rather than an even distribution
+across Los Angeles County.
+
+Higher listing counts appeared
+in several coastal areas
+and areas associated with
+tourism and cultural attractions.
+
+However,
+raw counts created an important limitation.
+
+---
+
+## Why Raw Counts Were Not Enough
+
+Communities differ substantially
+in the size of their housing stock.
+
+A region may contain
+thousands of Airbnb listings,
+but if it also contains
+hundreds of thousands of housing units,
+its relative concentration may still be low.
+
+The project therefore calculated:
+
+**Airbnb listings ÷ total housing units in each CCD**
+
+as a comparison metric.
+
+This helped place raw listing counts
+in the context of community size.
+
+Importantly,
+this ratio should not be interpreted
+as proving that the same percentage
+of housing units was literally converted
+from long-term housing to Airbnb use.
+
+It is a project-defined metric
+used to compare listing concentration
+across differently sized CCDs.
+
+---
+
+## The Pattern Changed After Accounting for Housing Units
+
+Using this metric,
+**Santa Monica CCD**
+had the highest ratio
+in the project's analysis,
+at approximately **9.5%**.
+
+Other relatively high values included:
+
+- Agoura Hills–Malibu CCD — approximately 4.8%
+- South Bay Cities CCD — approximately 4.2%
+
+In contrast,
+**San Fernando Valley CCD**
+contained more than 6,000 Airbnb listings
+in absolute terms,
+but also contained more than 620,000 housing units.
+
+Its calculated ratio was therefore
+approximately **0.9%**.
+
+The comparison showed that:
+
+**the community with the largest raw number of listings
+was not necessarily the community
+with the highest listing-to-housing-unit ratio.**
+
+---
+
+## Adding Community Context
+
+The project then connected
+Airbnb distribution
+with the demographic profiles
+of the 20 CCDs.
+
+From DP05,
+the analysis used median age
+and identified the largest population group
+among eight mutually exclusive
+racial and ethnic categories.
+
+From S1901,
+it included median household income
+and the income bracket
+with the largest share of residents.
+
+From S1501,
+the project examined educational attainment
+for residents age 25 and older
+and constructed poverty-related measures
+by educational attainment.
+
+This allowed the project
+to compare spatial Airbnb patterns
+with broader demographic
+and socioeconomic characteristics.
+
+These are area-level relationships,
+however,
+and should not be interpreted
+as describing the characteristics
+of individual Airbnb hosts or residents.
+
+---
+
+## A Closer Look at Santa Monica CCD
+
+Santa Monica CCD had
+the highest listing-to-housing-unit ratio
+under the project's comparison metric.
+
+The project therefore used
+Santa Monica and surrounding areas
+as a case study.
+
+The Narrative connected
+the area's Airbnb concentration,
+housing context,
+demographic profile,
+and previous scholarship
+on tourism and urban change.
+
+The original project discusses concepts
+such as tourism gentrification.
+
+However,
+the data used in this project alone
+do not establish that Airbnb directly caused
+changes in housing prices
+or resident displacement.
+
+What the project directly documents
+is the **spatial distribution of Airbnb listings
+and how those patterns coincide
+with area-level demographic
+and housing characteristics.**
+
+---
+
+## Data Limitations
+
+Each data source had important limitations.
+
+Inside Airbnb contains detailed information
+about listings,
+hosts,
+locations,
+and other platform-visible activity.
+
+However,
+it does not directly provide
+resident or guest demographics such as:
+
+- Age
+- Race
+- Income
+- Household characteristics
+
+The listing data used in this project
+also cannot independently measure
+off-platform outcomes such as
+rent changes,
+housing prices,
+or resident displacement.
+
+The ACS is a sample survey,
+so its figures are estimates
+rather than exact population counts
+and are reported with margins of error.
+
+The project therefore considered
+both what the available data could show
+and what they could not establish.
+
+---
+
+## What I Learned
+
+At first,
+raw listing counts appeared to provide
+a straightforward picture
+of Airbnb concentration.
+
+However,
+communities differ greatly
+in their underlying housing stock.
+
+Reframing the comparison
+as a listing-to-housing-unit ratio
+produced a different view
+of the same geography.
+
+The project also required
+connecting datasets created
+at different geographic scales
+and translating the resulting analysis
+into visualizations
+for a nontechnical audience.
+
+The experience reinforced
+that data analysis is not only
+about calculating values.
+
+**Choosing the right comparison,
+understanding the limits of the data,
+and communicating the result clearly
+are equally important parts
+of the analytical process.**
+
+---
+
+## Methods & Tools
+
+- R / RStudio
+- Tableau
+- Inside Airbnb
+- U.S. Census Bureau American Community Survey
+- Data Cleaning
+- Data Integration
+- Exploratory Data Analysis
+- Geographic Mapping
+- Ratio / Proportion Analysis
+- Data Visualization
+- Digital Humanities Research
+- WordPress
+
+---
+
+## Explore the Full Project
+
+The complete website includes
+the data methodology,
+interactive visualizations,
+Narrative,
+Chronology,
+and References.
+
+For a detailed explanation
+of the data sources,
+cleaning,
+and geographic mapping process:
+
+🌐 **[Beyond Airbnb — An Archive of Airbnb in Los Angeles County](https://shorttermrentalsinla.humspace.ucla.edu/)**

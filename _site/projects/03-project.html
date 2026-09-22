@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 3 — U.S. Election Winner Classification (STATS 101C) – Kwanhee Yoon</title>
+<title>Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C) – Kwanhee Yoon</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +102,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -142,13 +142,47 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#카운티의-특성만으로-2020년-대선-승자를-분류할-수-있을까" id="toc-카운티의-특성만으로-2020년-대선-승자를-분류할-수-있을까" class="nav-link active" data-scroll-target="#카운티의-특성만으로-2020년-대선-승자를-분류할-수-있을까">카운티의 특성만으로 2020년 대선 승자를 분류할 수 있을까?</a>
+  <ul class="collapse">
+  <li><a href="#프로젝트-개요" id="toc-프로젝트-개요" class="nav-link" data-scroll-target="#프로젝트-개요">프로젝트 개요</a></li>
+  <li><a href="#먼저-데이터를-살펴봤습니다" id="toc-먼저-데이터를-살펴봤습니다" class="nav-link" data-scroll-target="#먼저-데이터를-살펴봤습니다">먼저 데이터를 살펴봤습니다</a></li>
+  <li><a href="#한-가지-변수만으로는-충분하지-않았습니다" id="toc-한-가지-변수만으로는-충분하지-않았습니다" class="nav-link" data-scroll-target="#한-가지-변수만으로는-충분하지-않았습니다">한 가지 변수만으로는 충분하지 않았습니다</a></li>
+  <li><a href="#class-imbalance도-확인했습니다" id="toc-class-imbalance도-확인했습니다" class="nav-link" data-scroll-target="#class-imbalance도-확인했습니다">Class Imbalance도 확인했습니다</a></li>
+  <li><a href="#두-가지-전처리-방법을-비교했습니다" id="toc-두-가지-전처리-방법을-비교했습니다" class="nav-link" data-scroll-target="#두-가지-전처리-방법을-비교했습니다">두 가지 전처리 방법을 비교했습니다</a>
+  <ul class="collapse">
+  <li><a href="#generic-recipe" id="toc-generic-recipe" class="nav-link" data-scroll-target="#generic-recipe">1. Generic Recipe</a></li>
+  <li><a href="#log-recipe" id="toc-log-recipe" class="nav-link" data-scroll-target="#log-recipe">2. Log Recipe</a></li>
+  </ul></li>
+  <li><a href="#세-가지-머신러닝-모델을-비교했습니다" id="toc-세-가지-머신러닝-모델을-비교했습니다" class="nav-link" data-scroll-target="#세-가지-머신러닝-모델을-비교했습니다">세 가지 머신러닝 모델을 비교했습니다</a>
+  <ul class="collapse">
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression">Logistic Regression</a></li>
+  <li><a href="#k-nearest-neighbors-knn" id="toc-k-nearest-neighbors-knn" class="nav-link" data-scroll-target="#k-nearest-neighbors-knn">K-Nearest Neighbors (KNN)</a></li>
+  <li><a href="#xgboost" id="toc-xgboost" class="nav-link" data-scroll-target="#xgboost">XGBoost</a></li>
+  </ul></li>
+  <li><a href="#모델을-어떻게-비교했는가" id="toc-모델을-어떻게-비교했는가" class="nav-link" data-scroll-target="#모델을-어떻게-비교했는가">모델을 어떻게 비교했는가</a></li>
+  <li><a href="#모델-비교-결과" id="toc-모델-비교-결과" class="nav-link" data-scroll-target="#모델-비교-결과">모델 비교 결과</a></li>
+  <li><a href="#새로운-데이터에서도-성능을-확인했습니다" id="toc-새로운-데이터에서도-성능을-확인했습니다" class="nav-link" data-scroll-target="#새로운-데이터에서도-성능을-확인했습니다">새로운 데이터에서도 성능을 확인했습니다</a></li>
+  <li><a href="#높은-성능만-보고-끝내지-않았습니다" id="toc-높은-성능만-보고-끝내지-않았습니다" class="nav-link" data-scroll-target="#높은-성능만-보고-끝내지-않았습니다">높은 성능만 보고 끝내지 않았습니다</a></li>
+  <li><a href="#나의-역할" id="toc-나의-역할" class="nav-link" data-scroll-target="#나의-역할">나의 역할</a></li>
+  <li><a href="#이-프로젝트에서-중요했던-점" id="toc-이-프로젝트에서-중요했던-점" class="nav-link" data-scroll-target="#이-프로젝트에서-중요했던-점">이 프로젝트에서 중요했던 점</a></li>
+  <li><a href="#프로젝트의-한계" id="toc-프로젝트의-한계" class="nav-link" data-scroll-target="#프로젝트의-한계">프로젝트의 한계</a></li>
+  <li><a href="#사용한-분석-방법-및-도구" id="toc-사용한-분석-방법-및-도구" class="nav-link" data-scroll-target="#사용한-분석-방법-및-도구">사용한 분석 방법 및 도구</a></li>
+  <li><a href="#전체-프로젝트-보고서" id="toc-전체-프로젝트-보고서" class="nav-link" data-scroll-target="#전체-프로젝트-보고서">전체 프로젝트 보고서</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 3 — U.S. Election Winner Classification (STATS 101C)</h1>
+<h1 class="title">Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)</h1>
 </div>
 
 
@@ -165,48 +199,216 @@ window.Quarto = {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Using demographic, economic, and population composition data from the <strong>U.S. Census</strong>,<br>
-this project predicts <strong>whether each U.S. county voted for Biden or Trump in 2020</strong>.<br>
-We focused on building clean preprocessing pipelines and comparing several<br>
-machine-learning models to find the most reliable classifier.</p>
+<p><a href="03-project-en.html"><strong>English Version →</strong></a></p>
+<section id="카운티의-특성만으로-2020년-대선-승자를-분류할-수-있을까" class="level1">
+<h1>카운티의 특성만으로 2020년 대선 승자를 분류할 수 있을까?</h1>
+<p>미국의 카운티는 인구 규모부터 연령 구성, 교육 수준, 인종·민족 구성 등에서 큰 차이를 보입니다.</p>
+<p>이 프로젝트에서는 이러한 <strong>카운티 수준의 인구·교육 특성</strong>을 이용해 2020년 미국 대통령 선거에서 해당 카운티의 승자가 Biden인지 Trump인지 분류하는 머신러닝 모델을 만들었습니다.</p>
+<p>단순히 하나의 모델을 만드는 데 그치지 않고, 서로 다른 전처리 방식과 세 가지 분류모델을 조합해 비교하고, 새로운 데이터에서도 상대적으로 안정적인 성능을 보이는 workflow를 찾는 것이 프로젝트의 핵심이었습니다.</p>
+<hr>
+<section id="프로젝트-개요" class="level2">
+<h2 class="anchored" data-anchor-id="프로젝트-개요">프로젝트 개요</h2>
+<p>보고서에 따르면 주요 설명변수는 U.S. Census Bureau의 인구 및 교육 관련 추정치를 기반으로 했습니다.</p>
+<p>문제는 카운티마다 인구 규모가 크게 다르다는 점이었습니다.</p>
+<p>예를 들어 한 카운티에서 특정 연령대가 100,000명이고 다른 카운티에서는 10,000명이라고 하더라도, 그 숫자만으로는 두 지역의 인구 구성이 실제로 얼마나 다른지 공정하게 비교하기 어렵습니다.</p>
+<p>따라서 팀은 많은 인구 관련 원자료를 각 카운티의 전체 인구 또는 해당 하위집단의 인구로 나누어 <strong>비율 형태의 변수</strong>로 변환했습니다.</p>
+<p>이를 통해 단순한 인구 규모의 차이보다 각 카운티의 인구 구성이 어떻게 다른지를 모델이 활용하도록 했습니다.</p>
 <hr>
 </section>
-<section id="key-insights-preview" class="level2">
-<h2 class="anchored" data-anchor-id="key-insights-preview">Key Insights (Preview)</h2>
+<section id="먼저-데이터를-살펴봤습니다" class="level2">
+<h2 class="anchored" data-anchor-id="먼저-데이터를-살펴봤습니다">먼저 데이터를 살펴봤습니다</h2>
+<p>모델을 만들기 전에 각 변수의 분포와 카운티 간 차이를 확인했습니다.</p>
+<p>원자료의 여러 변수는 오른쪽으로 길게 치우친 right-skewed distribution을 보였습니다.</p>
+<p>또한 raw count로 연령대별 인구를 비교했을 때는 대도시와 작은 카운티의 규모 차이가 너무 커 변수 자체를 직접 비교하기 어려웠습니다.</p>
+<p>비율로 변환한 뒤에는 카운티의 규모보다는 각 연령대가 전체 인구에서 차지하는 비중을 비교할 수 있었습니다.</p>
+<hr>
+</section>
+<section id="한-가지-변수만으로는-충분하지-않았습니다" class="level2">
+<h2 class="anchored" data-anchor-id="한-가지-변수만으로는-충분하지-않았습니다">한 가지 변수만으로는 충분하지 않았습니다</h2>
+<p>각 predictor와 선거 결과 사이의 관계도 확인했습니다.</p>
+<p>binary outcome과 연속형 변수 사이의 관계를 측정하는 point-biserial correlation을 계산한 결과, 어떤 변수도 target과의 상관계수가 0.5를 넘지 않았습니다.</p>
+<p>즉, 특정 변수 하나만으로 두 county class를 뚜렷하게 구분하기보다는 여러 인구·교육 특성을 함께 고려할 필요가 있었습니다.</p>
+<p>그래서 일부 변수만 선택하기보다 여러 predictor를 함께 사용하는 분류모델을 비교했습니다.</p>
+<hr>
+</section>
+<section id="class-imbalance도-확인했습니다" class="level2">
+<h2 class="anchored" data-anchor-id="class-imbalance도-확인했습니다">Class Imbalance도 확인했습니다</h2>
+<p>학습 데이터에는 두 class의 수가 동일하지 않았습니다.</p>
+<p>보고서의 EDA에서는</p>
 <ul>
-<li>Most Census features were <strong>heavily right-skewed</strong>, so we used normalization<br>
-and, when appropriate, log transformations.</li>
-<li>No single variable clearly separated Biden vs.&nbsp;Trump counties —<br>
-meaningful patterns only appeared in multivariate models.</li>
-<li>After comparing Logistic Regression, KNN, and XGBoost workflows,<br>
-<strong>generic XGBoost performed best</strong>, achieving <strong>ROC-AUC ≈ 0.973</strong><br>
-with stable cross-validation.</li>
-<li>Final test accuracy was about <strong>0.944</strong>, while training accuracy was <strong>1.000</strong>,<br>
-revealing overfitting that we discuss in the report.</li>
+<li>Biden-winning counties: 389</li>
+<li>Trump-winning counties: 1,942</li>
+</ul>
+<p>로 나타났습니다.</p>
+<p>팀은 oversampling이나 undersampling으로 class distribution을 인위적으로 바꾸지 않고, 원래의 분포를 유지한 상태에서 모델을 학습하기로 했습니다.</p>
+<hr>
+</section>
+<section id="두-가지-전처리-방법을-비교했습니다" class="level2">
+<h2 class="anchored" data-anchor-id="두-가지-전처리-방법을-비교했습니다">두 가지 전처리 방법을 비교했습니다</h2>
+<p>같은 모델이라도 데이터를 어떻게 준비하느냐에 따라 성능이 달라질 수 있기 때문에 두 개의 preprocessing recipe를 만들었습니다.</p>
+<section id="generic-recipe" class="level3">
+<h3 class="anchored" data-anchor-id="generic-recipe">1. Generic Recipe</h3>
+<p>첫 번째 방법에서는 여러 인구 관련 count를 전체 인구 또는 해당 subgroup의 인구로 나누어 비율로 변환했습니다.</p>
+<p>또한 2016년과 2020년 사이의 income per capita와 GDP growth 변수를 계산하고, 일부 불필요한 identifier와 total column을 제거했습니다.</p>
+<p>결측값이 있는 numeric predictor는 median으로 대체했습니다.</p>
+</section>
+<section id="log-recipe" class="level3">
+<h3 class="anchored" data-anchor-id="log-recipe">2. Log Recipe</h3>
+<p>두 번째 방법은 Generic Recipe에</p>
+<ul>
+<li>log transformation</li>
+<li>standardization</li>
+</ul>
+<p>을 추가했습니다.</p>
+<p>EDA에서 많은 변수가 오른쪽으로 치우쳐 있었기 때문에, 이러한 변환이 Logistic Regression이나 KNN처럼 변수의 분포나 거리의 영향을 받는 모델에 도움이 되는지 확인했습니다.</p>
+<hr>
+</section>
+</section>
+<section id="세-가지-머신러닝-모델을-비교했습니다" class="level2">
+<h2 class="anchored" data-anchor-id="세-가지-머신러닝-모델을-비교했습니다">세 가지 머신러닝 모델을 비교했습니다</h2>
+<p>프로젝트에서는 세 가지 분류모델을 사용했습니다.</p>
+<section id="logistic-regression" class="level3">
+<h3 class="anchored" data-anchor-id="logistic-regression">Logistic Regression</h3>
+<p>여러 변수와 결과 사이의 관계를 비교적 단순한 형태로 모델링하는 방법입니다.</p>
+<p>복잡한 모델과 비교하기 위한 baseline 역할도 할 수 있습니다.</p>
+</section>
+<section id="k-nearest-neighbors-knn" class="level3">
+<h3 class="anchored" data-anchor-id="k-nearest-neighbors-knn">K-Nearest Neighbors (KNN)</h3>
+<p>새로운 카운티와 특성이 비슷한 주변 카운티들을 찾아 그들의 class를 바탕으로 결과를 분류하는 방식입니다.</p>
+</section>
+<section id="xgboost" class="level3">
+<h3 class="anchored" data-anchor-id="xgboost">XGBoost</h3>
+<p>여러 개의 decision tree를 순서대로 만들면서 앞선 tree가 잘못 분류한 부분을 다음 tree가 계속 보완하는 boosting 방식입니다.</p>
+<p>보다 복잡하고 비선형적인 패턴을 포착할 수 있다는 특징이 있습니다.</p>
+<hr>
+</section>
+</section>
+<section id="모델을-어떻게-비교했는가" class="level2">
+<h2 class="anchored" data-anchor-id="모델을-어떻게-비교했는가">모델을 어떻게 비교했는가</h2>
+<p>한 번의 train/test split 결과만으로 모델을 선택하지 않았습니다.</p>
+<p>Training data를 다섯 부분으로 나누는 <strong>5-fold cross-validation</strong>을 사용했습니다.</p>
+<p>쉽게 말하면, 다섯 부분 중 네 부분으로 학습하고 남은 한 부분으로 평가하는 과정을 평가 대상 부분을 바꿔가며 반복하는 방식입니다.</p>
+<p>또한 winner class의 비율이 각 fold에서 크게 달라지지 않도록 stratified cross-validation을 사용했습니다.</p>
+<p>모델 선택의 주된 지표는 <strong>ROC-AUC</strong>였습니다.</p>
+<p>ROC-AUC는 모델이 두 class를 얼마나 잘 구분하는지를 평가하는 지표이며, 값이 1에 가까울수록 구분 성능이 높습니다.</p>
+<hr>
+</section>
+<section id="모델-비교-결과" class="level2">
+<h2 class="anchored" data-anchor-id="모델-비교-결과">모델 비교 결과</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Workflow</th>
+<th style="text-align: right;">Cross-validated ROC-AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Generic XGBoost</td>
+<td style="text-align: right;">0.973</td>
+</tr>
+<tr class="even">
+<td>Log XGBoost</td>
+<td style="text-align: right;">0.973</td>
+</tr>
+<tr class="odd">
+<td>Generic KNN</td>
+<td style="text-align: right;">0.960</td>
+</tr>
+<tr class="even">
+<td>Log KNN</td>
+<td style="text-align: right;">0.959</td>
+</tr>
+<tr class="odd">
+<td>Generic Logistic Regression</td>
+<td style="text-align: right;">0.959</td>
+</tr>
+<tr class="even">
+<td>Log Logistic Regression</td>
+<td style="text-align: right;">0.966</td>
+</tr>
+</tbody>
+</table>
+<p>가장 높은 ROC-AUC는 <strong>Generic XGBoost와 Log XGBoost가 동일하게 약 0.973</strong>을 기록했습니다.</p>
+<p>즉, log transformation을 추가한다고 해서 XGBoost의 성능이 개선되지는 않았습니다.</p>
+<p>따라서 팀은 동일한 수준의 성능을 내면서 전처리 과정이 더 단순한 <strong>Generic XGBoost를 최종 workflow로 선택했습니다.</strong></p>
+<p>선택된 XGBoost configuration은 889개의 trees, tree depth 4, minimum observations per node 2였습니다.</p>
+<hr>
+</section>
+<section id="새로운-데이터에서도-성능을-확인했습니다" class="level2">
+<h2 class="anchored" data-anchor-id="새로운-데이터에서도-성능을-확인했습니다">새로운 데이터에서도 성능을 확인했습니다</h2>
+<p>Cross-validation만으로 평가를 끝내지 않고, training data를 다시 80:20으로 나누어 추가적인 hold-out evaluation도 진행했습니다.</p>
+<p>이 80/20 hold-out split에서 Generic XGBoost의 accuracy는 약 <strong>0.944</strong>였습니다.</p>
+<p>이는 cross-validation 외의 별도 subset에서도 높은 분류 정확도를 보였다는 의미입니다.</p>
+<p>다만 full training data에 다시 fitting했을 때는 training accuracy가 <strong>1.000</strong>으로 나타났습니다.</p>
+<p>Training data에서는 완벽하게 맞추지만 새로운 데이터에서는 그보다 성능이 낮다는 점 때문에, 팀은 <strong>overfitting 가능성</strong>도 함께 검토했습니다.</p>
+<hr>
+</section>
+<section id="높은-성능만-보고-끝내지-않았습니다" class="level2">
+<h2 class="anchored" data-anchor-id="높은-성능만-보고-끝내지-않았습니다">높은 성능만 보고 끝내지 않았습니다</h2>
+<p>모델의 실제 일반화 성능에는 추가적인 주의가 필요했습니다.</p>
+<p>보고서에 따르면 Kaggle private leaderboard가 공개된 뒤 팀의 순위는 1위에서 11위로 내려갔습니다.</p>
+<p>Cross-validation과 내부 hold-out에서는 높은 성능을 보였지만, 새로운 hidden test data에서는 같은 수준의 성능이 그대로 유지되지 않았던 것입니다.</p>
+<p>팀은 이를 통해 특정 train/test split에 따른 영향과 XGBoost의 overfitting 가능성을 다시 검토했습니다.</p>
+<p>보고서에서는 향후에는 보다 다양한 hyperparameter 탐색과 여러 모델을 결합한 ensemble 방식이 더 안정적인 선택이 될 가능성도 언급했습니다.</p>
+<hr>
+</section>
+<section id="나의-역할" class="level2">
+<h2 class="anchored" data-anchor-id="나의-역할">나의 역할</h2>
+<p>이 프로젝트는 5명이 함께한 팀 프로젝트였습니다.</p>
+<p>팀 기여 기록에 따르면 저는 <strong>Model Selection 및 Hyperparameter Tuning</strong>을 담당했고, <strong>최종 보고서 작성에도 참여했습니다.</strong></p>
+<p>Logistic Regression, KNN, XGBoost와 두 가지 preprocessing recipe를 조합한 workflow들의 cross-validation 결과를 비교하고, 각 모델의 tuning 결과를 검토해 최종 모델을 선택하는 과정에 참여했습니다.</p>
+<p>또한 모델 성능과 한계를 해석하고 그 내용을 팀원들과 함께 최종 보고서에 정리했습니다.</p>
+<hr>
+</section>
+<section id="이-프로젝트에서-중요했던-점" class="level2">
+<h2 class="anchored" data-anchor-id="이-프로젝트에서-중요했던-점">이 프로젝트에서 중요했던 점</h2>
+<p>처음에는 높은 ROC-AUC와 hold-out accuracy를 통해 XGBoost가 매우 안정적인 모델처럼 보였습니다.</p>
+<p>하지만 training accuracy가 1.000이었고, Kaggle private leaderboard에서는 성능이 기대만큼 유지되지 않았습니다.</p>
+<p>이를 통해 모델을 평가할 때 <strong>가장 높은 숫자 하나만 보는 것으로는 충분하지 않다</strong>는 점을 확인했습니다.</p>
+<p>Cross-validation, hold-out evaluation, training performance, 새로운 test data에서의 결과를 함께 확인해야 모델이 실제로 얼마나 안정적으로 일반화되는지 판단할 수 있었습니다.</p>
+<hr>
+</section>
+<section id="프로젝트의-한계" class="level2">
+<h2 class="anchored" data-anchor-id="프로젝트의-한계">프로젝트의 한계</h2>
+<p>이 프로젝트에도 몇 가지 한계가 있었습니다.</p>
+<p>첫째, 각 workflow의 hyperparameter tuning에서 10개의 candidate configuration만 탐색했습니다.</p>
+<p>따라서 더 넓은 범위를 탐색했다면 다른 설정이 더 좋은 결과를 냈을 가능성이 있습니다.</p>
+<p>둘째, 최종 workflow를 주로 ROC-AUC를 기준으로 선택했습니다.</p>
+<p>보고서에서도 accuracy나 Brier score와 같은 다른 평가 지표를 함께 고려했다면 모델을 보다 다양한 관점에서 평가할 수 있었다고 지적했습니다.</p>
+<p>셋째, training accuracy가 1.000이었던 점과 private leaderboard 성능 변화는 최종 XGBoost 모델의 generalization에 추가적인 검증이 필요했음을 보여줬습니다.</p>
+<hr>
+</section>
+<section id="사용한-분석-방법-및-도구" class="level2">
+<h2 class="anchored" data-anchor-id="사용한-분석-방법-및-도구">사용한 분석 방법 및 도구</h2>
+<ul>
+<li>R</li>
+<li>tidyverse</li>
+<li>tidymodels</li>
+<li>workflowsets</li>
+<li>Logistic Regression</li>
+<li>K-Nearest Neighbors (KNN)</li>
+<li>XGBoost</li>
+<li>5-Fold Stratified Cross-Validation</li>
+<li>Hyperparameter Tuning</li>
+<li>ROC-AUC</li>
+<li>Hold-out Evaluation</li>
+<li>Log Transformation</li>
+<li>Standardization</li>
+<li>Median Imputation</li>
+<li>Feature Engineering</li>
+<li>Kaggle Submission Workflow</li>
 </ul>
 <hr>
 </section>
-<section id="want-the-full-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="want-the-full-analysis">Want the full analysis?</h2>
-<p>The full project report includes:</p>
-<ul>
-<li>EDA on skewness, demographics, and county patterns<br>
-</li>
-<li>Preprocessing pipelines (generic vs.&nbsp;log)<br>
-</li>
-<li>Model comparison tables (Logistic Regression, KNN, XGBoost)<br>
-</li>
-<li>ROC curves, diagnostics, and discussion of overfitting<br>
-</li>
-<li>The complete R workflow used to train and evaluate the models</li>
-</ul>
-<p>📄 <strong>Full Project Report (PDF)</strong><br>
-👉 <a href="Team 10 Classification Project Report.pdf">Open PDF</a></p>
+<section id="전체-프로젝트-보고서" class="level2">
+<h2 class="anchored" data-anchor-id="전체-프로젝트-보고서">전체 프로젝트 보고서</h2>
+<p>전체 보고서에서는 Exploratory Data Analysis, 전처리 과정, 여섯 개 workflow 비교, cross-validation, hyperparameter tuning, ROC curve, hold-out evaluation, overfitting에 대한 논의와 전체 R code를 확인할 수 있습니다.</p>
+<p>📄 <a href="Team 10 Classification Project Report.pdf"><strong>전체 프로젝트 보고서 보기 (PDF)</strong></a></p>
 
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

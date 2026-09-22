@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 2 — How Music Influences Physical Performance (STATS 101B) – Kwanhee Yoon</title>
+<title>Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B) – Kwanhee Yoon</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +102,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -142,13 +142,36 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#운동-전에-듣는-음악이-실제-운동-수행을-바꿀까" id="toc-운동-전에-듣는-음악이-실제-운동-수행을-바꿀까" class="nav-link active" data-scroll-target="#운동-전에-듣는-음악이-실제-운동-수행을-바꿀까">운동 전에 듣는 음악이 실제 운동 수행을 바꿀까?</a>
+  <ul class="collapse">
+  <li><a href="#the-islands란" id="toc-the-islands란" class="nav-link" data-scroll-target="#the-islands란">The Islands란?</a></li>
+  <li><a href="#프로젝트-개요" id="toc-프로젝트-개요" class="nav-link" data-scroll-target="#프로젝트-개요">프로젝트 개요</a></li>
+  <li><a href="#데이터를-어떻게-만들었는가" id="toc-데이터를-어떻게-만들었는가" class="nav-link" data-scroll-target="#데이터를-어떻게-만들었는가">데이터를 어떻게 만들었는가</a></li>
+  <li><a href="#나의-역할" id="toc-나의-역할" class="nav-link" data-scroll-target="#나의-역할">나의 역할</a></li>
+  <li><a href="#왜-연령을-따로-고려했는가" id="toc-왜-연령을-따로-고려했는가" class="nav-link" data-scroll-target="#왜-연령을-따로-고려했는가">왜 연령을 따로 고려했는가</a></li>
+  <li><a href="#주요-결과" id="toc-주요-결과" class="nav-link" data-scroll-target="#주요-결과">주요 결과</a></li>
+  <li><a href="#특정-음악끼리는-차이가-있었을까" id="toc-특정-음악끼리는-차이가-있었을까" class="nav-link" data-scroll-target="#특정-음악끼리는-차이가-있었을까">특정 음악끼리는 차이가 있었을까?</a></li>
+  <li><a href="#분석-결과를-믿을-수-있는지도-확인했습니다" id="toc-분석-결과를-믿을-수-있는지도-확인했습니다" class="nav-link" data-scroll-target="#분석-결과를-믿을-수-있는지도-확인했습니다">분석 결과를 믿을 수 있는지도 확인했습니다</a></li>
+  <li><a href="#추가-분석" id="toc-추가-분석" class="nav-link" data-scroll-target="#추가-분석">추가 분석</a></li>
+  <li><a href="#이-프로젝트에서-확인한-점" id="toc-이-프로젝트에서-확인한-점" class="nav-link" data-scroll-target="#이-프로젝트에서-확인한-점">이 프로젝트에서 확인한 점</a></li>
+  <li><a href="#프로젝트의-한계" id="toc-프로젝트의-한계" class="nav-link" data-scroll-target="#프로젝트의-한계">프로젝트의 한계</a></li>
+  <li><a href="#사용한-분석-방법" id="toc-사용한-분석-방법" class="nav-link" data-scroll-target="#사용한-분석-방법">사용한 분석 방법</a></li>
+  <li><a href="#전체-프로젝트-보고서" id="toc-전체-프로젝트-보고서" class="nav-link" data-scroll-target="#전체-프로젝트-보고서">전체 프로젝트 보고서</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 2 — How Music Influences Physical Performance (STATS 101B)</h1>
+<h1 class="title">Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)</h1>
 </div>
 
 
@@ -165,90 +188,149 @@ window.Quarto = {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Can <strong>music actually change your physical performance</strong> — even when everything else is held constant?</p>
-<p>To answer this, we designed a controlled experiment using a<br>
-<strong>Randomized Complete Block Design (RCBD)</strong> where participants performed a strength task<br>
-under <strong>five different music genres</strong>:</p>
-<p>🎻 Classical  🎧 Pop  🎸 Rock  🎷 Jazz  🎤 Hip-hop</p>
-<p>Each participant experienced <em>every</em> genre, allowing us to isolate the <em>pure effect of music</em><br>
-on physical performance while blocking for age differences.</p>
-<p>This project explores whether the rhythm, intensity, or emotional tone of music<br>
-can meaningfully improve (or impair) measurable strength output.</p>
+<p><a href="02-project-en.html"><strong>English Version →</strong></a></p>
+<section id="운동-전에-듣는-음악이-실제-운동-수행을-바꿀까" class="level1">
+<h1>운동 전에 듣는 음악이 실제 운동 수행을 바꿀까?</h1>
+<p>운동할 때 음악을 들으면 평소보다 힘이 나거나 운동이 더 잘된다고 느끼는 경우가 있습니다.</p>
+<p>이 프로젝트에서는 이러한 느낌이 실제 수행 차이로 나타나는지 확인하기 위해, <strong>운동 전에 듣는 음악 장르가 단기 근력 수행에 영향을 미치는지</strong> 실험했습니다.</p>
+<p>다만 실제 사람을 모집한 실험은 아니었습니다. 실험설계 교육을 위해 만들어진 가상 인구 플랫폼인 <strong>The Islands</strong>를 활용해 표본을 추출하고 실험 데이터를 수집했습니다.</p>
+<hr>
+<section id="the-islands란" class="level2">
+<h2 class="anchored" data-anchor-id="the-islands란">The Islands란?</h2>
+<p><strong>The Islands</strong>는 University of Queensland에서 개발한 가상 인구 기반 학습 환경입니다.</p>
+<p>Ironbard, Providence, Bonne Santé라는 세 개의 가상 섬에 가상의 주민들이 거주하며, 학생들은 이 인구를 대상으로 표본을 추출하고 다양한 실험을 설계해 데이터를 수집할 수 있습니다.</p>
+<p>이번 프로젝트에서는 이 가상 환경을 활용해 참가자를 직접 선정하고 음악 조건에 따른 운동 수행 데이터를 수집했습니다.</p>
 <hr>
 </section>
-<section id="key-findings-at-a-glance" class="level2">
-<h2 class="anchored" data-anchor-id="key-findings-at-a-glance">Key Findings at a Glance</h2>
-<section id="yes-music-does-influence-physical-performance" class="level3">
-<h3 class="anchored" data-anchor-id="yes-music-does-influence-physical-performance">🎵 1. Yes — Music <em>does</em> influence physical performance</h3>
-<p>Our ANOVA results showed a <strong>statistically significant</strong> difference in mean performance across genres.<br>
-Not all music is equal — some genres consistently boosted reps, others held people back.</p>
-</section>
-<section id="age-matters-too" class="level3">
-<h3 class="anchored" data-anchor-id="age-matters-too">👥 2. Age matters too</h3>
-<p>Age group (used as a blocking factor) was also significant.<br>
-That means different age ranges responded differently to the same music —<br>
-a fascinating interaction that the full report explores in detail.</p>
-</section>
-<section id="which-genres-performed-best" class="level3">
-<h3 class="anchored" data-anchor-id="which-genres-performed-best">⬆ 3. Which genres performed best?</h3>
-<p>Tukey HSD pairwise tests revealed surprising contrasts.<br>
-Some music types that participants <em>expected</em> to be energizing… were not.<br>
-Others quietly outperformed the rest.</p>
-<p>(Full rankings and statistical comparisons are in the PDF!)</p>
-</section>
-<section id="strong-model-diagnostics" class="level3">
-<h3 class="anchored" data-anchor-id="strong-model-diagnostics">📈 4. Strong model diagnostics</h3>
-<p>Our RCBD model passed all major assumption checks:</p>
+<section id="프로젝트-개요" class="level2">
+<h2 class="anchored" data-anchor-id="프로젝트-개요">프로젝트 개요</h2>
+<p>단기 근력 수행은 <strong>2kg 무게로 30초 동안 수행한 arm curl 횟수</strong>로 측정했습니다.</p>
+<p>비교한 음악 조건은 다음 다섯 가지였습니다.</p>
 <ul>
-<li>Residuals were approximately normal<br>
-</li>
-<li>Variance was stable across treatments<br>
-</li>
-<li>No signs of influential outliers</li>
+<li>Classical</li>
+<li>Country</li>
+<li>Dance</li>
+<li>Heavy Metal</li>
+<li>No Music</li>
 </ul>
-<p>This means the conclusions are statistically reliable — not noise.</p>
-<hr>
-</section>
-</section>
-<section id="why-you-might-want-to-read-the-full-report" class="level2">
-<h2 class="anchored" data-anchor-id="why-you-might-want-to-read-the-full-report">Why you might want to read the full report</h2>
-<p>The complete PDF answers questions like:</p>
+<p>사람마다 기본적인 근력 수준이 다르고, 특히 연령에 따른 신체 능력 차이가 결과에 영향을 줄 수 있기 때문에 참가자를 다음 다섯 연령대로 구분했습니다.</p>
 <ul>
-<li>Which <strong>specific</strong> genre produced the highest mean performance?<br>
-</li>
-<li>How large were the differences? Small? Moderate? Dramatic?<br>
-</li>
-<li>Did older and younger participants react to music in the same way?<br>
-</li>
-<li>Were the results driven by rhythm, intensity, or something else?<br>
-</li>
-<li>How certain are we statistically — what do the confidence intervals say?</li>
+<li>18–24세</li>
+<li>25–31세</li>
+<li>32–38세</li>
+<li>39–45세</li>
+<li>46–52세</li>
 </ul>
-<p>It also includes:</p>
-<ul>
-<li>Full ANOVA tables<br>
-</li>
-<li>Tukey HSD comparison plots<br>
-</li>
-<li>Diagnostic visuals (Residual plots, Q-Q plots, etc.)<br>
-</li>
-<li>Detailed interpretation + limitations<br>
-</li>
-<li>Discussion about psychological + physiological explanations</li>
-</ul>
-<p>This is not just a stats report — it’s a surprising story about how humans respond to sound.</p>
+<p>총 <strong>175명의 가상 남성 참가자</strong>를 표본으로 구성했으며, 각 연령대에는 35명이 포함되었습니다.</p>
 <hr>
 </section>
-<section id="want-the-full-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="want-the-full-analysis">📄 Want the full analysis?</h2>
-<p>All results, plots, explanations, and model comparisons are available in the full PDF.</p>
-<p>👉 <strong><a href="STATS 101B Project.pdf">Click here to download the complete report</a></strong></p>
+<section id="데이터를-어떻게-만들었는가" class="level2">
+<h2 class="anchored" data-anchor-id="데이터를-어떻게-만들었는가">데이터를 어떻게 만들었는가</h2>
+<p>이 프로젝트에서는 이미 완성된 CSV 파일을 받아 분석한 것이 아니라, <strong>표본을 선정하는 단계부터 직접 진행했습니다.</strong></p>
+<p>보고서에 정한 무작위 추출 절차에 따라 먼저 Ironbard, Providence, Bonne Santé 중 하나의 섬을 무작위로 선택하고, 해당 섬 안에서 다시 도시를 선택했습니다.</p>
+<p>그다음 필요한 연령대에 해당하는 가상 주민들 가운데 무작위로 참가자를 선정했습니다.</p>
+<p>이 과정을 반복해 분석에 사용할 표본을 구성하고, The Islands에서 실험 조건에 따른 결과를 하나씩 확인해 <strong>Excel에 직접 입력하고 정리해 데이터셋을 만들었습니다.</strong></p>
 <hr>
+</section>
+<section id="나의-역할" class="level2">
+<h2 class="anchored" data-anchor-id="나의-역할">나의 역할</h2>
+<p>이 프로젝트는 팀 프로젝트로 진행되었습니다.</p>
+<p>저는 <strong>가상 실험 데이터 수집 및 Excel 정리, 통계 분석 일부, 결과 해석 및 최종 보고서 작성</strong>을 담당했습니다.</p>
+<p>표본추출 절차에 따라 가상 참가자들의 실험 결과를 하나씩 수집하고 분석에 사용할 수 있도록 데이터를 정리했습니다.</p>
+<p>이후 팀원들과 분석 역할을 나누어 제가 담당한 통계 분석을 수행하고, 그 결과와 해석을 최종 보고서에 정리했습니다.</p>
+<hr>
+</section>
+<section id="왜-연령을-따로-고려했는가" class="level2">
+<h2 class="anchored" data-anchor-id="왜-연령을-따로-고려했는가">왜 연령을 따로 고려했는가</h2>
+<p>가장 궁금했던 것은 <strong>음악 장르가 운동 수행에 영향을 주는가</strong>였습니다.</p>
+<p>하지만 연령에 따라 기본적인 신체 능력이 다르면, 음악 장르의 영향과 참가자 자체의 차이를 구분하기 어려워집니다.</p>
+<p>그래서 이 프로젝트에서는 <strong>Randomized Complete Block Design (RCBD)</strong>을 사용하고 연령대를 blocking factor로 설정했습니다.</p>
+<p>쉽게 말하면, 연령 차이로 발생할 수 있는 변동은 따로 고려한 상태에서 음악 장르가 추가적인 차이를 만드는지를 살펴본 것입니다.</p>
+<hr>
+</section>
+<section id="주요-결과" class="level2">
+<h2 class="anchored" data-anchor-id="주요-결과">주요 결과</h2>
+<p>분석 결과, <strong>음악 장르에 따른 arm curl 수행 차이는 통계적으로 유의하지 않았습니다.</strong></p>
+<p>ANOVA에서 음악 장르의 p-value는 <strong>0.933</strong>이었습니다.</p>
+<p>즉, 이번 실험에서는 Classical, Country, Dance, Heavy Metal, No Music 중 어떤 조건이 단기 근력 수행을 더 높이거나 낮춘다고 판단할 만큼 충분한 통계적 근거를 찾지 못했습니다.</p>
+<p>반면 연령대에 따른 수행 차이는 음악 장르에 따른 차이보다 훨씬 뚜렷하게 나타났습니다.</p>
+<p>이는 이번 데이터에서는 음악 장르보다 참가자의 연령과 같은 개인적 특성이 운동 수행 차이를 설명하는 데 더 중요한 요인으로 나타났음을 의미합니다.</p>
+<hr>
+</section>
+<section id="특정-음악끼리는-차이가-있었을까" class="level2">
+<h2 class="anchored" data-anchor-id="특정-음악끼리는-차이가-있었을까">특정 음악끼리는 차이가 있었을까?</h2>
+<p>전체적인 음악 장르 효과가 유의하지 않더라도, 특정 장르 두 개를 비교하면 차이가 있을 가능성을 확인하기 위해 <strong>Tukey pairwise comparison</strong>을 실시했습니다.</p>
+<p>그러나 음악 장르 간 어떤 조합에서도 통계적으로 유의한 차이는 발견되지 않았습니다.</p>
+<p>Dance가 포함된 일부 비교에서는 다른 장르 조합보다 상대적으로 낮은 p-value가 나타났지만, 통계적 유의수준에는 도달하지 못했습니다.</p>
+<p>따라서 이를 “Dance가 운동 수행을 높였다”는 결과로 해석하지 않았습니다.</p>
+<p>다만 더 큰 표본이나 다른 실험 조건에서 추가로 확인해볼 수 있는 관찰 정도로 남겼습니다.</p>
+<hr>
+</section>
+<section id="분석-결과를-믿을-수-있는지도-확인했습니다" class="level2">
+<h2 class="anchored" data-anchor-id="분석-결과를-믿을-수-있는지도-확인했습니다">분석 결과를 믿을 수 있는지도 확인했습니다</h2>
+<p>ANOVA 결과를 해석하기 전에 분석에 필요한 주요 가정이 크게 위반되지 않았는지도 확인했습니다.</p>
+<p>Normal Q-Q Plot에서는 대부분의 잔차가 기준선에 가까이 위치했습니다.</p>
+<p>꼬리 부분에서 일부 차이는 있었지만, 보고서에서는 정규성 가정을 심각하게 위반할 정도는 아니라고 판단했습니다.</p>
+<p>Residuals vs.&nbsp;Fitted Plot에서도 잔차가 특정 방향으로 계속 커지거나 뚜렷한 곡선 형태를 보이지 않았습니다.</p>
+<p>따라서 이번 데이터에서는 등분산성과 정규성에 큰 문제가 없다고 판단했습니다.</p>
+<hr>
+</section>
+<section id="추가-분석" class="level2">
+<h2 class="anchored" data-anchor-id="추가-분석">추가 분석</h2>
+<p>음악 장르와 연령대를 함께 포함한 선형모형도 확인했습니다.</p>
+<p>음악 장르의 개별 coefficient들은 기준 음악 조건과 비교했을 때 모두 통계적으로 유의하지 않았습니다.</p>
+<p>이는 앞선 ANOVA 결과와 동일하게, 특정 음악 장르가 단기 arm curl 수행을 바꾼다는 뚜렷한 근거를 찾지 못했다는 결과입니다.</p>
+<p>음악 장르와 연령대를 함께 포함한 모델의 Adjusted R²는 약 <strong>0.435</strong>였습니다.</p>
+<p>다만 이 값을 “음악이 수행의 43.5%를 설명했다”고 해석해서는 안 됩니다.</p>
+<p>이 값은 음악 장르와 연령대를 함께 포함한 전체 모델의 설명력이며, 실제 분석에서는 음악 장르보다 연령대에 따른 차이가 훨씬 뚜렷했습니다.</p>
+<hr>
+</section>
+<section id="이-프로젝트에서-확인한-점" class="level2">
+<h2 class="anchored" data-anchor-id="이-프로젝트에서-확인한-점">이 프로젝트에서 확인한 점</h2>
+<p>처음에는 특정 음악 장르가 운동 수행을 높일 가능성을 예상했습니다.</p>
+<p>하지만 실제 분석에서는 그 가설을 뒷받침할 충분한 근거를 찾지 못했습니다.</p>
+<p>대신 참가자 간 신체적 차이, 특히 연령에 따른 차이가 더 크게 나타났습니다.</p>
+<p>이 프로젝트를 통해 <strong>처음 예상한 결과와 다른 결과가 나오는 것 역시 중요한 분석 결과</strong>라는 점을 배웠습니다.</p>
+<p>유의하지 않은 결과를 억지로 의미 있는 차이처럼 해석하기보다, 데이터가 실제로 보여주는 결과를 그대로 받아들이고 왜 그런 결과가 나왔는지 다른 변동 요인과 한계를 함께 살펴보는 것이 중요했습니다.</p>
+<hr>
+</section>
+<section id="프로젝트의-한계" class="level2">
+<h2 class="anchored" data-anchor-id="프로젝트의-한계">프로젝트의 한계</h2>
+<p>연령을 blocking factor로 사용했지만, 같은 연령대 안에서도 신체 능력은 크게 다를 수 있습니다.</p>
+<p>이번 실험에서는 다음과 같은 요소를 충분히 통제하지 못했습니다.</p>
+<ul>
+<li>평소 운동량</li>
+<li>육체적으로 힘든 직업 여부</li>
+<li>건강 상태</li>
+<li>당일 컨디션</li>
+<li>최근 질병 또는 회복 상태</li>
+</ul>
+<p>따라서 연령만으로 참가자 간 신체 능력의 차이를 완전히 설명하기에는 한계가 있었습니다.</p>
+<p>또한 이번 표본은 18–52세 남성으로 제한되어 있기 때문에, 결과를 모든 연령과 성별에 그대로 일반화하는 데에도 주의가 필요합니다.</p>
+<hr>
+</section>
+<section id="사용한-분석-방법" class="level2">
+<h2 class="anchored" data-anchor-id="사용한-분석-방법">사용한 분석 방법</h2>
+<ul>
+<li>Randomized Complete Block Design (RCBD)</li>
+<li>Multi-stage Random Sampling</li>
+<li>Power Analysis</li>
+<li>Analysis of Variance (ANOVA)</li>
+<li>Linear Model</li>
+<li>Residual Diagnostics</li>
+<li>Tukey HSD Pairwise Comparison</li>
+<li>Excel을 활용한 데이터 수집 및 정리</li>
+</ul>
+<hr>
+</section>
+<section id="전체-프로젝트-보고서" class="level2">
+<h2 class="anchored" data-anchor-id="전체-프로젝트-보고서">전체 프로젝트 보고서</h2>
+<p>전체 보고서에서는 표본 선정 과정, 실험 설계, Power Analysis, ANOVA 결과, 잔차 진단, 선형모형과 Tukey 비교, 연구의 한계를 보다 자세히 확인할 수 있습니다.</p>
+<p>📄 <a href="STATS 101B Project.pdf"><strong>전체 프로젝트 보고서 보기 (PDF)</strong></a></p>
 
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

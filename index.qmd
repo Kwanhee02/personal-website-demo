@@ -1,11 +1,12 @@
 ---
-title: "Kwanhee Yoon"
+title: "윤관희 | Kwanhee Yoon"
 about:
   template: trestles
   image: profile_pic.jpg
+  image-width: 22em
   links:
     - icon: github
-      text: Github
+      text: GitHub
       href: https://github.com/kwanhee02
     - text: LinkedIn
       href: https://www.linkedin.com/in/kwanhee-yoon-762312335
@@ -13,35 +14,50 @@ about:
       href: "mailto:kwanhee02@gmail.com"
       icon: inbox-fill
 toc: false
+page-layout: full
 ---
 
-Hello, my name is **Kwanhee Yoon**, and I recently graduated from **UCLA** with a degree in **Statistics & Data Science**. My academic interests focus on **statistical modeling, computational methods, and data-driven problem solving**. Through upper-division coursework—including probability, mathematical statistics, regression, experimental design, optimization, and Monte Carlo methods—I have built a strong foundation in both the theory and practical applications of modern statistical analysis.
+안녕하세요, **윤관희(Kwanhee Yoon)**입니다.  
+**University of California, Los Angeles (UCLA)**에서 **Statistics & Data Science**를 전공하고 2026년 3월 졸업했습니다.
 
-I have experience working as a **Data Analyst at Novastar Basketball**, where I collected, validated, and refined real-time game statistics. This role strengthened my skills in data accuracy, analytical workflows, and applied modeling in fast-paced environments. I also supported operational infrastructure as an **Human Resources Assistant Manager at ASUCLA**, improving documentation, inventory processes, and coordination across teams.
+UCLA 재학 중에는 수업과 프로젝트를 통해 통계 분석과 데이터 활용을 공부했습니다. 실제 데이터를 정리하고 분석하며, 통계적 방법을 적용해 결과를 해석하고 시각화하는 경험을 쌓았습니다.
+
+학업과 함께 대학 유통 운영, 스포츠 통계, AI 개발 지원 등 서로 다른 환경에서 근무하며 다양한 실무 경험을 쌓았습니다.
+
+이 웹사이트에는 저의 학력과 업무 경험, UCLA에서 진행한 주요 프로젝트를 정리했습니다.
+
+**CV 안내**  
+현재 CV를 업데이트 중입니다. 최신 버전은 빠른 시일 내 업로드하겠습니다.
 
 
-You can view my full CV below:  
-**DOWNLOAD** [cv](cv.pdf)
-
-# Education
-
+# 학력
 
 **University of California, Los Angeles (UCLA)** | Los Angeles, CA  
-B.A. in Statistics & Data Science | *Graduated March 2026*
+B.S. in Statistics and Data Science | *2024 Sep – 2026 Mar*  
+GPA: **3.84 / 4.00**
 
 **Pasadena City College (PCC)** | Pasadena, CA  
-Associate in Science (A.S.) — Natural Sciences | *2020 Feb – 2024 June*
+A.S. in Natural Sciences | *2020 Feb – 2024 Jun*  
+GPA: **4.00 / 4.00**
 
 
-# Experience
+# 경력
 
-**Novastar Basketball** | Data Analyst Intern | *June 2025 – 2026 March*
-
-
-**ASUCLA (UCLA Bookstore – Central Receiving Center)** | Human Resources Assistant Manager | *June 2024 – 2026 March*
+**Associated Students UCLA (ASUCLA)** | Distribution Center (Operations / Inventory) | *2025 Jun – 2026 Mar*  
+UCLA Store의 상품 입고 및 재고 관리 업무를 담당했습니다. 인보이스와 품목 코드, 수량 및 단가를 확인하고 전산 등록과 상품 분류를 진행했으며, 수량 불일치·상품 파손·가격 오류가 발견되면 담당 관리자와 확인해 수정했습니다. 지원 인력이 업무를 익힐 수 있도록 카테고리별 업무 안내와 인수인계 방식도 정리했습니다.
 
 
-**Republic of Korea Army** | Administrative Specialist (HR Clerk) | *2020 Nov – 2022 May*  
+**Novastar Basketball, LLC** | Statistician Intern | *2025 Aug – 2026 Mar*  
+경기 전 선수 명단과 출전 정보를 확인하고, 경기 중에는 TurboStats를 활용해 득점·리바운드·어시스트·파울 등의 기록을 실시간으로 입력했습니다. 각 쿼터마다 기록을 교차 검수하고, 경기 후에는 선수별 통계표를 정리해 코치진에 전달했습니다.
 
 
-**SOOSUNGSPCITI LTD.** | Safety Management Intern | *2018 Dec – 2019 Mar *  
+**Boundary Remote Subsurface Solutions** | Intern, AI Development Team | *2025 Oct – 2026 Feb*  
+AI 개발팀에서 공개 well log 데이터를 활용한 데이터 정리 업무를 지원했습니다. 필요한 컬럼을 선별하고 이름을 정리했으며, 결측치와 이상치를 확인하고 처리 결과를 요약표와 그래프로 검증했습니다.
+
+
+**Republic of Korea Army** | Personnel Administration Clerk (HR Clerk) | *2020 Nov – 2022 May*  
+중대 인사계원으로 약 65명의 간부 및 용사를 대상으로 인사행정 업무를 담당했습니다. 인원 및 인사기록 관리, 휴가 일정 정리, 전입·전출·진급·전역 관련 행정처리, 근무 편성 지원과 각종 인사자료 취합·보고 업무를 수행했습니다.
+
+
+**SOOSUNGSPCITI LTD.** | Safety Management Intern | *2018 Dec – 2019 Mar*  
+현장 안전관리 업무를 보조하며 작업자의 안전수칙 준수 여부와 보호장비 착용 상태를 확인했습니다. 현장 정리와 자재 이동 등 필요한 작업 지원도 함께 수행했습니다.

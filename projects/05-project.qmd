@@ -1,0 +1,374 @@
+---
+title: "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)"
+format:
+  html:
+    toc: true
+---
+
+[**English Version →**](05-project-en.html)
+
+# Airbnb는 LA County의 어디에 집중되어 있고, 그 지역은 어떤 곳일까?
+
+Airbnb listing이 많은 지역을 찾는 것만으로는
+지역별 차이를 충분히 설명하기 어렵습니다.
+
+주택 규모가 큰 지역은 단순히 규모 때문에
+Airbnb listing 수도 많을 수 있기 때문입니다.
+
+**Beyond Airbnb: An Archive of Airbnb in Los Angeles County**는
+Inside Airbnb와 U.S. Census Bureau 데이터를 결합해
+Los Angeles County의 Airbnb 분포를
+지역의 주택 규모와 인구·소득·교육 특성까지 함께 살펴본
+UCLA Digital Humanities 팀 프로젝트입니다.
+
+프로젝트에서는 단순히
+“Airbnb가 어디에 많은가?”를 묻는 데서 끝나지 않고,
+
+**지역 규모를 함께 고려하면 Airbnb의 분포는 어떻게 달라 보이며,
+그 지역들은 어떤 사회·인구학적 특성을 가지고 있는가?**
+
+를 분석했습니다.
+
+---
+
+## 나의 역할
+
+이 프로젝트에서 저는
+
+**Data Specialist · Data Visualization Specialist · Editor**
+
+역할을 맡았습니다.
+
+Data Specialist로서
+raw project data를 분석 가능한 형태로 만들기 위한
+데이터 정리, 변수 검토, exploratory analysis에 참여했습니다.
+
+Data Visualization Specialist로서는
+분석 결과를 전달하는 Tableau visualization을 개발하고 개선했습니다.
+단순히 그래프를 만드는 데 그치지 않고,
+비전공자도 지역 간 차이를 이해할 수 있도록
+가독성과 해석 가능성을 반복적으로 점검했습니다.
+
+Editor로서는
+analytical explanation,
+visualization description,
+final presentation text의
+구조와 표현을 검토했습니다.
+
+기술적인 분석 결과가
+데이터 분석 경험이 없는 사람에게도
+이해될 수 있도록 전달하는 것이 중요한 역할이었습니다.
+
+---
+
+## 두 개의 서로 다른 데이터를 사용했습니다
+
+프로젝트에서는
+서로 다른 정보를 담고 있는
+두 개의 주요 데이터 출처를 사용했습니다.
+
+### Inside Airbnb
+
+Inside Airbnb의 Los Angeles `listings.csv.gz`를 사용했습니다.
+
+프로젝트 사이트에 따르면,
+사용한 archive dataset은
+2025년 12월 4일 기준으로 업데이트된 자료였습니다.
+
+원본 listing file에는 85개의 column이 있었으며,
+프로젝트에서는 연구 질문과 visualization에 필요한 정보를 선별해
+10개의 주요 column을 활용했습니다.
+
+여기에는 listing의 위치,
+neighborhood,
+latitude와 longitude,
+room type,
+availability,
+listing 및 host 관련 정보 등이 포함되었습니다.
+
+### U.S. Census Bureau American Community Survey
+
+Airbnb 데이터만으로는
+listing이 존재하는 지역의 주민 특성을 파악할 수 없었습니다.
+
+그래서 U.S. Census Bureau의
+**American Community Survey (ACS)** 데이터를 함께 사용했습니다.
+
+프로젝트에서는 County Census Division, 즉 **CCD** 단위의
+
+- DP05 — Demographic and Housing Estimates
+- S1901 — Income in the Past 12 Months
+- S1501 — Educational Attainment
+
+자료를 활용했습니다.
+
+이를 통해 지역별 인구 구성,
+연령,
+소득,
+교육 수준,
+poverty-related measures,
+housing units 등을 함께 비교할 수 있었습니다.
+
+---
+
+## 가장 큰 데이터 문제: 지역 기준이 서로 달랐습니다
+
+두 데이터를 바로 합칠 수는 없었습니다.
+
+Inside Airbnb listing은
+**266개의 distinct neighborhood**에 걸쳐 있었지만,
+프로젝트에서 사용한 Census 데이터는
+Los Angeles County를 **20개의 CCD**로 구분하고 있었습니다.
+
+즉,
+
+**Inside Airbnb → neighborhood**
+
+**ACS → CCD**
+
+라는 서로 다른 지리 단위를 사용하고 있었습니다.
+
+이를 해결하기 위해
+팀은 266개의 neighborhood를
+각각 해당 CCD에 연결하는
+**custom mapping code**를 만들었습니다.
+
+이 과정을 통해
+각 Airbnb listing을 하나의 CCD에 배정하고,
+동일한 지역의 Census 정보와 연결할 수 있었습니다.
+
+데이터의 cleaning과 integration은
+**R / RStudio**에서 진행했고,
+최종 데이터는 **Tableau** visualization에 사용했습니다.
+
+---
+
+## 첫 번째 분석: Airbnb listing은 어디에 많았을까?
+
+먼저 neighborhood별
+Airbnb listing의 절대 개수를 비교했습니다.
+
+프로젝트의 visualization에서는
+
+- Long Beach — 1,906 listings
+- Hollywood — 1,758
+- Venice — 1,529
+- Santa Monica — 1,243
+
+가 높은 listing 수를 보였습니다.
+
+이를 통해 Airbnb listing이
+Los Angeles County 전체에 균등하게 분포하기보다
+특정 지역에 집중되어 있다는 패턴을 확인했습니다.
+
+특히 해안 지역과 관광·문화 시설이 많은 지역에서
+높은 listing count가 관찰되었습니다.
+
+하지만 여기에는 한 가지 문제가 있었습니다.
+
+---
+
+## 절대 개수만 비교해도 될까?
+
+지역마다 전체 housing stock의 규모가 다릅니다.
+
+예를 들어 Airbnb listing이 많은 지역이라도
+전체 주택 수가 매우 많다면,
+지역 규모를 고려했을 때의 상대적인 비중은 낮을 수 있습니다.
+
+반대로 listing 수가 더 적더라도
+전체 주택 수가 작은 지역이라면
+상대적인 비중은 더 클 수 있습니다.
+
+그래서 프로젝트에서는
+CCD별로 다음과 같은 비교 지표를 계산했습니다.
+
+**Airbnb listing 수 ÷ total housing units**
+
+이 지표는
+서로 다른 규모의 지역을
+단순 listing count만으로 비교하는 문제를 줄이기 위해 사용했습니다.
+
+중요하게도,
+이 값이 실제 housing unit 중
+동일한 비율이 반드시 short-term rental로 전환되었다는 것을
+직접 의미하는 것은 아닙니다.
+
+프로젝트에서 사용한
+지역 간 비교 지표로 이해하는 것이 정확합니다.
+
+---
+
+## 지역 규모를 고려하자 다른 패턴이 나타났습니다
+
+프로젝트의 계산에서는
+**Santa Monica CCD**의
+Airbnb-listing-to-housing-unit ratio가
+약 **9.5%**로 가장 높게 나타났습니다.
+
+그 뒤로는
+
+- Agoura Hills–Malibu CCD — 약 4.8%
+- South Bay Cities CCD — 약 4.2%
+
+가 나타났습니다.
+
+반면 **San Fernando Valley CCD**는
+Airbnb listing의 절대 개수가 6,000개를 넘었지만,
+전체 housing units가 620,000개 이상이었기 때문에
+같은 방식으로 계산한 비율은 약 **0.9%**였습니다.
+
+즉,
+
+**Airbnb listing이 가장 많은 지역과
+지역 규모를 고려했을 때 listing 비중이 높은 지역은
+같지 않을 수 있었습니다.**
+
+이 차이가 프로젝트의 중요한 분석 결과 중 하나였습니다.
+
+---
+
+## Airbnb 위치에 지역사회 정보를 연결했습니다
+
+프로젝트는 listing 위치만 보여주는 데서 끝나지 않았습니다.
+
+ACS 정보를 이용해
+20개 CCD의 demographic profile을 구성했습니다.
+
+DP05에서는
+median age와
+8개의 mutually exclusive racial and ethnic group 가운데
+가장 큰 population group을 정리했습니다.
+
+S1901에서는
+median household income과
+가장 큰 비중을 차지하는 income bracket을 사용했습니다.
+
+S1501에서는
+25세 이상 인구의 educational attainment를 확인하고,
+poverty measure를 교육 수준에 따라 나누어 살펴봤습니다.
+
+이를 통해 Airbnb listing의 공간적 분포를
+해당 지역의 인구·소득·교육 특성과 함께
+비교할 수 있었습니다.
+
+다만 이러한 지역 수준의 관계가
+개별 Airbnb host나 resident의 특성을 직접 의미하는 것은 아닙니다.
+
+---
+
+## Santa Monica를 case study로 살펴봤습니다
+
+Santa Monica CCD는
+프로젝트에서 계산한
+Airbnb-listing-to-housing-unit ratio가
+가장 높았던 지역이었습니다.
+
+따라서 프로젝트에서는
+Santa Monica와 주변 지역을 case study로 삼아
+Airbnb의 공간적 집중,
+housing context,
+지역의 demographic profile,
+그리고 관련 연구에서 논의된
+관광과 도시 변화의 관계를 함께 살펴봤습니다.
+
+원래 프로젝트의 Narrative에서는
+이를 tourism gentrification 등의 개념과 연결해 해석했습니다.
+
+하지만 프로젝트의 데이터만으로
+Airbnb가 주택가격 상승이나
+resident displacement와 같은 현상을
+직접적으로 일으켰다고 입증한 것은 아닙니다.
+
+이 프로젝트에서 데이터가 직접 보여주는 것은
+**Airbnb listing의 공간적 분포와
+지역별 demographic·housing characteristics가
+어떻게 함께 나타나는가**입니다.
+
+---
+
+## 데이터의 한계도 함께 검토했습니다
+
+Inside Airbnb는
+listing, host, location,
+platform-visible activity에 대한 정보는 제공하지만,
+해당 지역 주민이나 guest의
+연령, 인종, 소득, household characteristics를
+직접 제공하지 않습니다.
+
+또한 사용한 `listings.csv.gz`만으로는
+rent, housing price,
+resident displacement 같은
+off-platform outcome을 직접 측정할 수 없습니다.
+
+ACS 역시 sample survey이기 때문에
+수치는 exact count가 아니라 estimate이며,
+Margin of Error를 동반합니다.
+
+따라서 작은 지역 간 차이를 해석할 때는
+이러한 불확실성을 고려해야 합니다.
+
+이 프로젝트에서는
+데이터가 보여줄 수 있는 것뿐 아니라
+**데이터가 보여주지 못하는 것까지 함께 검토했습니다.**
+
+---
+
+## 이 프로젝트에서 배운 점
+
+이 프로젝트에서 가장 중요했던 것은
+시각화를 많이 만드는 것이 아니었습니다.
+
+처음에는 listing의 절대 개수만으로도
+지역별 차이를 설명할 수 있을 것처럼 보였습니다.
+
+하지만 지역마다 housing 규모가 다르다는 점을 고려하면서,
+같은 숫자도 **어떤 기준으로 비교하느냐에 따라
+전혀 다른 의미를 가질 수 있다는 점**을 확인했습니다.
+
+또한 서로 다른 단위로 만들어진 데이터를
+하나의 분석 구조로 연결하고,
+그 결과를 비전공자도 이해할 수 있는 visualization과 설명으로
+전달하는 과정까지 경험했습니다.
+
+이 프로젝트를 통해
+데이터 분석에서는
+계산 자체뿐 아니라
+**비교 기준을 정하고,
+데이터의 한계를 확인하고,
+결과를 정확하게 전달하는 과정도 중요하다**는 점을 배웠습니다.
+
+---
+
+## 사용한 도구 및 방법
+
+- R / RStudio
+- Tableau
+- Inside Airbnb
+- U.S. Census Bureau American Community Survey
+- Data Cleaning
+- Data Integration
+- Exploratory Data Analysis
+- Geographic Mapping
+- Ratio / Proportion Analysis
+- Data Visualization
+- Digital Humanities Research
+- WordPress
+
+---
+
+## 전체 프로젝트 웹사이트
+
+전체 프로젝트에서는
+데이터 출처와 processing,
+interactive visualization,
+Narrative,
+Chronology,
+References를 확인할 수 있습니다.
+
+🌐 **[Beyond Airbnb — An Archive of Airbnb in Los Angeles County](https://shorttermrentalsinla.humspace.ucla.edu/)**
+
+데이터 출처와 cleaning,
+geographic mapping 과정에 대한 상세 설명:
+
+🌐 **[About the Data](https://shorttermrentalsinla.humspace.ucla.edu/about-the-data/)**

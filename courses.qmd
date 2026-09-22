@@ -8,7 +8,7 @@ format:
 # 🎓 Coursework Overview
 
 A curated list of all **mathematics, statistics, and computer science** courses\
-completed at **Pasadena City College (2022–2024)** and **UCLA (2024–Present)**.\
+completed at **Pasadena City College (2020–2024)** and **UCLA (2024–2026)**.\
 These courses form the core of my preparation for advanced study in Statistics & Data Science.
 
 ------------------------------------------------------------------------
@@ -17,53 +17,92 @@ These courses form the core of my preparation for advanced study in Statistics &
 
 ### Mathematics Foundation
 
--   Single Variable Calculus I (MATH 5A)\
--   Single Variable Calculus II (MATH 5B)\
--   Multivariable Calculus (MATH 5C)\
--   Differential Equations (MATH 55)\
--   Linear Algebra (MATH 10)
+- **Single Variable Calculus I (MATH 5A)**  
+  <span class="course-ko">일변수 미적분학 I</span>
+
+- **Single Variable Calculus II (MATH 5B)**  
+  <span class="course-ko">일변수 미적분학 II</span>
+
+- **Multivariable Calculus (MATH 5C)**  
+  <span class="course-ko">다변수 미적분학</span>
+
+- **Differential Equations (MATH 55)**  
+  <span class="course-ko">미분방정식</span>
+
+- **Linear Algebra (MATH 10)**  
+  <span class="course-ko">선형대수학</span>
 
 ------------------------------------------------------------------------
 
 ### Computer Science
 
--   Fundamentals of Computer Science (CS 002)
+- **Fundamentals of Computer Science (CS 002)**  
+  <span class="course-ko">컴퓨터과학 기초</span>
 
 ------------------------------------------------------------------------
 
 # 📊 Statistics (PCC)
 
--   Elementary Statistics (STAT 050)
+- **Elementary Statistics (STAT 050)**  
+  <span class="course-ko">기초통계학</span>
 
 ------------------------------------------------------------------------
 
-# 🐻 UCLA Statistics Major Coursework
+# 🐻 UCLA Statistics & Data Science Major Coursework
 
 ### Programming & Applied Statistics
 
--   Introduction to Statistical Programming with R (STATS 20)
--   Community or Corporate Internships in Statistics (STATS 195)
+- **Introduction to Statistical Programming with R (STATS 20)**  
+  <span class="course-ko">R을 활용한 통계 프로그래밍 입문</span>
+
+- **Community or Corporate Internships in Statistics (STATS 195)**  
+  <span class="course-ko">통계학 지역사회·기업 인턴십</span>
 
 ### Probability, Inference, and Mathematical Statistics
 
--   Introduction to Probability (STATS 100A)\
--   Introduction to Mathematical Statistics (STATS 100B)\
--   Linear Models (STATS 100C)
+- **Introduction to Probability (STATS 100A)**  
+  <span class="course-ko">확률론 입문</span>
+
+- **Introduction to Mathematical Statistics (STATS 100B)**  
+  <span class="course-ko">수리통계학 입문</span>
+
+- **Linear Models (STATS 100C)**  
+  <span class="course-ko">선형모형</span>
 
 ### Regression, Experiments, and Data Mining
 
--   Introduction to Data Analysis and Regression (STATS 101A)
--   Introduction to Design and Analysis of Experiments (STATS 101B)
--   Introduction to Statistical Models and Data Mining (STATS 101C)
+- **Introduction to Data Analysis and Regression (STATS 101A)**  
+  <span class="course-ko">데이터 분석 및 회귀분석 입문</span>
+
+- **Introduction to Design and Analysis of Experiments (STATS 101B)**  
+  <span class="course-ko">실험설계 및 분석 입문</span>
+
+- **Introduction to Statistical Models and Data Mining (STATS 101C)**  
+  <span class="course-ko">통계 모형 및 데이터 마이닝 입문</span>
 
 ### Computational & Theoretical Methods
 
--   Introduction to Computational Statistics with R (STATS 102A)
--   Introduction to Computation and Optimization for Statistics (STATS 102B)
--   Introduction to Monte Carlo Methods (STATS 102C)
+- **Introduction to Computational Statistics with R (STATS 102A)**  
+  <span class="course-ko">R을 활용한 계산통계학 입문</span>
+
+- **Introduction to Computation and Optimization for Statistics (STATS 102B)**  
+  <span class="course-ko">통계학을 위한 계산 및 최적화 입문</span>
+
+- **Introduction to Monte Carlo Methods (STATS 102C)**  
+  <span class="course-ko">몬테카를로 방법론 입문</span>
+
+### Statistical Consulting
+
+- **Practice of Statistical Consulting (STATS 140XP)**  
+  <span class="course-ko">통계 컨설팅 실습</span>
+
+- **Practice of Statistical Consulting (STATS 141XP)**  
+  <span class="course-ko">통계 컨설팅 실습</span>
 
 ### Advanced Electives
 
--   Statistical Models in Finance (STATS C183)
+- **Statistical Models in Finance (STATS C183)**  
+  <span class="course-ko">금융 분야의 통계 모형</span>
 
-------------------------------------------------------------------------
+- **Introduction to Digital Humanities (DGT HUM 101)**  
+  <span class="course-ko">디지털 인문학 입문</span>

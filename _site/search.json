@@ -4,139 +4,1056 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Title\n\n\n\n\n\n\n\n\nProject 1 — Wind Speed Prediction Using Weather Data (STATS 101A)\n\n\n\n\n\n\nProject 2 — How Music Influences Physical Performance (STATS 101B)\n\n\n\n\n\n\nProject 3 — U.S. Election Winner Classification (STATS 101C)\n\n\n\n\n\n\nProject 4 — Amazon State-Level Monthly Sales Prediction (Regression)(STATS 101C)\n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\n\n\n\n\n\n\nProject 1 — Wind Speed Prediction Using Weather Data (STATS 101A)\n\n\n\n\n\n\nProject 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)\n\n\n\n\n\n\nProject 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)\n\n\n\n\n\n\nProject 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)\n\n\n\n\n\n\nProject 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)\n\n\n\n\n\n\nProject 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)\n\n\n\n\n\n\nProject 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)\n\n\n\n\n\n\nProject 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)\n\n\n\n\n\n\nProject 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)\n\n\n\n\n\n\nProject 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "projects/03-project.html",
-    "href": "projects/03-project.html",
-    "title": "Project 3 — U.S. Election Winner Classification (STATS 101C)",
+    "objectID": "projects/05-project-en.html",
+    "href": "projects/05-project-en.html",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
     "section": "",
-    "text": "Using demographic, economic, and population composition data from the U.S. Census,\nthis project predicts whether each U.S. county voted for Biden or Trump in 2020.\nWe focused on building clean preprocessing pipelines and comparing several\nmachine-learning models to find the most reliable classifier."
+    "text": "← 한국어 버전"
   },
   {
-    "objectID": "projects/03-project.html#overview",
-    "href": "projects/03-project.html#overview",
-    "title": "Project 3 — U.S. Election Winner Classification (STATS 101C)",
+    "objectID": "projects/05-project-en.html#my-role",
+    "href": "projects/05-project-en.html#my-role",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "My Role",
+    "text": "My Role\nMy roles in this project were:\nData Specialist · Data Visualization Specialist · Editor\nAs a Data Specialist, I contributed to preparing raw project data for analysis through data cleaning, variable review, and exploratory analysis.\nAs a Data Visualization Specialist, I developed and refined Tableau visualizations used to communicate the project’s geographic and demographic patterns.\nThe visualization process emphasized readability, interpretability, and iterative improvement so that audiences without a technical statistics background could understand the results.\nAs an Editor, I reviewed and improved analytical explanations, visualization descriptions, and final presentation text.\nMy role therefore covered both the analytical and communication sides of the project."
+  },
+  {
+    "objectID": "projects/05-project-en.html#two-different-data-sources",
+    "href": "projects/05-project-en.html#two-different-data-sources",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "Two Different Data Sources",
+    "text": "Two Different Data Sources\nThe project combined two primary data sources.\n\nInside Airbnb\nWe used the Los Angeles listings.csv.gz file from Inside Airbnb.\nAccording to the project website, the archived dataset used for the analysis was updated on December 4, 2025.\nThe original listing file contained 85 columns.\nFor the project, the dataset was cleaned and reduced to 10 columns relevant to the research questions and visualizations.\nThe data included information related to:\n\nListing location\nNeighborhood\nLatitude and longitude\nRoom type\nAvailability\nListing and host attributes\n\n\n\nU.S. Census Bureau American Community Survey\nInside Airbnb data describe the listings, but they do not provide a demographic profile of the residents living in the communities that contain them.\nWe therefore used American Community Survey (ACS) data at the County Census Division (CCD) level.\nThe main tables were:\n\nDP05 — Demographic and Housing Estimates\nS1901 — Income in the Past 12 Months\nS1501 — Educational Attainment\n\nThese data provided information on population characteristics, age, income, education, poverty-related measures, and housing units."
+  },
+  {
+    "objectID": "projects/05-project-en.html#the-main-data-challenge-different-geographic-units",
+    "href": "projects/05-project-en.html#the-main-data-challenge-different-geographic-units",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "The Main Data Challenge: Different Geographic Units",
+    "text": "The Main Data Challenge: Different Geographic Units\nThe two datasets could not be joined directly.\nInside Airbnb listings spanned 266 distinct neighborhoods.\nThe Census data used for the project, however, divided Los Angeles County into 20 CCDs.\nThis meant the two sources used different geographic structures:\nInside Airbnb → Neighborhood\nACS → CCD\nTo address this mismatch, the team created custom mapping code that assigned each of the 266 neighborhoods to its corresponding CCD.\nThis allowed every Airbnb listing in the final dataset to be connected with Census information for the same geographic area.\nThe data were cleaned and combined using R and RStudio, and the resulting dataset was used for visualizations in Tableau."
+  },
+  {
+    "objectID": "projects/05-project-en.html#where-were-the-most-airbnb-listings",
+    "href": "projects/05-project-en.html#where-were-the-most-airbnb-listings",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "Where Were the Most Airbnb Listings?",
+    "text": "Where Were the Most Airbnb Listings?\nThe first analysis compared the raw number of Airbnb listings by neighborhood.\nThe project reported:\n\nLong Beach — 1,906 listings\nHollywood — 1,758\nVenice — 1,529\nSanta Monica — 1,243\n\nThe listing data showed clear geographic clustering rather than an even distribution across Los Angeles County.\nHigher listing counts appeared in several coastal areas and areas associated with tourism and cultural attractions.\nHowever, raw counts created an important limitation."
+  },
+  {
+    "objectID": "projects/05-project-en.html#why-raw-counts-were-not-enough",
+    "href": "projects/05-project-en.html#why-raw-counts-were-not-enough",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "Why Raw Counts Were Not Enough",
+    "text": "Why Raw Counts Were Not Enough\nCommunities differ substantially in the size of their housing stock.\nA region may contain thousands of Airbnb listings, but if it also contains hundreds of thousands of housing units, its relative concentration may still be low.\nThe project therefore calculated:\nAirbnb listings ÷ total housing units in each CCD\nas a comparison metric.\nThis helped place raw listing counts in the context of community size.\nImportantly, this ratio should not be interpreted as proving that the same percentage of housing units was literally converted from long-term housing to Airbnb use.\nIt is a project-defined metric used to compare listing concentration across differently sized CCDs."
+  },
+  {
+    "objectID": "projects/05-project-en.html#the-pattern-changed-after-accounting-for-housing-units",
+    "href": "projects/05-project-en.html#the-pattern-changed-after-accounting-for-housing-units",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "The Pattern Changed After Accounting for Housing Units",
+    "text": "The Pattern Changed After Accounting for Housing Units\nUsing this metric, Santa Monica CCD had the highest ratio in the project’s analysis, at approximately 9.5%.\nOther relatively high values included:\n\nAgoura Hills–Malibu CCD — approximately 4.8%\nSouth Bay Cities CCD — approximately 4.2%\n\nIn contrast, San Fernando Valley CCD contained more than 6,000 Airbnb listings in absolute terms, but also contained more than 620,000 housing units.\nIts calculated ratio was therefore approximately 0.9%.\nThe comparison showed that:\nthe community with the largest raw number of listings was not necessarily the community with the highest listing-to-housing-unit ratio."
+  },
+  {
+    "objectID": "projects/05-project-en.html#adding-community-context",
+    "href": "projects/05-project-en.html#adding-community-context",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "Adding Community Context",
+    "text": "Adding Community Context\nThe project then connected Airbnb distribution with the demographic profiles of the 20 CCDs.\nFrom DP05, the analysis used median age and identified the largest population group among eight mutually exclusive racial and ethnic categories.\nFrom S1901, it included median household income and the income bracket with the largest share of residents.\nFrom S1501, the project examined educational attainment for residents age 25 and older and constructed poverty-related measures by educational attainment.\nThis allowed the project to compare spatial Airbnb patterns with broader demographic and socioeconomic characteristics.\nThese are area-level relationships, however, and should not be interpreted as describing the characteristics of individual Airbnb hosts or residents."
+  },
+  {
+    "objectID": "projects/05-project-en.html#a-closer-look-at-santa-monica-ccd",
+    "href": "projects/05-project-en.html#a-closer-look-at-santa-monica-ccd",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "A Closer Look at Santa Monica CCD",
+    "text": "A Closer Look at Santa Monica CCD\nSanta Monica CCD had the highest listing-to-housing-unit ratio under the project’s comparison metric.\nThe project therefore used Santa Monica and surrounding areas as a case study.\nThe Narrative connected the area’s Airbnb concentration, housing context, demographic profile, and previous scholarship on tourism and urban change.\nThe original project discusses concepts such as tourism gentrification.\nHowever, the data used in this project alone do not establish that Airbnb directly caused changes in housing prices or resident displacement.\nWhat the project directly documents is the spatial distribution of Airbnb listings and how those patterns coincide with area-level demographic and housing characteristics."
+  },
+  {
+    "objectID": "projects/05-project-en.html#data-limitations",
+    "href": "projects/05-project-en.html#data-limitations",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "Data Limitations",
+    "text": "Data Limitations\nEach data source had important limitations.\nInside Airbnb contains detailed information about listings, hosts, locations, and other platform-visible activity.\nHowever, it does not directly provide resident or guest demographics such as:\n\nAge\nRace\nIncome\nHousehold characteristics\n\nThe listing data used in this project also cannot independently measure off-platform outcomes such as rent changes, housing prices, or resident displacement.\nThe ACS is a sample survey, so its figures are estimates rather than exact population counts and are reported with margins of error.\nThe project therefore considered both what the available data could show and what they could not establish."
+  },
+  {
+    "objectID": "projects/05-project-en.html#what-i-learned",
+    "href": "projects/05-project-en.html#what-i-learned",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "What I Learned",
+    "text": "What I Learned\nAt first, raw listing counts appeared to provide a straightforward picture of Airbnb concentration.\nHowever, communities differ greatly in their underlying housing stock.\nReframing the comparison as a listing-to-housing-unit ratio produced a different view of the same geography.\nThe project also required connecting datasets created at different geographic scales and translating the resulting analysis into visualizations for a nontechnical audience.\nThe experience reinforced that data analysis is not only about calculating values.\nChoosing the right comparison, understanding the limits of the data, and communicating the result clearly are equally important parts of the analytical process."
+  },
+  {
+    "objectID": "projects/05-project-en.html#methods-tools",
+    "href": "projects/05-project-en.html#methods-tools",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "Methods & Tools",
+    "text": "Methods & Tools\n\nR / RStudio\nTableau\nInside Airbnb\nU.S. Census Bureau American Community Survey\nData Cleaning\nData Integration\nExploratory Data Analysis\nGeographic Mapping\nRatio / Proportion Analysis\nData Visualization\nDigital Humanities Research\nWordPress"
+  },
+  {
+    "objectID": "projects/05-project-en.html#explore-the-full-project",
+    "href": "projects/05-project-en.html#explore-the-full-project",
+    "title": "Project 5 — Beyond Airbnb: Mapping Airbnb Listings and Community Profiles in Los Angeles County (DGT HUM 101)",
+    "section": "Explore the Full Project",
+    "text": "Explore the Full Project\nThe complete website includes the data methodology, interactive visualizations, Narrative, Chronology, and References.\nFor a detailed explanation of the data sources, cleaning, and geographic mapping process:\n🌐 Beyond Airbnb — An Archive of Airbnb in Los Angeles County"
+  },
+  {
+    "objectID": "projects/04-project-en.html",
+    "href": "projects/04-project-en.html",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
     "section": "",
-    "text": "Using demographic, economic, and population composition data from the U.S. Census,\nthis project predicts whether each U.S. county voted for Biden or Trump in 2020.\nWe focused on building clean preprocessing pipelines and comparing several\nmachine-learning models to find the most reliable classifier."
+    "text": "← 한국어 버전"
   },
   {
-    "objectID": "projects/03-project.html#key-insights-preview",
-    "href": "projects/03-project.html#key-insights-preview",
-    "title": "Project 3 — U.S. Election Winner Classification (STATS 101C)",
-    "section": "Key Insights (Preview)",
-    "text": "Key Insights (Preview)\n\nMost Census features were heavily right-skewed, so we used normalization\nand, when appropriate, log transformations.\nNo single variable clearly separated Biden vs. Trump counties —\nmeaningful patterns only appeared in multivariate models.\nAfter comparing Logistic Regression, KNN, and XGBoost workflows,\ngeneric XGBoost performed best, achieving ROC-AUC ≈ 0.973\nwith stable cross-validation.\nFinal test accuracy was about 0.944, while training accuracy was 1.000,\nrevealing overfitting that we discuss in the report."
+    "objectID": "projects/04-project-en.html#what-information-was-available",
+    "href": "projects/04-project-en.html#what-information-was-available",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "What Information Was Available?",
+    "text": "What Information Was Available?\nThe project included three broad types of information.\nThe first was time and geography:\n\nYear\nMonth\nState\n\nThe second consisted of customer characteristics and Amazon usage information.\nAccording to the report, these included variables related to gender, age, income, customer and household counts, and Amazon usage.\nThe third source was the separate amazon_order_details dataset.\nThis dataset contained detailed order information such as:\n\nProduct category\nUnit price\nQuantity\nOrder date\n\nThe team used these detailed records to create additional predictors that were not available in the original main dataset."
   },
   {
-    "objectID": "projects/03-project.html#want-the-full-analysis",
-    "href": "projects/03-project.html#want-the-full-analysis",
-    "title": "Project 3 — U.S. Election Winner Classification (STATS 101C)",
-    "section": "Want the full analysis?",
-    "text": "Want the full analysis?\nThe full project report includes:\n\nEDA on skewness, demographics, and county patterns\n\nPreprocessing pipelines (generic vs. log)\n\nModel comparison tables (Logistic Regression, KNN, XGBoost)\n\nROC curves, diagnostics, and discussion of overfitting\n\nThe complete R workflow used to train and evaluate the models\n\n📄 Full Project Report (PDF)\n👉 Open PDF"
+    "objectID": "projects/04-project-en.html#creating-new-predictors-from-detailed-order-data",
+    "href": "projects/04-project-en.html#creating-new-predictors-from-detailed-order-data",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Creating New Predictors from Detailed Order Data",
+    "text": "Creating New Predictors from Detailed Order Data\nThe team first calculated the average price and price variability for each product category.\nThe order data were then aggregated to the state × year × month level to construct additional predictors.\n\nmonth_est\nThis was a monthly spending estimate based on product-category average prices and purchase quantities.\nIn the implemented R code, the category mean price, cat_mean, was multiplied by quantity and then summed within each state-year-month group.\nRather than directly using the actual target value, this created a separate spending estimate from category-level price information.\n\n\nmonth_var_ratio\nFor each product category, the project calculated:\nprice variance ÷ average price\nto create cat_var_ratio.\nThese ratios were then averaged within each state-year-month observation.\nThe variable was used as a measure of the relative price variability of the categories represented in that group of orders.\n\n\nbin1_count–bin5_count\nThe project divided 1,818 product categories into five price tiers based on their average prices.\n\nBin 1 represented relatively higher-priced categories\nBin 5 represented relatively lower-priced categories\n\nFor each state-year-month, the code counted the number of order-detail records assigned to each price tier.\nThis provided the models with information about the price composition of the orders, rather than relying only on overall spending estimates.\n\n\nmonth_est_low_var\nThis predictor was similar to month_est, but only included categories with relatively low price variability.\nThe implemented code used the condition:\ncat_var_ratio &lt; 45\nto determine which categories were included."
   },
   {
-    "objectID": "projects/01-project.html",
-    "href": "projects/01-project.html",
+    "objectID": "projects/04-project-en.html#combining-the-data",
+    "href": "projects/04-project-en.html#combining-the-data",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Combining the Data",
+    "text": "Combining the Data\nThe engineered predictors were joined to the original training and test datasets using:\n\nState\nYear\nMonth\n\nas the matching keys.\nThis created the expanded datasets:\n\ntrain_expanded\ntest_expanded\n\nThe final modeling data therefore combined customer, geographic, temporal, and engineered order-level information within a common state-year-month structure."
+  },
+  {
+    "objectID": "projects/04-project-en.html#preventing-data-leakage",
+    "href": "projects/04-project-en.html#preventing-data-leakage",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Preventing Data Leakage",
+    "text": "Preventing Data Leakage\nThe original dataset contained a variable called order_totals.\nHowever, the report and code identified this variable as being too directly related to the target log_total.\nIncluding it would allow the model to use information that effectively reveals the quantity it is supposed to predict.\nTo prevent this data leakage, order_totals was removed before model training.\nThis was important because a high model score is not meaningful if the model relies on information that would not be appropriately available in a genuine prediction setting."
+  },
+  {
+    "objectID": "projects/04-project-en.html#examining-the-response-variable",
+    "href": "projects/04-project-en.html#examining-the-response-variable",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Examining the Response Variable",
+    "text": "Examining the Response Variable\nThe response variable was log_total.\nThe report describes it as the total spending for each state-year-month observation expressed on a log10 scale.\nAfter the log transformation, the response distribution showed a much less extreme shape than raw spending values would typically produce.\nThe models therefore predicted log_total, and model errors were also evaluated on this log scale."
+  },
+  {
+    "objectID": "projects/04-project-en.html#most-numeric-predictors-were-right-skewed",
+    "href": "projects/04-project-en.html#most-numeric-predictors-were-right-skewed",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Most Numeric Predictors Were Right-Skewed",
+    "text": "Most Numeric Predictors Were Right-Skewed\nThe team examined the distributions of 30 numeric predictors from the original training dataset.\nMost showed a clear right-skewed distribution.\nLog transformations were explored during EDA as a possible way to reduce skewness.\nHowever, the final modeling workflows did not apply a log transformation to all numeric predictors.\nThe final comparison instead focused on the Generic Recipe and Interaction Recipe."
+  },
+  {
+    "objectID": "projects/04-project-en.html#treating-month-as-a-category",
+    "href": "projects/04-project-en.html#treating-month-as-a-category",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Treating Month as a Category",
+    "text": "Treating Month as a Category\nMonth was originally stored as the numbers 1 through 12.\nIf it remained numeric, a model could treat January, February, March, and later months as points along a single numerical line.\nThe EDA showed that the distribution of log_total differed across months.\nThe project therefore converted Month into a categorical factor.\nThis allowed the models to learn separate effects for individual months without assuming one simple linear relationship from January through December."
+  },
+  {
+    "objectID": "projects/04-project-en.html#two-preprocessing-strategies",
+    "href": "projects/04-project-en.html#two-preprocessing-strategies",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Two Preprocessing Strategies",
+    "text": "Two Preprocessing Strategies\n\n1. Generic Recipe\nThe Generic Recipe performed three main steps:\n\nConverted Month into a factor\nConverted categorical predictors such as State and Month into dummy variables\nReplaced missing numeric values with the median\n\nMedian imputation was selected because many numeric predictors were right-skewed, making the median less sensitive to extreme values than the mean.\n\n\n\n2. Interaction Recipe\nThe Interaction Recipe started with the Generic Recipe and added explicit interactions among three engineered predictors:\n\nmonth_est\nmonth_var_ratio\nmonth_est_low_var\n\nThe recipe created:\n\nThree 2-way interactions\nOne 3-way interaction\n\nThis allowed the models to explicitly represent situations where the effect of one engineered predictor might depend on the value of another."
+  },
+  {
+    "objectID": "projects/04-project-en.html#models-compared",
+    "href": "projects/04-project-en.html#models-compared",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Models Compared",
+    "text": "Models Compared\nThe project compared three regression approaches.\n\nLinear Regression\nLinear Regression served as the simplest baseline model.\nIt models the response mainly as an additive combination of the predictors.\n\n\nRandom Forest\nRandom Forest builds many decision trees independently and averages their predictions.\nThis allows it to capture more complex and nonlinear patterns than a simple linear model.\n\n\nXGBoost\nXGBoost builds decision trees sequentially.\nEach new tree attempts to correct prediction errors left by the previous trees.\nThis structure allows the model to capture complex nonlinear relationships and interactions among predictors."
+  },
+  {
+    "objectID": "projects/04-project-en.html#how-were-the-models-evaluated",
+    "href": "projects/04-project-en.html#how-were-the-models-evaluated",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "How Were the Models Evaluated?",
+    "text": "How Were the Models Evaluated?\nThe team did not select a model from a single train/test split.\nInstead, the project used 10-fold cross-validation.\nThe training data were divided into ten folds.\nFor each iteration, the model was trained on nine folds and evaluated on the remaining fold.\nThis process was repeated until each fold had served as the validation set.\nThe report and code also used stratification on log_total when constructing the folds."
+  },
+  {
+    "objectID": "projects/04-project-en.html#evaluation-metric-rmse",
+    "href": "projects/04-project-en.html#evaluation-metric-rmse",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Evaluation Metric: RMSE",
+    "text": "Evaluation Metric: RMSE\nThe primary evaluation metric was RMSE.\nRMSE summarizes the difference between predicted and observed values.\nLower RMSE means smaller prediction error.\nBecause the response variable was log_total, the reported RMSE values were also calculated on the log_total scale."
+  },
+  {
+    "objectID": "projects/04-project-en.html#model-comparison",
+    "href": "projects/04-project-en.html#model-comparison",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Model Comparison",
+    "text": "Model Comparison\n\n\n\nWorkflow\n10-Fold CV RMSE\n\n\n\n\nGeneric Linear Regression\n0.1385\n\n\nInteraction Linear Regression\n0.1300\n\n\nGeneric Random Forest\n0.0960\n\n\nInteraction Random Forest\n0.0966\n\n\nGeneric XGBoost\n0.0927\n\n\nInteraction XGBoost\n0.0932\n\n\n\nAmong the six workflows, Generic XGBoost achieved the lowest RMSE.\nIts exact cross-validation result was:\nRMSE = 0.09271658\nwith a standard error of approximately:\n0.00252"
+  },
+  {
+    "objectID": "projects/04-project-en.html#explicit-interactions-did-not-help-every-model",
+    "href": "projects/04-project-en.html#explicit-interactions-did-not-help-every-model",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Explicit Interactions Did Not Help Every Model",
+    "text": "Explicit Interactions Did Not Help Every Model\nThe effect of the interaction terms differed across model types.\nFor Linear Regression:\n\nGeneric: approximately 0.1385\nInteraction: approximately 0.1300\n\nThe lower RMSE suggests that explicit interaction terms improved the linear model’s predictive performance.\nFor Random Forest:\n\nGeneric: approximately 0.0960\nInteraction: approximately 0.0966\n\nThe interaction recipe did not improve performance.\nThe same pattern appeared with XGBoost:\n\nGeneric: approximately 0.0927\nInteraction: approximately 0.0932\n\nThe project interpreted this as evidence that tree-based models such as XGBoost can already learn important nonlinear relationships and interactions through their tree splits, making the explicitly added interaction columns unnecessary in this case."
+  },
+  {
+    "objectID": "projects/04-project-en.html#final-model",
+    "href": "projects/04-project-en.html#final-model",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Final Model",
+    "text": "Final Model\nThe final selected workflow was Generic XGBoost.\nThe report lists the selected hyperparameters as:\n\nTrees: approximately 2,829\nTree depth: 7\nLearning rate: approximately 0.01076\nMinimum node size (min_n): 14\nLoss reduction: approximately 1.95 × 10⁻⁴\nSample proportion: approximately 0.9858\nmtry: 28\n\nWithout the additional interaction columns, this workflow achieved the lowest cross-validated RMSE among the six workflows evaluated."
+  },
+  {
+    "objectID": "projects/04-project-en.html#my-role",
+    "href": "projects/04-project-en.html#my-role",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "My Role",
+    "text": "My Role\nThis was a team project.\nAccording to the team contribution record, I worked on Model Selection and Hyperparameter Tuning and also contributed to the final report.\nThe data mining, data manipulation, and pre-preprocessing work were handled by other team members.\nMy role focused on comparing the cross-validation performance of Linear Regression, Random Forest, and XGBoost under the Generic and Interaction preprocessing strategies.\nI also reviewed tuning results and participated in selecting the final model and hyperparameter configuration.\nFinally, I contributed to interpreting the model’s performance and limitations and documenting those findings in the final report."
+  },
+  {
+    "objectID": "projects/04-project-en.html#looking-beyond-the-lowest-rmse",
+    "href": "projects/04-project-en.html#looking-beyond-the-lowest-rmse",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Looking Beyond the Lowest RMSE",
+    "text": "Looking Beyond the Lowest RMSE\nAlthough Generic XGBoost achieved the lowest RMSE, not every XGBoost configuration performed well.\nDuring cross-validation, some hyperparameter combinations produced much larger prediction errors.\nThis showed that XGBoost performance could be sensitive to its parameter settings.\nThe tuning search was also relatively small, with only five parameter combinations evaluated per workflow.\nThis reduced computation time, but it also meant that a better configuration may have existed outside the tested grid.\nFor this reason, the project did not treat “XGBoost is always the best model” as a general conclusion.\nInstead, it highlighted the importance of careful tuning and validation, even when using a powerful algorithm."
+  },
+  {
+    "objectID": "projects/04-project-en.html#possible-improvements",
+    "href": "projects/04-project-en.html#possible-improvements",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Possible Improvements",
+    "text": "Possible Improvements\nThe report identified several directions for improving the modeling process.\nWith greater computational resources, a wider hyperparameter search could be performed around the best-performing region.\nThe predictions from Generic XGBoost and Interaction XGBoost could also be combined in a simple ensemble.\nBecause the dataset contains both year and month information, a future version could replace standard cross-validation with time-aware cross-validation.\nFor example, models could be trained on earlier periods and validated on later periods.\nThe project also suggested exploring lagged and rolling predictors, such as:\n\nPrevious month’s month_est\nRolling averages over recent months\nChanges in month_var_ratio over time\n\nThese approaches were proposed as future improvements and were not part of the final model used in this project."
+  },
+  {
+    "objectID": "projects/04-project-en.html#what-i-learned",
+    "href": "projects/04-project-en.html#what-i-learned",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "What I Learned",
+    "text": "What I Learned\nThe most important part of this project was not simply using a complex model.\nThe workflow required several decisions:\nturning detailed order records into usable predictors, removing a leaking variable, comparing preprocessing strategies, evaluating multiple model types, and tuning the final model under the same validation framework.\nEven within XGBoost, performance varied substantially depending on the hyperparameter configuration.\nThis project reinforced that model selection is not just about finding the lowest error number. The entire process — from feature construction to validation and tuning — must be evaluated together."
+  },
+  {
+    "objectID": "projects/04-project-en.html#methods-tools",
+    "href": "projects/04-project-en.html#methods-tools",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Methods & Tools",
+    "text": "Methods & Tools\n\nR\ntidyverse\ntidymodels\nworkflowsets\nFeature Engineering\nMultiple Linear Regression\nRandom Forest\nXGBoost\n10-Fold Cross-Validation\nHyperparameter Tuning\nRMSE\nDummy Encoding\nMedian Imputation\nInteraction Terms\nKaggle Submission Workflow"
+  },
+  {
+    "objectID": "projects/04-project-en.html#full-project-report",
+    "href": "projects/04-project-en.html#full-project-report",
+    "title": "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)",
+    "section": "Full Project Report",
+    "text": "Full Project Report\nThe full report includes exploratory data analysis, feature engineering from detailed order records, Generic and Interaction preprocessing strategies, comparisons of Linear Regression, Random Forest, and XGBoost, 10-fold cross-validation, hyperparameter tuning, limitations and proposed improvements, and the annotated R code used in the project.\n📄 View Full Project Report (PDF)"
+  },
+  {
+    "objectID": "projects/03-project-en.html",
+    "href": "projects/03-project-en.html",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "",
+    "text": "← 한국어 버전"
+  },
+  {
+    "objectID": "projects/03-project-en.html#project-overview",
+    "href": "projects/03-project-en.html#project-overview",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Project Overview",
+    "text": "Project Overview\nAccording to the project report, the primary predictors included demographic and education estimates from the U.S. Census Bureau.\nOne of the main challenges was the large difference in population size across counties.\nFor example, a raw count of people in an age group can be much larger in a large metropolitan county simply because more people live there.\nTo make counties more comparable, many raw population counts were converted into within-group or population-based proportions.\nThis allowed the models to focus more on population composition rather than county size alone."
+  },
+  {
+    "objectID": "projects/03-project-en.html#exploring-the-data",
+    "href": "projects/03-project-en.html#exploring-the-data",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Exploring the Data",
+    "text": "Exploring the Data\nBefore training the models, we examined the distributions of the predictors.\nMany of the original variables were strongly right-skewed.\nRaw population counts also showed substantial scale differences across counties, making direct comparisons difficult.\nAfter expressing many population variables as proportions, the predictors became more comparable across counties."
+  },
+  {
+    "objectID": "projects/03-project-en.html#no-single-predictor-was-enough",
+    "href": "projects/03-project-en.html#no-single-predictor-was-enough",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "No Single Predictor Was Enough",
+    "text": "No Single Predictor Was Enough\nWe also examined the relationship between individual predictors and the binary election outcome.\nPoint-biserial correlations were calculated between the predictors and the target variable.\nNo individual predictor had a correlation exceeding 0.5.\nThis suggested that the classification problem was unlikely to be explained well by a single variable alone.\nWe therefore compared models capable of using many predictors simultaneously."
+  },
+  {
+    "objectID": "projects/03-project-en.html#class-imbalance",
+    "href": "projects/03-project-en.html#class-imbalance",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Class Imbalance",
+    "text": "Class Imbalance\nThe labeled training data were not evenly distributed between the two classes.\nThe EDA in the report showed:\n\nBiden-winning counties: 389\nTrump-winning counties: 1,942\n\nThe team chose to preserve the original class distribution rather than applying over- or undersampling."
+  },
+  {
+    "objectID": "projects/03-project-en.html#two-preprocessing-strategies",
+    "href": "projects/03-project-en.html#two-preprocessing-strategies",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Two Preprocessing Strategies",
+    "text": "Two Preprocessing Strategies\nWe compared two preprocessing recipes.\n\n1. Generic Recipe\nThe first recipe converted many population counts into proportions based on the appropriate population or subgroup totals.\nIt also created growth variables for income per capita and GDP between 2016 and 2020, removed several identifiers and total columns, and used median imputation for missing numeric values.\n\n\n2. Log Recipe\nThe second recipe began with the Generic Recipe and additionally applied:\n\nLog transformation\nStandardization\n\nBecause many predictors were right-skewed, we tested whether these additional transformations would improve models such as Logistic Regression and KNN."
+  },
+  {
+    "objectID": "projects/03-project-en.html#models-compared",
+    "href": "projects/03-project-en.html#models-compared",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Models Compared",
+    "text": "Models Compared\nWe evaluated three classification algorithms.\n\nLogistic Regression\nA relatively simple classification model that served as an interpretable baseline.\n\n\nK-Nearest Neighbors (KNN)\nA model that classifies a new observation based on nearby observations with similar predictor values.\n\n\nXGBoost\nA boosting algorithm that builds decision trees sequentially, with later trees attempting to correct errors made by earlier ones.\nThis structure allows XGBoost to capture more complex and nonlinear patterns."
+  },
+  {
+    "objectID": "projects/03-project-en.html#model-evaluation",
+    "href": "projects/03-project-en.html#model-evaluation",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Model Evaluation",
+    "text": "Model Evaluation\nWe used 5-fold stratified cross-validation rather than relying on a single train/test split.\nThe training data were divided into five folds.\nThe model was trained on four folds and evaluated on the remaining fold, and this process was repeated so that each fold served as the validation set.\nStratification helped maintain similar class distributions across folds.\nThe primary model-selection metric was ROC-AUC, which measures how well a classifier separates the two classes."
+  },
+  {
+    "objectID": "projects/03-project-en.html#model-comparison",
+    "href": "projects/03-project-en.html#model-comparison",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Model Comparison",
+    "text": "Model Comparison\n\n\n\nWorkflow\nCross-Validated ROC-AUC\n\n\n\n\nGeneric XGBoost\n0.973\n\n\nLog XGBoost\n0.973\n\n\nGeneric KNN\n0.960\n\n\nLog KNN\n0.959\n\n\nGeneric Logistic Regression\n0.959\n\n\nLog Logistic Regression\n0.966\n\n\n\nThe highest ROC-AUC was shared by Generic XGBoost and Log XGBoost, both achieving approximately 0.973.\nThe additional log transformation did not improve XGBoost performance.\nThe team therefore selected Generic XGBoost as the final workflow because it achieved the same performance with the simpler preprocessing pipeline.\nThe selected XGBoost configuration used:\n\n889 trees\nTree depth of 4\nMinimum node size of 2"
+  },
+  {
+    "objectID": "projects/03-project-en.html#hold-out-evaluation",
+    "href": "projects/03-project-en.html#hold-out-evaluation",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Hold-Out Evaluation",
+    "text": "Hold-Out Evaluation\nAfter model selection, we performed an additional 80/20 hold-out evaluation using the labeled training dataset.\nThe Generic XGBoost workflow achieved an accuracy of approximately 0.944 on the 20% hold-out portion.\nHowever, after refitting the workflow on the full training dataset, training accuracy reached 1.000.\nThe gap between perfect training performance and lower performance on unseen observations raised a concern about potential overfitting."
+  },
+  {
+    "objectID": "projects/03-project-en.html#looking-beyond-a-high-validation-score",
+    "href": "projects/03-project-en.html#looking-beyond-a-high-validation-score",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Looking Beyond a High Validation Score",
+    "text": "Looking Beyond a High Validation Score\nThe internal validation results were strong, but the project also highlighted the importance of evaluating model generalization carefully.\nAccording to the report, after the Kaggle private leaderboard was released, the team’s ranking fell from first to eleventh.\nAlthough the model performed consistently during cross-validation and the internal hold-out evaluation, its performance did not transfer perfectly to the hidden Kaggle test data.\nThis led the team to consider the sensitivity of the model to the particular training and test samples and the possibility of overfitting.\nThe report also noted that a more stable approach, such as an ensemble of multiple models, could be worth exploring in future work."
+  },
+  {
+    "objectID": "projects/03-project-en.html#my-role",
+    "href": "projects/03-project-en.html#my-role",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "My Role",
+    "text": "My Role\nThis was a five-person team project.\nAccording to the team-contribution record, I worked on Model Selection and Hyperparameter Tuning and also contributed to the final report.\nI participated in comparing the cross-validation results of Logistic Regression, KNN, and XGBoost workflows under both preprocessing strategies, reviewing tuning results, and selecting the final modeling workflow.\nI also contributed to interpreting the model performance and documenting the results and limitations in the final report."
+  },
+  {
+    "objectID": "projects/03-project-en.html#what-i-learned",
+    "href": "projects/03-project-en.html#what-i-learned",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "What I Learned",
+    "text": "What I Learned\nAt first, the high ROC-AUC and hold-out accuracy made XGBoost appear extremely robust.\nHowever, the perfect training accuracy and later private-leaderboard performance showed why a single strong metric is not enough to evaluate a model.\nThe project reinforced the importance of considering cross-validation, hold-out performance, training performance, and truly unseen data together when evaluating how well a model generalizes."
+  },
+  {
+    "objectID": "projects/03-project-en.html#limitations",
+    "href": "projects/03-project-en.html#limitations",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Limitations",
+    "text": "Limitations\nThe project had several limitations.\nFirst, the tuning process searched only a limited grid of 10 candidate hyperparameter configurations per workflow.\nA wider search may have identified stronger settings, particularly for XGBoost.\nSecond, the final workflow was selected primarily using ROC-AUC.\nThe report notes that additional metrics, such as accuracy or Brier score, could provide a more complete evaluation.\nFinally, the perfect training accuracy and the change in private-leaderboard performance suggested that the final XGBoost model required additional evaluation of its generalization ability."
+  },
+  {
+    "objectID": "projects/03-project-en.html#methods-tools",
+    "href": "projects/03-project-en.html#methods-tools",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Methods & Tools",
+    "text": "Methods & Tools\n\nR\ntidyverse\ntidymodels\nworkflowsets\nLogistic Regression\nK-Nearest Neighbors (KNN)\nXGBoost\n5-Fold Stratified Cross-Validation\nHyperparameter Tuning\nROC-AUC\nHold-Out Evaluation\nLog Transformation\nStandardization\nMedian Imputation\nFeature Engineering\nKaggle Submission Workflow"
+  },
+  {
+    "objectID": "projects/03-project-en.html#full-project-report",
+    "href": "projects/03-project-en.html#full-project-report",
+    "title": "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)",
+    "section": "Full Project Report",
+    "text": "Full Project Report\nThe full report includes exploratory data analysis, preprocessing pipelines, six workflow comparisons, cross-validation, hyperparameter tuning, ROC curves, hold-out evaluation, a discussion of overfitting, and the complete annotated R workflow.\n📄 View Full Project Report (PDF)"
+  },
+  {
+    "objectID": "projects/02-project-en.html",
+    "href": "projects/02-project-en.html",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "",
+    "text": "← 한국어 버전"
+  },
+  {
+    "objectID": "projects/02-project-en.html#what-is-the-islands",
+    "href": "projects/02-project-en.html#what-is-the-islands",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "What Is The Islands?",
+    "text": "What Is The Islands?\nThe Islands is a virtual population developed at The University of Queensland for teaching experimental design, epidemiology, and statistical reasoning.\nIts virtual population lives across three islands: Ironbard, Providence, and Bonne Santé.\nThe environment allows students to select participants, design experiments, apply experimental conditions, and collect resulting data from virtual subjects.\nWe used this environment to construct our sample and collect the experimental observations used in this project."
+  },
+  {
+    "objectID": "projects/02-project-en.html#project-overview",
+    "href": "projects/02-project-en.html#project-overview",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "Project Overview",
+    "text": "Project Overview\nShort-term muscle performance was measured by the number of arm curls completed in 30 seconds using a 2kg weight.\nThe experiment compared five conditions:\n\nClassical\nCountry\nDance\nHeavy Metal\nNo Music\n\nBecause baseline physical ability may differ with age, participants were divided into five age groups:\n\n18–24\n25–31\n32–38\n39–45\n46–52\n\nThe final sample consisted of 175 virtual male participants, with 35 participants in each age group."
+  },
+  {
+    "objectID": "projects/02-project-en.html#building-the-dataset",
+    "href": "projects/02-project-en.html#building-the-dataset",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "Building the Dataset",
+    "text": "Building the Dataset\nThis project did not begin with a ready-made dataset.\nWe were involved in the process of selecting the sample and producing the data used for analysis.\nFollowing the random-sampling procedure described in our study, we first randomly selected one of the three Islands, then selected a city within that Island, and finally selected eligible virtual participants within the required age group.\nWe repeated this procedure to construct the study sample.\nThe experimental outcomes were then collected from The Islands and recorded manually in Excel to create the dataset used for analysis."
+  },
+  {
+    "objectID": "projects/02-project-en.html#my-role",
+    "href": "projects/02-project-en.html#my-role",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "My Role",
+    "text": "My Role\nThis was a team project.\nMy responsibilities included collecting and organizing the simulated experimental data in Excel, conducting part of the statistical analysis, interpreting the results, and contributing to the final report.\nI followed the sampling procedure to collect participant-level observations from the virtual population and organized them into a dataset suitable for analysis.\nThe statistical work was divided among team members. I completed the analyses assigned to me and documented the corresponding results and interpretations in the final report."
+  },
+  {
+    "objectID": "projects/02-project-en.html#why-block-by-age",
+    "href": "projects/02-project-en.html#why-block-by-age",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "Why Block by Age?",
+    "text": "Why Block by Age?\nThe primary question was whether music genre affects exercise performance.\nHowever, differences in baseline physical ability could make it difficult to separate a music effect from differences between participants.\nBecause age may influence physical performance, we used a Randomized Complete Block Design (RCBD) with age range as the blocking factor.\nIn simpler terms, we accounted for differences associated with age before asking whether music genre explained any additional variation."
+  },
+  {
+    "objectID": "projects/02-project-en.html#key-findings",
+    "href": "projects/02-project-en.html#key-findings",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "Key Findings",
+    "text": "Key Findings\nThe analysis found no statistically significant difference in arm curl performance across music genres.\nThe ANOVA p-value for music genre was 0.933.\nTherefore, under the conditions of this experiment, we did not find sufficient statistical evidence that Classical, Country, Dance, Heavy Metal, or No Music produced different levels of short-term muscle performance.\nIn contrast, differences across age groups were much more visible.\nIn this dataset, participant characteristics such as age were more clearly associated with performance differences than the genre of music heard before exercise."
+  },
+  {
+    "objectID": "projects/02-project-en.html#did-any-specific-music-conditions-differ",
+    "href": "projects/02-project-en.html#did-any-specific-music-conditions-differ",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "Did Any Specific Music Conditions Differ?",
+    "text": "Did Any Specific Music Conditions Differ?\nWe also used Tukey pairwise comparisons to examine whether specific pairs of music conditions differed.\nNone of the pairwise comparisons between music conditions were statistically significant.\nSome comparisons involving the Dance condition produced relatively lower p-values than other pairs, but they still did not reach the threshold for statistical significance.\nWe therefore did not interpret this pattern as evidence that Dance improved exercise performance.\nInstead, it was treated only as a possible direction for future investigation."
+  },
+  {
+    "objectID": "projects/02-project-en.html#model-diagnostics",
+    "href": "projects/02-project-en.html#model-diagnostics",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "Model Diagnostics",
+    "text": "Model Diagnostics\nBefore interpreting the ANOVA results, we examined whether the major model assumptions were reasonable.\nThe Normal Q-Q Plot showed that most residuals were close to the reference line.\nAlthough there were minor deviations in the tails, the report did not identify a serious violation of normality.\nThe Residuals vs. Fitted Plot also showed no clear funnel shape or systematic curvature.\nTherefore, the diagnostic results did not reveal major concerns regarding normality or constant variance for the data analyzed."
+  },
+  {
+    "objectID": "projects/02-project-en.html#additional-analysis",
+    "href": "projects/02-project-en.html#additional-analysis",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "Additional Analysis",
+    "text": "Additional Analysis\nWe also examined a linear model containing both music genre and age range.\nThe individual music-genre coefficients were not statistically significant relative to the reference genre.\nThis result was consistent with the ANOVA: the data did not provide clear evidence that a specific music genre changed short-term arm curl performance.\nThe model including both genre and age range had an Adjusted R² of approximately 0.435.\nThis should not be interpreted as music explaining 43.5% of performance variation.\nThe value represents the explanatory power of the combined model, and the observed differences associated with age were substantially clearer than those associated with music genre."
+  },
+  {
+    "objectID": "projects/02-project-en.html#what-we-learned",
+    "href": "projects/02-project-en.html#what-we-learned",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "What We Learned",
+    "text": "What We Learned\nOur initial hypothesis was that different music genres might produce measurable differences in exercise performance.\nThe data did not support that hypothesis.\nInstead, variation among participants, particularly differences associated with age, was much more visible than variation between music conditions.\nThis project demonstrated that a non-significant result can still be an important result.\nRather than forcing the data to support our initial expectation, we focused on what the experiment actually showed and considered other sources of variation and study limitations."
+  },
+  {
+    "objectID": "projects/02-project-en.html#limitations",
+    "href": "projects/02-project-en.html#limitations",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "Limitations",
+    "text": "Limitations\nAge was used as a blocking factor, but people within the same age group can still differ substantially in physical ability.\nThe experiment did not fully control for factors such as:\n\nRegular exercise habits\nPhysically demanding occupations\nUnderlying health conditions\nDay-to-day physical condition\nRecent illness or recovery\n\nTherefore, age alone may not have captured all individual differences affecting arm curl performance.\nThe sample was also restricted to virtual male participants aged 18–52, so the findings should not be generalized directly to all ages or sexes."
+  },
+  {
+    "objectID": "projects/02-project-en.html#methods-used",
+    "href": "projects/02-project-en.html#methods-used",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "Methods Used",
+    "text": "Methods Used\n\nRandomized Complete Block Design (RCBD)\nMulti-stage Random Sampling\nPower Analysis\nAnalysis of Variance (ANOVA)\nLinear Model\nResidual Diagnostics\nTukey HSD Pairwise Comparison\nData Collection and Organization in Excel"
+  },
+  {
+    "objectID": "projects/02-project-en.html#full-project-report",
+    "href": "projects/02-project-en.html#full-project-report",
+    "title": "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)",
+    "section": "Full Project Report",
+    "text": "Full Project Report\nThe full report includes the sampling procedure, experimental design, power analysis, ANOVA results, residual diagnostics, linear-model analysis, Tukey comparisons, and a detailed discussion of the study’s limitations.\n📄 View Full Project Report (PDF)"
+  },
+  {
+    "objectID": "projects/01-project-en.html",
+    "href": "projects/01-project-en.html",
     "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
     "section": "",
-    "text": "A statistical modeling project predicting daily wind speed in Szeged, Hungary\nusing four meteorological variables (Temperature, Humidity, Visibility, Pressure)\nfrom 10 years of daily weather data (2006–2016).\nThe goal was to build, compare, and interpret multiple linear regression models\nand determine which weather factors significantly influence wind speed."
+    "text": "← 한국어 버전"
   },
   {
-    "objectID": "projects/01-project.html#overview",
-    "href": "projects/01-project.html#overview",
+    "objectID": "projects/01-project-en.html#project-overview",
+    "href": "projects/01-project-en.html#project-overview",
     "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
-    "section": "",
-    "text": "A statistical modeling project predicting daily wind speed in Szeged, Hungary\nusing four meteorological variables (Temperature, Humidity, Visibility, Pressure)\nfrom 10 years of daily weather data (2006–2016).\nThe goal was to build, compare, and interpret multiple linear regression models\nand determine which weather factors significantly influence wind speed."
+    "section": "Project Overview",
+    "text": "Project Overview\nThe analysis used Wind Speed as the outcome and the following four meteorological variables:\n\nTemperature\nHumidity\nVisibility\nPressure\n\nWe first built a multiple linear regression model using all four variables.\nWe then examined whether each variable meaningfully contributed to explaining wind speed, compared the full model with a simpler model, and evaluated both the explanatory power and statistical limitations of the final model."
   },
   {
-    "objectID": "projects/01-project.html#key-insights-preview",
-    "href": "projects/01-project.html#key-insights-preview",
+    "objectID": "projects/01-project-en.html#my-role",
+    "href": "projects/01-project-en.html#my-role",
     "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
-    "section": "Key Insights (Preview)",
-    "text": "Key Insights (Preview)\n\nHumidity and Pressure were strong, statistically significant predictors.\n\nVisibility showed no significance in predicting wind speed.\n\nThe final model explained 18% of wind speed variation (R² = 0.18).\n\nDiagnostic checks confirmed:\n\nmostly normal residuals\n\nmild heteroscedasticity\n\nno influential outliers\n\nno multicollinearity (VIF &lt; 2)\n\n\nThis summary highlights only the main findings —\nthe full modeling process, diagnostics, and detailed interpretation\nare included in the complete PDF report."
+    "section": "My Role",
+    "text": "My Role\nI was responsible for topic selection, data preprocessing, statistical analysis, and final report writing.\nI prepared the dataset, built and interpreted the multiple linear regression models, and documented the model comparisons, diagnostic results, and limitations in the final report."
   },
   {
-    "objectID": "projects/01-project.html#want-the-full-analysis",
-    "href": "projects/01-project.html#want-the-full-analysis",
+    "objectID": "projects/01-project-en.html#analysis-approach",
+    "href": "projects/01-project-en.html#analysis-approach",
     "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
-    "section": "Want the full analysis?",
-    "text": "Want the full analysis?\nThe complete report includes:\n\nExploratory data analysis\n\nModel comparison (full vs reduced)\n\nResidual diagnostics\n\nMathematical interpretation of coefficients\n\nDiscussion of modeling assumptions\n\nStudy limitations and future improvements\n\n📄 Download Full Project Report (PDF)\n👉 Click here to read the full analysis"
+    "section": "Analysis Approach",
+    "text": "Analysis Approach\n\n1. Building a model with all four weather variables\nWe first built a multiple linear regression model using Temperature, Humidity, Visibility, and Pressure.\nIn the full model, Temperature, Humidity, and Pressure showed statistically significant relationships with wind speed, while Visibility did not.\n\n\n2. Determining whether Visibility was necessary\nTo determine whether Visibility was necessary in the model, we compared a model that included Visibility with one that excluded it.\nThe Partial F-test produced a p-value of 0.6459, suggesting that removing Visibility did not significantly reduce the explanatory power of the model.\nWe therefore selected the reduced model using:\nTemperature · Humidity · Pressure\n\n\n3. Evaluating the model\nAfter selecting the final model, we examined residual plots and additional diagnostic measures to determine whether the assumptions of the regression model were reasonable.\nWe also calculated the Variance Inflation Factor (VIF) to check whether the predictor variables contained excessive overlapping information."
+  },
+  {
+    "objectID": "projects/01-project-en.html#key-findings",
+    "href": "projects/01-project-en.html#key-findings",
+    "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
+    "section": "Key Findings",
+    "text": "Key Findings\nThe final model used:\nTemperature · Humidity · Pressure\nThe model explained approximately 18% of the variation in wind speed.\nThis suggested that the selected weather variables were related to wind speed, but they were not sufficient to explain most of its variation.\nThe final regression equation was:\nWind Speed = 282.486\n− 0.295(Temperature)\n− 17.426(Humidity)\n− 0.251(Pressure)"
+  },
+  {
+    "objectID": "projects/01-project-en.html#model-diagnostics",
+    "href": "projects/01-project-en.html#model-diagnostics",
+    "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
+    "section": "Model Diagnostics",
+    "text": "Model Diagnostics\nThe residuals generally did not show a strong systematic pattern, although their spread increased in some regions with higher fitted values.\nA Breusch–Pagan test also produced a very small p-value, indicating that heteroscedasticity, or non-constant residual variance, remained a limitation of the model.\nIn contrast, all VIF values were below 2, suggesting that severe multicollinearity was not a concern.\nThe Residuals vs. Leverage plot also did not indicate any clearly influential observations that substantially distorted the model."
+  },
+  {
+    "objectID": "projects/01-project-en.html#exploring-an-alternative-model",
+    "href": "projects/01-project-en.html#exploring-an-alternative-model",
+    "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
+    "section": "Exploring an Alternative Model",
+    "text": "Exploring an Alternative Model\nWe also examined whether a Box-Cox transformation could improve the model.\nHowever, the transformed model produced a slightly lower Adjusted R² and introduced additional deviation in part of the Q-Q plot.\nBecause the transformation increased model complexity without providing a meaningful improvement, we retained the untransformed reduced model."
+  },
+  {
+    "objectID": "projects/01-project-en.html#limitations",
+    "href": "projects/01-project-en.html#limitations",
+    "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
+    "section": "Limitations",
+    "text": "Limitations\nThis project also demonstrated that identifying statistically meaningful relationships is different from achieving strong predictive performance.\nOnly a limited set of weather variables was included in the analysis.\nDate information was not incorporated into the model, preventing us from accounting for seasonal patterns in wind speed.\nOther potentially relevant variables, such as Wind Bearing, were also excluded.\nTherefore, the relatively low R² of approximately 0.18 suggests that much of the variation in wind speed may be influenced by factors not included in the model."
+  },
+  {
+    "objectID": "projects/01-project-en.html#methods-used",
+    "href": "projects/01-project-en.html#methods-used",
+    "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
+    "section": "Methods Used",
+    "text": "Methods Used\n\nMultiple Linear Regression\nFull Model / Reduced Model Comparison\nPartial F-test\nResidual Diagnostics\nVariance Inflation Factor (VIF)\nBreusch–Pagan Test\nBox-Cox Transformation"
+  },
+  {
+    "objectID": "projects/01-project-en.html#full-project-report",
+    "href": "projects/01-project-en.html#full-project-report",
+    "title": "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)",
+    "section": "Full Project Report",
+    "text": "Full Project Report\nThe full report includes exploratory data analysis, regression model development, model comparison, residual diagnostics, variable selection, transformation analysis, and a more detailed discussion of the results and limitations.\n📄 View Full Project Report (PDF)"
   },
   {
     "objectID": "courses.html",
     "href": "courses.html",
     "title": "Courses",
     "section": "",
-    "text": "🎓 Coursework Overview\nA curated list of all mathematics, statistics, and computer science courses\ncompleted at Pasadena City College (2022–2024) and UCLA (2024–Present).\nThese courses form the core of my preparation for advanced study in Statistics & Data Science.\n\n\n\n📘 Mathematics & Computer Science (PCC)\n\nMathematics Foundation\n\nSingle Variable Calculus I (MATH 5A)\n\nSingle Variable Calculus II (MATH 5B)\n\nMultivariable Calculus (MATH 5C)\n\nDifferential Equations (MATH 55)\n\nLinear Algebra (MATH 10)\n\n\n\n\nComputer Science\n\nFundamentals of Computer Science (CS 002)\n\n\n\n\n\n📊 Statistics (PCC)\n\nElementary Statistics (STAT 050)\n\n\n\n\n🐻 UCLA Statistics Major Coursework\n\nProgramming & Applied Statistics\n\nIntroduction to Statistical Programming with R (STATS 20)\nCommunity or Corporate Internships in Statistics (STATS 195)\n\n\n\nProbability, Inference, and Mathematical Statistics\n\nIntroduction to Probability (STATS 100A)\n\nIntroduction to Mathematical Statistics (STATS 100B)\n\nLinear Models (STATS 100C)\n\n\n\nRegression, Experiments, and Data Mining\n\nIntroduction to Data Analysis and Regression (STATS 101A)\nIntroduction to Design and Analysis of Experiments (STATS 101B)\nIntroduction to Statistical Models and Data Mining (STATS 101C)\n\n\n\nComputational & Theoretical Methods\n\nIntroduction to Computational Statistics with R (STATS 102A)\nIntroduction to Computation and Optimization for Statistics (STATS 102B)\nIntroduction to Monte Carlo Methods (STATS 102C)\n\n\n\nAdvanced Electives\n\nStatistical Models in Finance (STATS C183)"
+    "text": "🎓 Coursework Overview\nA curated list of all mathematics, statistics, and computer science courses\ncompleted at Pasadena City College (2020–2024) and UCLA (2024–2026).\nThese courses form the core of my preparation for advanced study in Statistics & Data Science.\n\n\n\n📘 Mathematics & Computer Science (PCC)\n\nMathematics Foundation\n\nSingle Variable Calculus I (MATH 5A)\n일변수 미적분학 I\nSingle Variable Calculus II (MATH 5B)\n일변수 미적분학 II\nMultivariable Calculus (MATH 5C)\n다변수 미적분학\nDifferential Equations (MATH 55)\n미분방정식\nLinear Algebra (MATH 10)\n선형대수학\n\n\n\n\nComputer Science\n\nFundamentals of Computer Science (CS 002)\n컴퓨터과학 기초\n\n\n\n\n\n📊 Statistics (PCC)\n\nElementary Statistics (STAT 050)\n기초통계학\n\n\n\n\n🐻 UCLA Statistics & Data Science Major Coursework\n\nProgramming & Applied Statistics\n\nIntroduction to Statistical Programming with R (STATS 20)\nR을 활용한 통계 프로그래밍 입문\nCommunity or Corporate Internships in Statistics (STATS 195)\n통계학 지역사회·기업 인턴십\n\n\n\nProbability, Inference, and Mathematical Statistics\n\nIntroduction to Probability (STATS 100A)\n확률론 입문\nIntroduction to Mathematical Statistics (STATS 100B)\n수리통계학 입문\nLinear Models (STATS 100C)\n선형모형\n\n\n\nRegression, Experiments, and Data Mining\n\nIntroduction to Data Analysis and Regression (STATS 101A)\n데이터 분석 및 회귀분석 입문\nIntroduction to Design and Analysis of Experiments (STATS 101B)\n실험설계 및 분석 입문\nIntroduction to Statistical Models and Data Mining (STATS 101C)\n통계 모형 및 데이터 마이닝 입문\n\n\n\nComputational & Theoretical Methods\n\nIntroduction to Computational Statistics with R (STATS 102A)\nR을 활용한 계산통계학 입문\nIntroduction to Computation and Optimization for Statistics (STATS 102B)\n통계학을 위한 계산 및 최적화 입문\nIntroduction to Monte Carlo Methods (STATS 102C)\n몬테카를로 방법론 입문\n\n\n\nStatistical Consulting\n\nPractice of Statistical Consulting (STATS 140XP)\n통계 컨설팅 실습\nPractice of Statistical Consulting (STATS 141XP)\n통계 컨설팅 실습\n\n\n\nAdvanced Electives\n\nStatistical Models in Finance (STATS C183)\n금융 분야의 통계 모형\nIntroduction to Digital Humanities (DGT HUM 101)\n디지털 인문학 입문"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Kwanhee Yoon",
+    "title": "윤관희 | Kwanhee Yoon",
     "section": "",
-    "text": "Hello, my name is Kwanhee Yoon, and I am currently studying Statistics & Data Science at UCLA. My academic interests focus on statistical modeling, computational methods, and data-driven problem solving. Through upper-division coursework—including probability, mathematical statistics, regression, experimental design, optimization, and Monte Carlo methods—I have built a strong foundation in both the theory and practical applications of modern statistical analysis.\nAlongside my studies, I work as a Data Analyst at Novastar Basketball, where I collect, validate, and refine real-time game statistics. This role has strengthened my skills in data accuracy, analytical workflows, and applied modeling in fast-paced environments. I also support operational infrastructure as an Human Resources Assistant Manager at ASUCLA, improving documentation, inventory processes, and coordination across teams.\nYou can view my full CV below:\nDOWNLOAD cv\n\nEducation\nUniversity of California, Los Angeles (UCLA) | Los Angeles, CA\nB.A. in Statistics & Data Science | Expected 2026\nPasadena City College (PCC) | Pasadena, CA\nAssociate in Science (A.S.) — Natural Sciences | 2020 Feb – 2024 June\n\n\nExperience\nNovastar Basketball | Data Analyst Intern | June 2025 – Present\nASUCLA (UCLA Bookstore – Central Receiving Center) | HumanResources Assistant Manager | June 2024 – Present\nRepublic of Korea Army | Administrative Specialist (HR Clerk) | 2020 Nov – 2022 May\nSOOSUNGSPCITI LTD. | Safety Management Intern | 2018 Dec – 2019 Mar"
+    "text": "안녕하세요, 윤관희(Kwanhee Yoon)입니다.\nUniversity of California, Los Angeles (UCLA)에서 Statistics & Data Science를 전공하고 2026년 3월 졸업했습니다.\nUCLA 재학 중에는 수업과 프로젝트를 통해 통계 분석과 데이터 활용을 공부했습니다. 실제 데이터를 정리하고 분석하며, 통계적 방법을 적용해 결과를 해석하고 시각화하는 경험을 쌓았습니다.\n학업과 함께 대학 유통 운영, 스포츠 통계, AI 개발 지원 등 서로 다른 환경에서 근무하며 다양한 실무 경험을 쌓았습니다.\n이 웹사이트에는 저의 학력과 업무 경험, UCLA에서 진행한 주요 프로젝트를 정리했습니다.\nCV 안내\n현재 CV를 업데이트 중입니다. 최신 버전은 빠른 시일 내 업로드하겠습니다.\n\n학력\nUniversity of California, Los Angeles (UCLA) | Los Angeles, CA\nB.S. in Statistics and Data Science | 2024 Sep – 2026 Mar\nGPA: 3.84 / 4.00\nPasadena City College (PCC) | Pasadena, CA\nA.S. in Natural Sciences | 2020 Feb – 2024 Jun\nGPA: 4.00 / 4.00\n\n\n경력\nAssociated Students UCLA (ASUCLA) | Distribution Center (Operations / Inventory) | 2025 Jun – 2026 Mar\nUCLA Store의 상품 입고 및 재고 관리 업무를 담당했습니다. 인보이스와 품목 코드, 수량 및 단가를 확인하고 전산 등록과 상품 분류를 진행했으며, 수량 불일치·상품 파손·가격 오류가 발견되면 담당 관리자와 확인해 수정했습니다. 지원 인력이 업무를 익힐 수 있도록 카테고리별 업무 안내와 인수인계 방식도 정리했습니다.\nNovastar Basketball, LLC | Statistician Intern | 2025 Aug – 2026 Mar\n경기 전 선수 명단과 출전 정보를 확인하고, 경기 중에는 TurboStats를 활용해 득점·리바운드·어시스트·파울 등의 기록을 실시간으로 입력했습니다. 각 쿼터마다 기록을 교차 검수하고, 경기 후에는 선수별 통계표를 정리해 코치진에 전달했습니다.\nBoundary Remote Subsurface Solutions | Intern, AI Development Team | 2025 Oct – 2026 Feb\nAI 개발팀에서 공개 well log 데이터를 활용한 데이터 정리 업무를 지원했습니다. 필요한 컬럼을 선별하고 이름을 정리했으며, 결측치와 이상치를 확인하고 처리 결과를 요약표와 그래프로 검증했습니다.\nRepublic of Korea Army | Personnel Administration Clerk (HR Clerk) | 2020 Nov – 2022 May\n중대 인사계원으로 약 65명의 간부 및 용사를 대상으로 인사행정 업무를 담당했습니다. 인원 및 인사기록 관리, 휴가 일정 정리, 전입·전출·진급·전역 관련 행정처리, 근무 편성 지원과 각종 인사자료 취합·보고 업무를 수행했습니다.\nSOOSUNGSPCITI LTD. | Safety Management Intern | 2018 Dec – 2019 Mar\n현장 안전관리 업무를 보조하며 작업자의 안전수칙 준수 여부와 보호장비 착용 상태를 확인했습니다. 현장 정리와 자재 이동 등 필요한 작업 지원도 함께 수행했습니다."
+  },
+  {
+    "objectID": "projects/01-project.html",
+    "href": "projects/01-project.html",
+    "title": "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)",
+    "section": "",
+    "text": "English Version →"
+  },
+  {
+    "objectID": "projects/01-project.html#프로젝트-개요",
+    "href": "projects/01-project.html#프로젝트-개요",
+    "title": "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)",
+    "section": "프로젝트 개요",
+    "text": "프로젝트 개요\n분석에서는 풍속(Wind Speed)을 결과값으로 두고 다음 네 가지 기상정보를 활용했습니다.\n\n기온 (Temperature)\n습도 (Humidity)\n가시거리 (Visibility)\n기압 (Pressure)\n\n먼저 네 가지 변수를 모두 포함한 다중선형회귀모형을 만든 뒤, 각 변수가 풍속을 설명하는 데 실제로 도움이 되는지 확인했습니다.\n이후 불필요한 변수를 제외한 더 단순한 모형과 비교하고, 최종 모델의 설명력과 통계적 한계까지 함께 검토했습니다."
+  },
+  {
+    "objectID": "projects/01-project.html#나의-역할",
+    "href": "projects/01-project.html#나의-역할",
+    "title": "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)",
+    "section": "나의 역할",
+    "text": "나의 역할\n프로젝트의 주제 선정, 데이터 전처리, 통계 분석, 최종 보고서 작성을 담당했습니다.\n분석에 사용할 데이터를 정리하고 다중선형회귀모형을 구축해 결과를 해석했으며, 모형 비교와 진단 결과, 분석의 한계를 최종 보고서에 정리했습니다."
+  },
+  {
+    "objectID": "projects/01-project.html#어떻게-분석했는가",
+    "href": "projects/01-project.html#어떻게-분석했는가",
+    "title": "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)",
+    "section": "어떻게 분석했는가",
+    "text": "어떻게 분석했는가\n\n1. 네 가지 기상 변수를 모두 포함한 모델 구축\n먼저 Temperature, Humidity, Visibility, Pressure를 모두 사용해 풍속을 설명하는 회귀모형을 만들었습니다.\n분석 결과, 다중회귀모형에서는 Temperature, Humidity, Pressure가 풍속과 통계적으로 유의한 관계를 보였지만, Visibility는 그렇지 않았습니다.\n\n\n2. Visibility가 정말 필요한지 확인\nVisibility가 모델에 필요한 변수인지 확인하기 위해 Visibility를 포함한 모델과 제외한 모델을 비교했습니다.\nPartial F-test 결과 p-value가 0.6459로 나타나, Visibility를 제외하더라도 모델의 설명력이 유의미하게 나빠지지 않는다고 판단했습니다.\n따라서 최종적으로는 Visibility를 제외하고 Temperature, Humidity, Pressure를 사용하는 모델을 선택했습니다.\n\n\n3. 모델이 통계적으로 적절한지 확인\n모델을 선택한 뒤에는 결과만 보는 데서 끝내지 않고, 잔차 그래프와 여러 검정 방법을 이용해 모델의 가정을 확인했습니다.\n또한 변수끼리 지나치게 비슷한 정보를 제공하고 있는지도 VIF(Variance Inflation Factor)를 이용해 점검했습니다."
+  },
+  {
+    "objectID": "projects/01-project.html#주요-결과",
+    "href": "projects/01-project.html#주요-결과",
+    "title": "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)",
+    "section": "주요 결과",
+    "text": "주요 결과\n최종 모델은 다음 세 가지 변수를 사용했습니다.\nTemperature · Humidity · Pressure\n이 모델은 풍속 변화의 약 18%를 설명했습니다.\n즉, 세 가지 기상정보가 풍속과 일정한 관계를 보이기는 했지만, 이 변수들만으로 풍속의 대부분을 설명하기에는 한계가 있었습니다.\n최종 회귀식은 다음과 같습니다.\nWind Speed = 282.486\n− 0.295(Temperature)\n− 17.426(Humidity)\n− 0.251(Pressure)"
+  },
+  {
+    "objectID": "projects/01-project.html#모델-진단에서-확인한-점",
+    "href": "projects/01-project.html#모델-진단에서-확인한-점",
+    "title": "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)",
+    "section": "모델 진단에서 확인한 점",
+    "text": "모델 진단에서 확인한 점\n잔차는 전반적으로 일정한 패턴 없이 분포했지만, 예측값이 커지는 일부 구간에서 잔차의 퍼짐도 커지는 모습이 나타났습니다.\nBreusch–Pagan test에서도 매우 작은 p-value가 나타나 잔차의 분산이 일정하지 않은 이분산성(heteroscedasticity)이 모델의 한계 중 하나임을 확인했습니다.\n반면 VIF는 모든 변수에서 2 미만으로 나타나, 변수들 사이의 심각한 다중공선성 문제는 확인되지 않았습니다.\nResiduals vs. Leverage Plot에서도 모델 결과를 크게 왜곡할 정도의 뚜렷한 영향점은 확인되지 않았습니다."
+  },
+  {
+    "objectID": "projects/01-project.html#다른-방법도-검토했습니다",
+    "href": "projects/01-project.html#다른-방법도-검토했습니다",
+    "title": "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)",
+    "section": "다른 방법도 검토했습니다",
+    "text": "다른 방법도 검토했습니다\n모델을 개선할 수 있는지 확인하기 위해 Box-Cox transformation을 적용한 대안 모델도 검토했습니다.\n그러나 변환 후 Adjusted R²가 소폭 감소했고, Q-Q Plot의 일부 구간에서 새로운 편차가 나타났습니다.\n모델을 더 복잡하게 만드는 것에 비해 성능 개선이 크지 않다고 판단해, 최종적으로는 변환하지 않은 reduced model을 유지했습니다."
+  },
+  {
+    "objectID": "projects/01-project.html#프로젝트의-한계",
+    "href": "projects/01-project.html#프로젝트의-한계",
+    "title": "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)",
+    "section": "프로젝트의 한계",
+    "text": "프로젝트의 한계\n이 프로젝트를 통해 통계적으로 의미 있는 관계를 찾는 것과 높은 예측력을 확보하는 것은 다른 문제라는 점도 확인했습니다.\n이번 분석에는 제한된 수의 기상 변수만 사용했습니다.\n또한 날짜 정보를 모델에 포함하지 않아 계절에 따른 풍속의 변화를 충분히 반영하지 못했습니다.\nWind Bearing과 같이 풍속과 관련될 수 있는 다른 변수들도 최종 분석에 포함하지 않았습니다.\n따라서 R²가 약 0.18에 머문 것은 현재 모델에 포함되지 않은 여러 요인이 풍속 변화에 영향을 주고 있기 때문일 가능성이 있습니다."
+  },
+  {
+    "objectID": "projects/01-project.html#사용한-분석-방법",
+    "href": "projects/01-project.html#사용한-분석-방법",
+    "title": "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)",
+    "section": "사용한 분석 방법",
+    "text": "사용한 분석 방법\n\nMultiple Linear Regression\nFull Model / Reduced Model 비교\nPartial F-test\nResidual Diagnostics\nVariance Inflation Factor (VIF)\nBreusch–Pagan Test\nBox-Cox Transformation"
+  },
+  {
+    "objectID": "projects/01-project.html#전체-프로젝트-보고서",
+    "href": "projects/01-project.html#전체-프로젝트-보고서",
+    "title": "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)",
+    "section": "전체 프로젝트 보고서",
+    "text": "전체 프로젝트 보고서\n전체 보고서에서는 데이터 탐색부터 회귀모형 구축, 모형 비교, 잔차 진단, 변수 선택, transformation 검토, 분석 결과와 한계를 보다 자세히 확인할 수 있습니다.\n📄 전체 프로젝트 보고서 보기 (PDF)"
   },
   {
     "objectID": "projects/02-project.html",
     "href": "projects/02-project.html",
-    "title": "Project 2 — How Music Influences Physical Performance (STATS 101B)",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
     "section": "",
-    "text": "Can music actually change your physical performance — even when everything else is held constant?\nTo answer this, we designed a controlled experiment using a\nRandomized Complete Block Design (RCBD) where participants performed a strength task\nunder five different music genres:\n🎻 Classical  🎧 Pop  🎸 Rock  🎷 Jazz  🎤 Hip-hop\nEach participant experienced every genre, allowing us to isolate the pure effect of music\non physical performance while blocking for age differences.\nThis project explores whether the rhythm, intensity, or emotional tone of music\ncan meaningfully improve (or impair) measurable strength output."
+    "text": "English Version →"
   },
   {
-    "objectID": "projects/02-project.html#overview",
-    "href": "projects/02-project.html#overview",
-    "title": "Project 2 — How Music Influences Physical Performance (STATS 101B)",
+    "objectID": "projects/02-project.html#the-islands란",
+    "href": "projects/02-project.html#the-islands란",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "The Islands란?",
+    "text": "The Islands란?\nThe Islands는 University of Queensland에서 개발한 가상 인구 기반 학습 환경입니다.\nIronbard, Providence, Bonne Santé라는 세 개의 가상 섬에 가상의 주민들이 거주하며, 학생들은 이 인구를 대상으로 표본을 추출하고 다양한 실험을 설계해 데이터를 수집할 수 있습니다.\n이번 프로젝트에서는 이 가상 환경을 활용해 참가자를 직접 선정하고 음악 조건에 따른 운동 수행 데이터를 수집했습니다."
+  },
+  {
+    "objectID": "projects/02-project.html#프로젝트-개요",
+    "href": "projects/02-project.html#프로젝트-개요",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "프로젝트 개요",
+    "text": "프로젝트 개요\n단기 근력 수행은 2kg 무게로 30초 동안 수행한 arm curl 횟수로 측정했습니다.\n비교한 음악 조건은 다음 다섯 가지였습니다.\n\nClassical\nCountry\nDance\nHeavy Metal\nNo Music\n\n사람마다 기본적인 근력 수준이 다르고, 특히 연령에 따른 신체 능력 차이가 결과에 영향을 줄 수 있기 때문에 참가자를 다음 다섯 연령대로 구분했습니다.\n\n18–24세\n25–31세\n32–38세\n39–45세\n46–52세\n\n총 175명의 가상 남성 참가자를 표본으로 구성했으며, 각 연령대에는 35명이 포함되었습니다."
+  },
+  {
+    "objectID": "projects/02-project.html#데이터를-어떻게-만들었는가",
+    "href": "projects/02-project.html#데이터를-어떻게-만들었는가",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "데이터를 어떻게 만들었는가",
+    "text": "데이터를 어떻게 만들었는가\n이 프로젝트에서는 이미 완성된 CSV 파일을 받아 분석한 것이 아니라, 표본을 선정하는 단계부터 직접 진행했습니다.\n보고서에 정한 무작위 추출 절차에 따라 먼저 Ironbard, Providence, Bonne Santé 중 하나의 섬을 무작위로 선택하고, 해당 섬 안에서 다시 도시를 선택했습니다.\n그다음 필요한 연령대에 해당하는 가상 주민들 가운데 무작위로 참가자를 선정했습니다.\n이 과정을 반복해 분석에 사용할 표본을 구성하고, The Islands에서 실험 조건에 따른 결과를 하나씩 확인해 Excel에 직접 입력하고 정리해 데이터셋을 만들었습니다."
+  },
+  {
+    "objectID": "projects/02-project.html#나의-역할",
+    "href": "projects/02-project.html#나의-역할",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "나의 역할",
+    "text": "나의 역할\n이 프로젝트는 팀 프로젝트로 진행되었습니다.\n저는 가상 실험 데이터 수집 및 Excel 정리, 통계 분석 일부, 결과 해석 및 최종 보고서 작성을 담당했습니다.\n표본추출 절차에 따라 가상 참가자들의 실험 결과를 하나씩 수집하고 분석에 사용할 수 있도록 데이터를 정리했습니다.\n이후 팀원들과 분석 역할을 나누어 제가 담당한 통계 분석을 수행하고, 그 결과와 해석을 최종 보고서에 정리했습니다."
+  },
+  {
+    "objectID": "projects/02-project.html#왜-연령을-따로-고려했는가",
+    "href": "projects/02-project.html#왜-연령을-따로-고려했는가",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "왜 연령을 따로 고려했는가",
+    "text": "왜 연령을 따로 고려했는가\n가장 궁금했던 것은 음악 장르가 운동 수행에 영향을 주는가였습니다.\n하지만 연령에 따라 기본적인 신체 능력이 다르면, 음악 장르의 영향과 참가자 자체의 차이를 구분하기 어려워집니다.\n그래서 이 프로젝트에서는 Randomized Complete Block Design (RCBD)을 사용하고 연령대를 blocking factor로 설정했습니다.\n쉽게 말하면, 연령 차이로 발생할 수 있는 변동은 따로 고려한 상태에서 음악 장르가 추가적인 차이를 만드는지를 살펴본 것입니다."
+  },
+  {
+    "objectID": "projects/02-project.html#주요-결과",
+    "href": "projects/02-project.html#주요-결과",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "주요 결과",
+    "text": "주요 결과\n분석 결과, 음악 장르에 따른 arm curl 수행 차이는 통계적으로 유의하지 않았습니다.\nANOVA에서 음악 장르의 p-value는 0.933이었습니다.\n즉, 이번 실험에서는 Classical, Country, Dance, Heavy Metal, No Music 중 어떤 조건이 단기 근력 수행을 더 높이거나 낮춘다고 판단할 만큼 충분한 통계적 근거를 찾지 못했습니다.\n반면 연령대에 따른 수행 차이는 음악 장르에 따른 차이보다 훨씬 뚜렷하게 나타났습니다.\n이는 이번 데이터에서는 음악 장르보다 참가자의 연령과 같은 개인적 특성이 운동 수행 차이를 설명하는 데 더 중요한 요인으로 나타났음을 의미합니다."
+  },
+  {
+    "objectID": "projects/02-project.html#특정-음악끼리는-차이가-있었을까",
+    "href": "projects/02-project.html#특정-음악끼리는-차이가-있었을까",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "특정 음악끼리는 차이가 있었을까?",
+    "text": "특정 음악끼리는 차이가 있었을까?\n전체적인 음악 장르 효과가 유의하지 않더라도, 특정 장르 두 개를 비교하면 차이가 있을 가능성을 확인하기 위해 Tukey pairwise comparison을 실시했습니다.\n그러나 음악 장르 간 어떤 조합에서도 통계적으로 유의한 차이는 발견되지 않았습니다.\nDance가 포함된 일부 비교에서는 다른 장르 조합보다 상대적으로 낮은 p-value가 나타났지만, 통계적 유의수준에는 도달하지 못했습니다.\n따라서 이를 “Dance가 운동 수행을 높였다”는 결과로 해석하지 않았습니다.\n다만 더 큰 표본이나 다른 실험 조건에서 추가로 확인해볼 수 있는 관찰 정도로 남겼습니다."
+  },
+  {
+    "objectID": "projects/02-project.html#분석-결과를-믿을-수-있는지도-확인했습니다",
+    "href": "projects/02-project.html#분석-결과를-믿을-수-있는지도-확인했습니다",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "분석 결과를 믿을 수 있는지도 확인했습니다",
+    "text": "분석 결과를 믿을 수 있는지도 확인했습니다\nANOVA 결과를 해석하기 전에 분석에 필요한 주요 가정이 크게 위반되지 않았는지도 확인했습니다.\nNormal Q-Q Plot에서는 대부분의 잔차가 기준선에 가까이 위치했습니다.\n꼬리 부분에서 일부 차이는 있었지만, 보고서에서는 정규성 가정을 심각하게 위반할 정도는 아니라고 판단했습니다.\nResiduals vs. Fitted Plot에서도 잔차가 특정 방향으로 계속 커지거나 뚜렷한 곡선 형태를 보이지 않았습니다.\n따라서 이번 데이터에서는 등분산성과 정규성에 큰 문제가 없다고 판단했습니다."
+  },
+  {
+    "objectID": "projects/02-project.html#추가-분석",
+    "href": "projects/02-project.html#추가-분석",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "추가 분석",
+    "text": "추가 분석\n음악 장르와 연령대를 함께 포함한 선형모형도 확인했습니다.\n음악 장르의 개별 coefficient들은 기준 음악 조건과 비교했을 때 모두 통계적으로 유의하지 않았습니다.\n이는 앞선 ANOVA 결과와 동일하게, 특정 음악 장르가 단기 arm curl 수행을 바꾼다는 뚜렷한 근거를 찾지 못했다는 결과입니다.\n음악 장르와 연령대를 함께 포함한 모델의 Adjusted R²는 약 0.435였습니다.\n다만 이 값을 “음악이 수행의 43.5%를 설명했다”고 해석해서는 안 됩니다.\n이 값은 음악 장르와 연령대를 함께 포함한 전체 모델의 설명력이며, 실제 분석에서는 음악 장르보다 연령대에 따른 차이가 훨씬 뚜렷했습니다."
+  },
+  {
+    "objectID": "projects/02-project.html#이-프로젝트에서-확인한-점",
+    "href": "projects/02-project.html#이-프로젝트에서-확인한-점",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "이 프로젝트에서 확인한 점",
+    "text": "이 프로젝트에서 확인한 점\n처음에는 특정 음악 장르가 운동 수행을 높일 가능성을 예상했습니다.\n하지만 실제 분석에서는 그 가설을 뒷받침할 충분한 근거를 찾지 못했습니다.\n대신 참가자 간 신체적 차이, 특히 연령에 따른 차이가 더 크게 나타났습니다.\n이 프로젝트를 통해 처음 예상한 결과와 다른 결과가 나오는 것 역시 중요한 분석 결과라는 점을 배웠습니다.\n유의하지 않은 결과를 억지로 의미 있는 차이처럼 해석하기보다, 데이터가 실제로 보여주는 결과를 그대로 받아들이고 왜 그런 결과가 나왔는지 다른 변동 요인과 한계를 함께 살펴보는 것이 중요했습니다."
+  },
+  {
+    "objectID": "projects/02-project.html#프로젝트의-한계",
+    "href": "projects/02-project.html#프로젝트의-한계",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "프로젝트의 한계",
+    "text": "프로젝트의 한계\n연령을 blocking factor로 사용했지만, 같은 연령대 안에서도 신체 능력은 크게 다를 수 있습니다.\n이번 실험에서는 다음과 같은 요소를 충분히 통제하지 못했습니다.\n\n평소 운동량\n육체적으로 힘든 직업 여부\n건강 상태\n당일 컨디션\n최근 질병 또는 회복 상태\n\n따라서 연령만으로 참가자 간 신체 능력의 차이를 완전히 설명하기에는 한계가 있었습니다.\n또한 이번 표본은 18–52세 남성으로 제한되어 있기 때문에, 결과를 모든 연령과 성별에 그대로 일반화하는 데에도 주의가 필요합니다."
+  },
+  {
+    "objectID": "projects/02-project.html#사용한-분석-방법",
+    "href": "projects/02-project.html#사용한-분석-방법",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "사용한 분석 방법",
+    "text": "사용한 분석 방법\n\nRandomized Complete Block Design (RCBD)\nMulti-stage Random Sampling\nPower Analysis\nAnalysis of Variance (ANOVA)\nLinear Model\nResidual Diagnostics\nTukey HSD Pairwise Comparison\nExcel을 활용한 데이터 수집 및 정리"
+  },
+  {
+    "objectID": "projects/02-project.html#전체-프로젝트-보고서",
+    "href": "projects/02-project.html#전체-프로젝트-보고서",
+    "title": "Project 2 — 운동 전 음악 장르가 단기 근력 수행에 영향을 미칠까? (STATS 101B)",
+    "section": "전체 프로젝트 보고서",
+    "text": "전체 프로젝트 보고서\n전체 보고서에서는 표본 선정 과정, 실험 설계, Power Analysis, ANOVA 결과, 잔차 진단, 선형모형과 Tukey 비교, 연구의 한계를 보다 자세히 확인할 수 있습니다.\n📄 전체 프로젝트 보고서 보기 (PDF)"
+  },
+  {
+    "objectID": "projects/03-project.html",
+    "href": "projects/03-project.html",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
     "section": "",
-    "text": "Can music actually change your physical performance — even when everything else is held constant?\nTo answer this, we designed a controlled experiment using a\nRandomized Complete Block Design (RCBD) where participants performed a strength task\nunder five different music genres:\n🎻 Classical  🎧 Pop  🎸 Rock  🎷 Jazz  🎤 Hip-hop\nEach participant experienced every genre, allowing us to isolate the pure effect of music\non physical performance while blocking for age differences.\nThis project explores whether the rhythm, intensity, or emotional tone of music\ncan meaningfully improve (or impair) measurable strength output."
+    "text": "English Version →"
   },
   {
-    "objectID": "projects/02-project.html#key-findings-at-a-glance",
-    "href": "projects/02-project.html#key-findings-at-a-glance",
-    "title": "Project 2 — How Music Influences Physical Performance (STATS 101B)",
-    "section": "Key Findings at a Glance",
-    "text": "Key Findings at a Glance\n\n🎵 1. Yes — Music does influence physical performance\nOur ANOVA results showed a statistically significant difference in mean performance across genres.\nNot all music is equal — some genres consistently boosted reps, others held people back.\n\n\n👥 2. Age matters too\nAge group (used as a blocking factor) was also significant.\nThat means different age ranges responded differently to the same music —\na fascinating interaction that the full report explores in detail.\n\n\n⬆ 3. Which genres performed best?\nTukey HSD pairwise tests revealed surprising contrasts.\nSome music types that participants expected to be energizing… were not.\nOthers quietly outperformed the rest.\n(Full rankings and statistical comparisons are in the PDF!)\n\n\n📈 4. Strong model diagnostics\nOur RCBD model passed all major assumption checks:\n\nResiduals were approximately normal\n\nVariance was stable across treatments\n\nNo signs of influential outliers\n\nThis means the conclusions are statistically reliable — not noise."
+    "objectID": "projects/03-project.html#프로젝트-개요",
+    "href": "projects/03-project.html#프로젝트-개요",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "프로젝트 개요",
+    "text": "프로젝트 개요\n보고서에 따르면 주요 설명변수는 U.S. Census Bureau의 인구 및 교육 관련 추정치를 기반으로 했습니다.\n문제는 카운티마다 인구 규모가 크게 다르다는 점이었습니다.\n예를 들어 한 카운티에서 특정 연령대가 100,000명이고 다른 카운티에서는 10,000명이라고 하더라도, 그 숫자만으로는 두 지역의 인구 구성이 실제로 얼마나 다른지 공정하게 비교하기 어렵습니다.\n따라서 팀은 많은 인구 관련 원자료를 각 카운티의 전체 인구 또는 해당 하위집단의 인구로 나누어 비율 형태의 변수로 변환했습니다.\n이를 통해 단순한 인구 규모의 차이보다 각 카운티의 인구 구성이 어떻게 다른지를 모델이 활용하도록 했습니다."
   },
   {
-    "objectID": "projects/02-project.html#why-you-might-want-to-read-the-full-report",
-    "href": "projects/02-project.html#why-you-might-want-to-read-the-full-report",
-    "title": "Project 2 — How Music Influences Physical Performance (STATS 101B)",
-    "section": "Why you might want to read the full report",
-    "text": "Why you might want to read the full report\nThe complete PDF answers questions like:\n\nWhich specific genre produced the highest mean performance?\n\nHow large were the differences? Small? Moderate? Dramatic?\n\nDid older and younger participants react to music in the same way?\n\nWere the results driven by rhythm, intensity, or something else?\n\nHow certain are we statistically — what do the confidence intervals say?\n\nIt also includes:\n\nFull ANOVA tables\n\nTukey HSD comparison plots\n\nDiagnostic visuals (Residual plots, Q-Q plots, etc.)\n\nDetailed interpretation + limitations\n\nDiscussion about psychological + physiological explanations\n\nThis is not just a stats report — it’s a surprising story about how humans respond to sound."
+    "objectID": "projects/03-project.html#먼저-데이터를-살펴봤습니다",
+    "href": "projects/03-project.html#먼저-데이터를-살펴봤습니다",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "먼저 데이터를 살펴봤습니다",
+    "text": "먼저 데이터를 살펴봤습니다\n모델을 만들기 전에 각 변수의 분포와 카운티 간 차이를 확인했습니다.\n원자료의 여러 변수는 오른쪽으로 길게 치우친 right-skewed distribution을 보였습니다.\n또한 raw count로 연령대별 인구를 비교했을 때는 대도시와 작은 카운티의 규모 차이가 너무 커 변수 자체를 직접 비교하기 어려웠습니다.\n비율로 변환한 뒤에는 카운티의 규모보다는 각 연령대가 전체 인구에서 차지하는 비중을 비교할 수 있었습니다."
   },
   {
-    "objectID": "projects/02-project.html#want-the-full-analysis",
-    "href": "projects/02-project.html#want-the-full-analysis",
-    "title": "Project 2 — How Music Influences Physical Performance (STATS 101B)",
-    "section": "📄 Want the full analysis?",
-    "text": "📄 Want the full analysis?\nAll results, plots, explanations, and model comparisons are available in the full PDF.\n👉 Click here to download the complete report"
+    "objectID": "projects/03-project.html#한-가지-변수만으로는-충분하지-않았습니다",
+    "href": "projects/03-project.html#한-가지-변수만으로는-충분하지-않았습니다",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "한 가지 변수만으로는 충분하지 않았습니다",
+    "text": "한 가지 변수만으로는 충분하지 않았습니다\n각 predictor와 선거 결과 사이의 관계도 확인했습니다.\nbinary outcome과 연속형 변수 사이의 관계를 측정하는 point-biserial correlation을 계산한 결과, 어떤 변수도 target과의 상관계수가 0.5를 넘지 않았습니다.\n즉, 특정 변수 하나만으로 두 county class를 뚜렷하게 구분하기보다는 여러 인구·교육 특성을 함께 고려할 필요가 있었습니다.\n그래서 일부 변수만 선택하기보다 여러 predictor를 함께 사용하는 분류모델을 비교했습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#class-imbalance도-확인했습니다",
+    "href": "projects/03-project.html#class-imbalance도-확인했습니다",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "Class Imbalance도 확인했습니다",
+    "text": "Class Imbalance도 확인했습니다\n학습 데이터에는 두 class의 수가 동일하지 않았습니다.\n보고서의 EDA에서는\n\nBiden-winning counties: 389\nTrump-winning counties: 1,942\n\n로 나타났습니다.\n팀은 oversampling이나 undersampling으로 class distribution을 인위적으로 바꾸지 않고, 원래의 분포를 유지한 상태에서 모델을 학습하기로 했습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#두-가지-전처리-방법을-비교했습니다",
+    "href": "projects/03-project.html#두-가지-전처리-방법을-비교했습니다",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "두 가지 전처리 방법을 비교했습니다",
+    "text": "두 가지 전처리 방법을 비교했습니다\n같은 모델이라도 데이터를 어떻게 준비하느냐에 따라 성능이 달라질 수 있기 때문에 두 개의 preprocessing recipe를 만들었습니다.\n\n1. Generic Recipe\n첫 번째 방법에서는 여러 인구 관련 count를 전체 인구 또는 해당 subgroup의 인구로 나누어 비율로 변환했습니다.\n또한 2016년과 2020년 사이의 income per capita와 GDP growth 변수를 계산하고, 일부 불필요한 identifier와 total column을 제거했습니다.\n결측값이 있는 numeric predictor는 median으로 대체했습니다.\n\n\n2. Log Recipe\n두 번째 방법은 Generic Recipe에\n\nlog transformation\nstandardization\n\n을 추가했습니다.\nEDA에서 많은 변수가 오른쪽으로 치우쳐 있었기 때문에, 이러한 변환이 Logistic Regression이나 KNN처럼 변수의 분포나 거리의 영향을 받는 모델에 도움이 되는지 확인했습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#세-가지-머신러닝-모델을-비교했습니다",
+    "href": "projects/03-project.html#세-가지-머신러닝-모델을-비교했습니다",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "세 가지 머신러닝 모델을 비교했습니다",
+    "text": "세 가지 머신러닝 모델을 비교했습니다\n프로젝트에서는 세 가지 분류모델을 사용했습니다.\n\nLogistic Regression\n여러 변수와 결과 사이의 관계를 비교적 단순한 형태로 모델링하는 방법입니다.\n복잡한 모델과 비교하기 위한 baseline 역할도 할 수 있습니다.\n\n\nK-Nearest Neighbors (KNN)\n새로운 카운티와 특성이 비슷한 주변 카운티들을 찾아 그들의 class를 바탕으로 결과를 분류하는 방식입니다.\n\n\nXGBoost\n여러 개의 decision tree를 순서대로 만들면서 앞선 tree가 잘못 분류한 부분을 다음 tree가 계속 보완하는 boosting 방식입니다.\n보다 복잡하고 비선형적인 패턴을 포착할 수 있다는 특징이 있습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#모델을-어떻게-비교했는가",
+    "href": "projects/03-project.html#모델을-어떻게-비교했는가",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "모델을 어떻게 비교했는가",
+    "text": "모델을 어떻게 비교했는가\n한 번의 train/test split 결과만으로 모델을 선택하지 않았습니다.\nTraining data를 다섯 부분으로 나누는 5-fold cross-validation을 사용했습니다.\n쉽게 말하면, 다섯 부분 중 네 부분으로 학습하고 남은 한 부분으로 평가하는 과정을 평가 대상 부분을 바꿔가며 반복하는 방식입니다.\n또한 winner class의 비율이 각 fold에서 크게 달라지지 않도록 stratified cross-validation을 사용했습니다.\n모델 선택의 주된 지표는 ROC-AUC였습니다.\nROC-AUC는 모델이 두 class를 얼마나 잘 구분하는지를 평가하는 지표이며, 값이 1에 가까울수록 구분 성능이 높습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#모델-비교-결과",
+    "href": "projects/03-project.html#모델-비교-결과",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "모델 비교 결과",
+    "text": "모델 비교 결과\n\n\n\nWorkflow\nCross-validated ROC-AUC\n\n\n\n\nGeneric XGBoost\n0.973\n\n\nLog XGBoost\n0.973\n\n\nGeneric KNN\n0.960\n\n\nLog KNN\n0.959\n\n\nGeneric Logistic Regression\n0.959\n\n\nLog Logistic Regression\n0.966\n\n\n\n가장 높은 ROC-AUC는 Generic XGBoost와 Log XGBoost가 동일하게 약 0.973을 기록했습니다.\n즉, log transformation을 추가한다고 해서 XGBoost의 성능이 개선되지는 않았습니다.\n따라서 팀은 동일한 수준의 성능을 내면서 전처리 과정이 더 단순한 Generic XGBoost를 최종 workflow로 선택했습니다.\n선택된 XGBoost configuration은 889개의 trees, tree depth 4, minimum observations per node 2였습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#새로운-데이터에서도-성능을-확인했습니다",
+    "href": "projects/03-project.html#새로운-데이터에서도-성능을-확인했습니다",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "새로운 데이터에서도 성능을 확인했습니다",
+    "text": "새로운 데이터에서도 성능을 확인했습니다\nCross-validation만으로 평가를 끝내지 않고, training data를 다시 80:20으로 나누어 추가적인 hold-out evaluation도 진행했습니다.\n이 80/20 hold-out split에서 Generic XGBoost의 accuracy는 약 0.944였습니다.\n이는 cross-validation 외의 별도 subset에서도 높은 분류 정확도를 보였다는 의미입니다.\n다만 full training data에 다시 fitting했을 때는 training accuracy가 1.000으로 나타났습니다.\nTraining data에서는 완벽하게 맞추지만 새로운 데이터에서는 그보다 성능이 낮다는 점 때문에, 팀은 overfitting 가능성도 함께 검토했습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#높은-성능만-보고-끝내지-않았습니다",
+    "href": "projects/03-project.html#높은-성능만-보고-끝내지-않았습니다",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "높은 성능만 보고 끝내지 않았습니다",
+    "text": "높은 성능만 보고 끝내지 않았습니다\n모델의 실제 일반화 성능에는 추가적인 주의가 필요했습니다.\n보고서에 따르면 Kaggle private leaderboard가 공개된 뒤 팀의 순위는 1위에서 11위로 내려갔습니다.\nCross-validation과 내부 hold-out에서는 높은 성능을 보였지만, 새로운 hidden test data에서는 같은 수준의 성능이 그대로 유지되지 않았던 것입니다.\n팀은 이를 통해 특정 train/test split에 따른 영향과 XGBoost의 overfitting 가능성을 다시 검토했습니다.\n보고서에서는 향후에는 보다 다양한 hyperparameter 탐색과 여러 모델을 결합한 ensemble 방식이 더 안정적인 선택이 될 가능성도 언급했습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#나의-역할",
+    "href": "projects/03-project.html#나의-역할",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "나의 역할",
+    "text": "나의 역할\n이 프로젝트는 5명이 함께한 팀 프로젝트였습니다.\n팀 기여 기록에 따르면 저는 Model Selection 및 Hyperparameter Tuning을 담당했고, 최종 보고서 작성에도 참여했습니다.\nLogistic Regression, KNN, XGBoost와 두 가지 preprocessing recipe를 조합한 workflow들의 cross-validation 결과를 비교하고, 각 모델의 tuning 결과를 검토해 최종 모델을 선택하는 과정에 참여했습니다.\n또한 모델 성능과 한계를 해석하고 그 내용을 팀원들과 함께 최종 보고서에 정리했습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#이-프로젝트에서-중요했던-점",
+    "href": "projects/03-project.html#이-프로젝트에서-중요했던-점",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "이 프로젝트에서 중요했던 점",
+    "text": "이 프로젝트에서 중요했던 점\n처음에는 높은 ROC-AUC와 hold-out accuracy를 통해 XGBoost가 매우 안정적인 모델처럼 보였습니다.\n하지만 training accuracy가 1.000이었고, Kaggle private leaderboard에서는 성능이 기대만큼 유지되지 않았습니다.\n이를 통해 모델을 평가할 때 가장 높은 숫자 하나만 보는 것으로는 충분하지 않다는 점을 확인했습니다.\nCross-validation, hold-out evaluation, training performance, 새로운 test data에서의 결과를 함께 확인해야 모델이 실제로 얼마나 안정적으로 일반화되는지 판단할 수 있었습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#프로젝트의-한계",
+    "href": "projects/03-project.html#프로젝트의-한계",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "프로젝트의 한계",
+    "text": "프로젝트의 한계\n이 프로젝트에도 몇 가지 한계가 있었습니다.\n첫째, 각 workflow의 hyperparameter tuning에서 10개의 candidate configuration만 탐색했습니다.\n따라서 더 넓은 범위를 탐색했다면 다른 설정이 더 좋은 결과를 냈을 가능성이 있습니다.\n둘째, 최종 workflow를 주로 ROC-AUC를 기준으로 선택했습니다.\n보고서에서도 accuracy나 Brier score와 같은 다른 평가 지표를 함께 고려했다면 모델을 보다 다양한 관점에서 평가할 수 있었다고 지적했습니다.\n셋째, training accuracy가 1.000이었던 점과 private leaderboard 성능 변화는 최종 XGBoost 모델의 generalization에 추가적인 검증이 필요했음을 보여줬습니다."
+  },
+  {
+    "objectID": "projects/03-project.html#사용한-분석-방법-및-도구",
+    "href": "projects/03-project.html#사용한-분석-방법-및-도구",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "사용한 분석 방법 및 도구",
+    "text": "사용한 분석 방법 및 도구\n\nR\ntidyverse\ntidymodels\nworkflowsets\nLogistic Regression\nK-Nearest Neighbors (KNN)\nXGBoost\n5-Fold Stratified Cross-Validation\nHyperparameter Tuning\nROC-AUC\nHold-out Evaluation\nLog Transformation\nStandardization\nMedian Imputation\nFeature Engineering\nKaggle Submission Workflow"
+  },
+  {
+    "objectID": "projects/03-project.html#전체-프로젝트-보고서",
+    "href": "projects/03-project.html#전체-프로젝트-보고서",
+    "title": "Project 3 — 인구·교육 데이터를 활용한 2020 미국 대선 카운티 승자 분류 (STATS 101C)",
+    "section": "전체 프로젝트 보고서",
+    "text": "전체 프로젝트 보고서\n전체 보고서에서는 Exploratory Data Analysis, 전처리 과정, 여섯 개 workflow 비교, cross-validation, hyperparameter tuning, ROC curve, hold-out evaluation, overfitting에 대한 논의와 전체 R code를 확인할 수 있습니다.\n📄 전체 프로젝트 보고서 보기 (PDF)"
   },
   {
     "objectID": "projects/04-project.html",
     "href": "projects/04-project.html",
-    "title": "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)(STATS 101C)",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
     "section": "",
-    "text": "This project predicts monthly Amazon spending (log_total) for each\nstate × year × month from 2018–2022, using survey data and order records\nfrom about 5,000 Amazon customers. The response is modeled on the log10 scale,\nand the main predictors include:\n\nTime and geography (year, month, state)\nCustomer demographics (age, income, gender, household counts, etc.)\nCustomer engagement (Amazon usage by customer and household)\nEngineered features from order-level data:\n\nmonth_est: estimated monthly spending from category means\nmonth_var_ratio: price stability score for categories\nbin1_count–bin5_count: counts of items by price tier\nmonth_est_low_var: spending using only low-variance categories\n\n\nThese features are aggregated into train_expanded and test_expanded to\npredict state-level monthly sales across 2018–2022."
+    "text": "English Version →"
   },
   {
-    "objectID": "projects/04-project.html#overview",
-    "href": "projects/04-project.html#overview",
-    "title": "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)(STATS 101C)",
+    "objectID": "projects/04-project.html#프로젝트에-어떤-정보가-있었는가",
+    "href": "projects/04-project.html#프로젝트에-어떤-정보가-있었는가",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "프로젝트에 어떤 정보가 있었는가",
+    "text": "프로젝트에 어떤 정보가 있었는가\n기본 데이터에는 크게 세 종류의 정보가 포함되어 있었습니다.\n첫째는 시간과 지역 정보입니다.\n\nYear\nMonth\nState\n\n둘째는 고객 특성과 Amazon 이용 관련 정보입니다.\n보고서에는 성별, 연령, 소득, 고객 및 가구 관련 count, Amazon 이용 관련 변수 등이 포함되어 있다고 설명되어 있습니다.\n셋째는 별도의 amazon_order_details 데이터에 포함된 상세 주문 정보입니다.\n이 데이터에는 상품 category, 상품 단가, 구매수량, 주문 날짜 등이 포함되어 있었습니다.\n팀은 이 상세 주문 데이터를 활용해 기존 main dataset에는 없던 새로운 predictor를 만들었습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#상세-주문-데이터에서-새로운-predictor를-만들었습니다",
+    "href": "projects/04-project.html#상세-주문-데이터에서-새로운-predictor를-만들었습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "상세 주문 데이터에서 새로운 predictor를 만들었습니다",
+    "text": "상세 주문 데이터에서 새로운 predictor를 만들었습니다\n팀은 먼저 상품 category별 평균 가격과 가격 변동성을 계산했습니다.\n이후 주문 데이터를 state × year × month 단위로 다시 집계해 추가 predictor를 만들었습니다.\n\nmonth_est\n상품 category의 평균 가격과 구매수량을 이용해 만든 월별 지출 추정치입니다.\n실제 구현에서는 각 category의 평균 가격인 cat_mean과 구매수량 quantity를 곱한 뒤, 해당 state-year-month의 값을 합산했습니다.\n즉, 실제 총지출을 그대로 predictor로 사용하는 것이 아니라, category별 평균가격을 이용해 별도의 추정값을 만든 것입니다.\n\n\nmonth_var_ratio\n각 상품 category에 대해\n가격 분산 ÷ 평균 가격\n을 계산해 cat_var_ratio를 만든 뒤, 해당 state-year-month에 포함된 주문 기록들의 cat_var_ratio를 평균한 변수입니다.\n따라서 이 값은 해당 월의 주문에 포함된 category들의 상대적인 가격 변동성을 나타내는 지표로 사용했습니다.\n\n\nbin1_count ~ bin5_count\n총 1,818개의 상품 category를 평균 가격을 기준으로 다섯 개의 price tier로 나누었습니다.\n\nBin 1: 평균 가격이 상대적으로 높은 category\nBin 5: 평균 가격이 상대적으로 낮은 category\n\n그다음 각 state-year-month에 각 가격대에 해당하는 관측 건수를 계산했습니다.\n이를 통해 단순한 총구매금액뿐 아니라, 어떤 가격대의 category가 해당 시점의 주문에 많이 나타났는지도 모델이 활용할 수 있도록 했습니다.\n\n\nmonth_est_low_var\nmonth_est와 비슷한 방식의 지출 추정치이지만, 가격 변동성이 상대적으로 낮은 category만 포함했습니다.\n실제 코드에서는\ncat_var_ratio &lt; 45\n인 category만 포함해 계산했습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#여러-데이터를-하나의-분석-단위로-결합했습니다",
+    "href": "projects/04-project.html#여러-데이터를-하나의-분석-단위로-결합했습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "여러 데이터를 하나의 분석 단위로 결합했습니다",
+    "text": "여러 데이터를 하나의 분석 단위로 결합했습니다\n새롭게 만든 predictor들은 state, year, month를 기준으로 기존 training/test data와 결합했습니다.\n이를 통해 최종적으로\n\ntrain_expanded\ntest_expanded\n\n라는 확장된 데이터셋을 만들었습니다.\n즉, 고객·지역·시간 정보와 상세 주문 데이터에서 만든 predictor를 하나의 state-year-month 단위로 연결한 것입니다."
+  },
+  {
+    "objectID": "projects/04-project.html#데이터-누수를-먼저-제거했습니다",
+    "href": "projects/04-project.html#데이터-누수를-먼저-제거했습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "데이터 누수를 먼저 제거했습니다",
+    "text": "데이터 누수를 먼저 제거했습니다\n원본 데이터에는 order_totals라는 변수가 있었습니다.\n하지만 보고서와 실제 코드에서는 이 값이 예측 대상인 log_total과 지나치게 직접적으로 연결되어 있다고 판단했습니다.\n이 변수를 그대로 모델에 넣으면 모델이 실제 예측 상황에서는 사용할 수 없는 정보를 이용해 정답을 사실상 미리 보게 되는 data leakage가 발생할 수 있습니다.\n따라서 모델 학습 전에 order_totals를 predictor에서 제거했습니다.\n예측 성능 숫자만 높이는 것이 아니라, 실제로 새로운 데이터에 적용할 수 있는 모델을 만드는 것이 중요했기 때문입니다."
+  },
+  {
+    "objectID": "projects/04-project.html#예측-대상의-분포부터-확인했습니다",
+    "href": "projects/04-project.html#예측-대상의-분포부터-확인했습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "예측 대상의 분포부터 확인했습니다",
+    "text": "예측 대상의 분포부터 확인했습니다\n예측 대상은 log_total이었습니다.\n보고서에서는 이를 각 state × year × month의 총지출을 log10 scale로 표현한 값이라고 설명합니다.\nHistogram을 확인했을 때, log transformation 이후에는 원래 지출값에서 나타날 수 있는 극단적인 차이가 상당 부분 줄어든 형태를 보였습니다.\n따라서 프로젝트에서는 log_total 자체를 예측하고, 모델 간 오차를 비교할 때도 이 log scale에서 RMSE를 사용했습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#원래-predictor들은-대부분-한쪽으로-치우쳐-있었습니다",
+    "href": "projects/04-project.html#원래-predictor들은-대부분-한쪽으로-치우쳐-있었습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "원래 predictor들은 대부분 한쪽으로 치우쳐 있었습니다",
+    "text": "원래 predictor들은 대부분 한쪽으로 치우쳐 있었습니다\nTraining data의 30개 numeric predictor에 대해 분포를 확인한 결과, 대부분이 right-skewed distribution을 보였습니다.\n팀은 이를 확인한 뒤 predictor에 log transformation을 적용하는 방법도 탐색했습니다.\n다만 최종 모델링 코드에서는 모든 predictor에 대한 log transformation을 사용하지 않았습니다.\n최종적으로 비교된 모델은 Generic Recipe와 Interaction Recipe를 기반으로 했습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#month를-단순한-숫자로-사용하지-않았습니다",
+    "href": "projects/04-project.html#month를-단순한-숫자로-사용하지-않았습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "Month를 단순한 숫자로 사용하지 않았습니다",
+    "text": "Month를 단순한 숫자로 사용하지 않았습니다\n원본 데이터에서 Month는 1부터 12까지의 숫자로 저장되어 있었습니다.\n하지만 이를 그대로 numeric variable로 사용하면 모델이 January, February, March 등을 하나의 연속적인 숫자 관계처럼 처리할 수 있습니다.\nEDA에서는 월에 따라 log_total의 분포가 서로 다르게 나타났습니다.\n따라서 Month를 categorical factor로 변환했습니다.\n이렇게 하면 1월과 2월의 차이가 2월과 3월의 차이와 반드시 같다고 가정하지 않고, 각 월의 차이를 별도로 모델에 반영할 수 있습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#두-가지-전처리-방식을-비교했습니다",
+    "href": "projects/04-project.html#두-가지-전처리-방식을-비교했습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "두 가지 전처리 방식을 비교했습니다",
+    "text": "두 가지 전처리 방식을 비교했습니다\n\n1. Generic Recipe\n기본 recipe에서는 세 가지 처리를 했습니다.\n\nMonth를 factor로 변환\nState, Month 등 categorical predictor를 dummy variable로 변환\nNumeric predictor의 missing value를 median으로 대체\n\nMedian imputation은 여러 numeric predictor가 right-skewed되어 있었기 때문에 평균보다 극단값의 영향을 덜 받는 값을 사용하는 방식으로 선택했습니다.\n\n\n\n2. Interaction Recipe\n두 번째 recipe는 Generic Recipe에 추가로 세 engineered predictor 사이의 interaction을 만들었습니다.\n사용한 변수는:\n\nmonth_est\nmonth_var_ratio\nmonth_est_low_var\n\n였습니다.\n여기서\n\n세 개의 2-way interaction\n한 개의 3-way interaction\n\n을 추가했습니다.\n이를 통해 예를 들어 month_est의 영향이 month_var_ratio의 수준에 따라 달라지는지와 같은 변수 간 결합 효과를 모델에 명시적으로 제공했습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#세-가지-회귀모델을-비교했습니다",
+    "href": "projects/04-project.html#세-가지-회귀모델을-비교했습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "세 가지 회귀모델을 비교했습니다",
+    "text": "세 가지 회귀모델을 비교했습니다\n프로젝트에서는 세 종류의 regression model을 비교했습니다.\n\nLinear Regression\n가장 단순한 baseline model입니다.\nPredictor들의 효과를 주로 additive하고 선형적인 형태로 표현합니다.\n복잡한 모델과 비교할 때 기준점 역할을 했습니다.\n\n\nRandom Forest\n여러 개의 decision tree를 만들고 각 tree의 예측값을 평균하는 방식입니다.\nLinear Regression보다 복잡하고 비선형적인 패턴을 표현할 수 있습니다.\n\n\nXGBoost\nDecision tree를 순차적으로 생성하며, 새로운 tree가 앞선 tree의 예측 오류를 계속 보완하는 boosting 방식입니다.\n이를 통해 복잡한 비선형 관계와 변수 간 interaction을 학습할 수 있습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#한-번의-결과만-보고-모델을-고르지-않았습니다",
+    "href": "projects/04-project.html#한-번의-결과만-보고-모델을-고르지-않았습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "한 번의 결과만 보고 모델을 고르지 않았습니다",
+    "text": "한 번의 결과만 보고 모델을 고르지 않았습니다\n모델 평가는 10-fold cross-validation을 이용했습니다.\nTraining data를 10개 fold로 나눈 뒤,\n9개 fold로 모델을 학습하고 남은 1개 fold에서 평가하는 과정을 반복했습니다.\n각 fold가 한 번씩 validation data가 되도록 총 10번의 평가를 수행했습니다.\n보고서와 실제 코드에서는 log_total을 기준으로 stratification도 적용했습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#평가-기준은-rmse였습니다",
+    "href": "projects/04-project.html#평가-기준은-rmse였습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "평가 기준은 RMSE였습니다",
+    "text": "평가 기준은 RMSE였습니다\n모델 비교에는 RMSE를 사용했습니다.\nRMSE는 실제값과 예측값 사이의 차이를 하나의 수치로 요약하는 지표입니다.\nRMSE가 낮을수록 평균적인 예측 오차가 작다는 의미입니다.\n이번 프로젝트에서는 log_total을 예측했기 때문에, RMSE 역시 log_total scale에서 계산되었습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#모델-비교-결과",
+    "href": "projects/04-project.html#모델-비교-결과",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "모델 비교 결과",
+    "text": "모델 비교 결과\n\n\n\nWorkflow\n10-Fold CV RMSE\n\n\n\n\nGeneric Linear Regression\n0.1385\n\n\nInteraction Linear Regression\n0.1300\n\n\nGeneric Random Forest\n0.0960\n\n\nInteraction Random Forest\n0.0966\n\n\nGeneric XGBoost\n0.0927\n\n\nInteraction XGBoost\n0.0932\n\n\n\n비교한 여섯 workflow 가운데 가장 낮은 RMSE를 기록한 모델은 Generic XGBoost였습니다.\n정확한 cross-validation 결과는\nRMSE = 0.09271658\n이었고, standard error는 약\n0.00252\n였습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#interaction을-추가한다고-항상-좋아지는-것은-아니었습니다",
+    "href": "projects/04-project.html#interaction을-추가한다고-항상-좋아지는-것은-아니었습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "Interaction을 추가한다고 항상 좋아지는 것은 아니었습니다",
+    "text": "Interaction을 추가한다고 항상 좋아지는 것은 아니었습니다\nInteraction term의 효과는 모델에 따라 달랐습니다.\nLinear Regression에서는\n\nGeneric: 약 0.1385\nInteraction: 약 0.1300\n\n으로 RMSE가 감소했습니다.\n즉, Linear Regression에서는 engineered feature 간 interaction을 직접 추가한 것이 예측 성능 개선과 연결되었습니다.\n반면 Random Forest에서는\n\nGeneric: 약 0.0960\nInteraction: 약 0.0966\n\n으로 오히려 소폭 높아졌습니다.\nXGBoost에서도\n\nGeneric: 약 0.0927\nInteraction: 약 0.0932\n\n로 interaction recipe가 더 좋은 결과를 만들지 못했습니다.\n프로젝트에서는 이를 tree-based model이 tree split을 통해 비선형 관계와 interaction을 이미 자체적으로 학습할 수 있기 때문일 가능성으로 해석했습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#최종-모델",
+    "href": "projects/04-project.html#최종-모델",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "최종 모델",
+    "text": "최종 모델\n최종적으로 선택한 workflow는 Generic XGBoost였습니다.\n보고서에 기록된 최종 hyperparameter는 다음과 같습니다.\n\nTrees: 약 2,829\nTree depth: 7\nLearning rate: 약 0.01076\nMinimum node size (min_n): 14\nLoss reduction: 약 1.95 × 10⁻⁴\nSample proportion: 약 0.9858\nmtry: 28\n\n추가 interaction column을 만들지 않은 상대적으로 단순한 preprocessing pipeline으로도 비교한 여섯 workflow 중 가장 낮은 cross-validation RMSE를 기록했습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#나의-역할",
+    "href": "projects/04-project.html#나의-역할",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "나의 역할",
+    "text": "나의 역할\n이 프로젝트는 팀 프로젝트로 진행되었습니다.\n팀 기여 기록에 따르면 저는 Model Selection 및 Hyperparameter Tuning을 담당했고, 최종 보고서 작성에도 참여했습니다.\n데이터 mining과 pre-processing 자체는 다른 팀원들이 담당했습니다.\n저는 Linear Regression, Random Forest, XGBoost의 결과와 Generic / Interaction workflow의 cross-validation 성능을 비교했습니다.\n또한 tuning 결과를 검토하고 어떤 모델과 parameter configuration을 최종 workflow로 사용할지 결정하는 과정에 참여했습니다.\n이후 선택한 모델의 성능과 한계를 해석하고 그 내용을 팀원들과 함께 최종 보고서에 정리했습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#가장-낮은-rmse만-보고-끝내지는-않았습니다",
+    "href": "projects/04-project.html#가장-낮은-rmse만-보고-끝내지는-않았습니다",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "가장 낮은 RMSE만 보고 끝내지는 않았습니다",
+    "text": "가장 낮은 RMSE만 보고 끝내지는 않았습니다\nGeneric XGBoost가 가장 낮은 RMSE를 기록했지만, 모든 XGBoost 설정이 좋은 성능을 보인 것은 아니었습니다.\nCross-validation 결과를 보면 일부 hyperparameter combination에서는 오차가 매우 크게 증가했습니다.\n이는 XGBoost의 성능이 parameter 설정에 민감할 수 있다는 점을 보여줬습니다.\n또한 프로젝트에서는 workflow당 비교한 tuning combination이 다섯 개로 제한되어 있었습니다.\n계산시간을 줄일 수 있다는 장점은 있었지만, 더 넓은 search space를 탐색했다면 더 나은 parameter 조합을 찾았을 가능성도 남아 있었습니다.\n따라서 이번 결과를 “XGBoost는 항상 가장 좋은 모델이다”라고 해석하지 않고, 같은 알고리즘이라도 tuning과 validation 방식에 따라 성능이 크게 달라질 수 있다는 점을 함께 고려했습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#개선한다면-무엇을-바꿀-수-있을까",
+    "href": "projects/04-project.html#개선한다면-무엇을-바꿀-수-있을까",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "개선한다면 무엇을 바꿀 수 있을까?",
+    "text": "개선한다면 무엇을 바꿀 수 있을까?\n보고서에서는 후속 개선 방향도 제시했습니다.\n먼저 computing resource가 충분하다면 현재 최적 parameter 주변에서 더 많은 hyperparameter combination을 탐색할 수 있습니다.\n또한 Generic XGBoost와 Interaction XGBoost의 prediction을 결합한 간단한 ensemble도 검토할 수 있습니다.\n이번 프로젝트에서는 일반적인 10-fold cross-validation을 사용했지만, 데이터에 year와 month가 포함되어 있기 때문에 향후에는 과거 시점으로 학습하고 더 나중 시점으로 검증하는 time-aware cross-validation을 사용할 수도 있습니다.\n또한\n\n이전 달의 month_est\n최근 몇 개월의 rolling average\nmonth_var_ratio의 시계열 변화\n\n와 같은 lagged / rolling feature를 추가로 검토할 수 있습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#프로젝트에서-배운-점",
+    "href": "projects/04-project.html#프로젝트에서-배운-점",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "프로젝트에서 배운 점",
+    "text": "프로젝트에서 배운 점\n이 프로젝트에서 가장 중요했던 것은 복잡한 모델을 사용하는 것 자체가 아니었습니다.\n상세 주문 데이터를 분석 가능한 predictor로 바꾸고, target을 지나치게 직접적으로 알려주는 변수를 제거하고, 여러 모델과 preprocessing 방식을 동일한 cross-validation 기준에서 비교하는 과정이 중요했습니다.\n또한 최종 성능이 가장 좋았던 모델에서도 hyperparameter에 따라 결과가 크게 달라질 수 있었습니다.\n이를 통해 좋은 모델을 고르는 과정은 높은 성능 숫자 하나를 찾는 것이 아니라, 데이터 구성부터 validation까지 전체 과정을 함께 검토하는 일이라는 점을 확인했습니다."
+  },
+  {
+    "objectID": "projects/04-project.html#사용한-분석-방법-및-도구",
+    "href": "projects/04-project.html#사용한-분석-방법-및-도구",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "사용한 분석 방법 및 도구",
+    "text": "사용한 분석 방법 및 도구\n\nR\ntidyverse\ntidymodels\nworkflowsets\nFeature Engineering\nMultiple Linear Regression\nRandom Forest\nXGBoost\n10-Fold Cross-Validation\nHyperparameter Tuning\nRMSE\nDummy Encoding\nMedian Imputation\nInteraction Terms\nKaggle Submission Workflow"
+  },
+  {
+    "objectID": "projects/04-project.html#전체-프로젝트-보고서",
+    "href": "projects/04-project.html#전체-프로젝트-보고서",
+    "title": "Project 4 — Amazon 고객·주문 데이터를 활용한 주·연도·월 단위 지출 예측 (STATS 101C)",
+    "section": "전체 프로젝트 보고서",
+    "text": "전체 프로젝트 보고서\n전체 보고서에서는 Exploratory Data Analysis, 상세 주문 데이터를 활용한 feature engineering, Generic / Interaction preprocessing, Linear Regression / Random Forest / XGBoost 비교, 10-fold cross-validation, hyperparameter tuning, 최종 모델의 한계와 개선 방향, 그리고 실제 R 코드를 확인할 수 있습니다.\n📄 전체 프로젝트 보고서 보기 (PDF)"
+  },
+  {
+    "objectID": "projects/05-project.html",
+    "href": "projects/05-project.html",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
     "section": "",
-    "text": "This project predicts monthly Amazon spending (log_total) for each\nstate × year × month from 2018–2022, using survey data and order records\nfrom about 5,000 Amazon customers. The response is modeled on the log10 scale,\nand the main predictors include:\n\nTime and geography (year, month, state)\nCustomer demographics (age, income, gender, household counts, etc.)\nCustomer engagement (Amazon usage by customer and household)\nEngineered features from order-level data:\n\nmonth_est: estimated monthly spending from category means\nmonth_var_ratio: price stability score for categories\nbin1_count–bin5_count: counts of items by price tier\nmonth_est_low_var: spending using only low-variance categories\n\n\nThese features are aggregated into train_expanded and test_expanded to\npredict state-level monthly sales across 2018–2022."
+    "text": "English Version →"
   },
   {
-    "objectID": "projects/04-project.html#key-insights-preview",
-    "href": "projects/04-project.html#key-insights-preview",
-    "title": "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)(STATS 101C)",
-    "section": "Key Insights (Preview)",
-    "text": "Key Insights (Preview)\n\nThe target log_total is roughly unimodal after log10 transformation,\nsupporting RMSE on the log scale as the main metric.\nNearly all 30 numeric predictors are strongly right-skewed, which motivated\nexperiments with log-transformed recipes (though tree models did not require them).\nEDA shows that engineered features such as month_est,\nmonth_est_low_var, and bin counts are highly correlated with log_total.\nTwo preprocessing recipes were compared:\n\na generic recipe (dummy variables, median imputation, month as factor)\nan interaction recipe adding 2-way and 3-way interactions among\nmonth_est, month_var_ratio, and month_est_low_var.\n\nAcross six candidate models (linear regression, random forest, XGBoost with both recipes),\nthe Generic XGBoost model achieved the best performance with\nCV RMSE ≈ 0.0927 and a small standard error (~0.0025),\nbeating both random forest and linear regression.\nAdding explicit interaction terms did not improve XGBoost’s performance,\nindicating that the tree-based model already captures nonlinear interactions."
+    "objectID": "projects/05-project.html#나의-역할",
+    "href": "projects/05-project.html#나의-역할",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "나의 역할",
+    "text": "나의 역할\n이 프로젝트에서 저는\nData Specialist · Data Visualization Specialist · Editor\n역할을 맡았습니다.\nData Specialist로서 raw project data를 분석 가능한 형태로 만들기 위한 데이터 정리, 변수 검토, exploratory analysis에 참여했습니다.\nData Visualization Specialist로서는 분석 결과를 전달하는 Tableau visualization을 개발하고 개선했습니다. 단순히 그래프를 만드는 데 그치지 않고, 비전공자도 지역 간 차이를 이해할 수 있도록 가독성과 해석 가능성을 반복적으로 점검했습니다.\nEditor로서는 analytical explanation, visualization description, final presentation text의 구조와 표현을 검토했습니다.\n기술적인 분석 결과가 데이터 분석 경험이 없는 사람에게도 이해될 수 있도록 전달하는 것이 중요한 역할이었습니다."
   },
   {
-    "objectID": "projects/04-project.html#want-the-full-analysis",
-    "href": "projects/04-project.html#want-the-full-analysis",
-    "title": "Project 4 — Amazon State-Level Monthly Sales Prediction (Regression)(STATS 101C)",
-    "section": "Want the full analysis?",
-    "text": "Want the full analysis?\nThe full regression report includes:\n\nDetailed EDA:\n\nHistograms of log_total and predictor distributions\nMonth-by-month boxplots and scatterplots of engineered features\nCorrelation ranking of top numeric predictors\n\nA step-by-step explanation of the feature engineering pipeline\nfrom raw order-level and customer data\nFull comparison of:\n\nGeneric vs. interaction recipes\nLinear regression, random forest, and XGBoost models\n\nCross-validation tables and plots for RMSE and standard errors\nA discussion of the final tuned XGBoost model:\n\nChosen hyperparameters\nStrengths, weaknesses, and risks of overfitting\nIdeas for future improvements (larger tuning grids, ensembles, time-aware CV,\nand additional lagged features)\n\nAn appendix with fully annotated R scripts used for the Kaggle submission\n\n📄 Full Project Report (PDF)\n👉 Open PDF"
+    "objectID": "projects/05-project.html#두-개의-서로-다른-데이터를-사용했습니다",
+    "href": "projects/05-project.html#두-개의-서로-다른-데이터를-사용했습니다",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "두 개의 서로 다른 데이터를 사용했습니다",
+    "text": "두 개의 서로 다른 데이터를 사용했습니다\n프로젝트에서는 서로 다른 정보를 담고 있는 두 개의 주요 데이터 출처를 사용했습니다.\n\nInside Airbnb\nInside Airbnb의 Los Angeles listings.csv.gz를 사용했습니다.\n프로젝트 사이트에 따르면, 사용한 archive dataset은 2025년 12월 4일 기준으로 업데이트된 자료였습니다.\n원본 listing file에는 85개의 column이 있었으며, 프로젝트에서는 연구 질문과 visualization에 필요한 정보를 선별해 10개의 주요 column을 활용했습니다.\n여기에는 listing의 위치, neighborhood, latitude와 longitude, room type, availability, listing 및 host 관련 정보 등이 포함되었습니다.\n\n\nU.S. Census Bureau American Community Survey\nAirbnb 데이터만으로는 listing이 존재하는 지역의 주민 특성을 파악할 수 없었습니다.\n그래서 U.S. Census Bureau의 American Community Survey (ACS) 데이터를 함께 사용했습니다.\n프로젝트에서는 County Census Division, 즉 CCD 단위의\n\nDP05 — Demographic and Housing Estimates\nS1901 — Income in the Past 12 Months\nS1501 — Educational Attainment\n\n자료를 활용했습니다.\n이를 통해 지역별 인구 구성, 연령, 소득, 교육 수준, poverty-related measures, housing units 등을 함께 비교할 수 있었습니다."
+  },
+  {
+    "objectID": "projects/05-project.html#가장-큰-데이터-문제-지역-기준이-서로-달랐습니다",
+    "href": "projects/05-project.html#가장-큰-데이터-문제-지역-기준이-서로-달랐습니다",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "가장 큰 데이터 문제: 지역 기준이 서로 달랐습니다",
+    "text": "가장 큰 데이터 문제: 지역 기준이 서로 달랐습니다\n두 데이터를 바로 합칠 수는 없었습니다.\nInside Airbnb listing은 266개의 distinct neighborhood에 걸쳐 있었지만, 프로젝트에서 사용한 Census 데이터는 Los Angeles County를 20개의 CCD로 구분하고 있었습니다.\n즉,\nInside Airbnb → neighborhood\nACS → CCD\n라는 서로 다른 지리 단위를 사용하고 있었습니다.\n이를 해결하기 위해 팀은 266개의 neighborhood를 각각 해당 CCD에 연결하는 custom mapping code를 만들었습니다.\n이 과정을 통해 각 Airbnb listing을 하나의 CCD에 배정하고, 동일한 지역의 Census 정보와 연결할 수 있었습니다.\n데이터의 cleaning과 integration은 R / RStudio에서 진행했고, 최종 데이터는 Tableau visualization에 사용했습니다."
+  },
+  {
+    "objectID": "projects/05-project.html#첫-번째-분석-airbnb-listing은-어디에-많았을까",
+    "href": "projects/05-project.html#첫-번째-분석-airbnb-listing은-어디에-많았을까",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "첫 번째 분석: Airbnb listing은 어디에 많았을까?",
+    "text": "첫 번째 분석: Airbnb listing은 어디에 많았을까?\n먼저 neighborhood별 Airbnb listing의 절대 개수를 비교했습니다.\n프로젝트의 visualization에서는\n\nLong Beach — 1,906 listings\nHollywood — 1,758\nVenice — 1,529\nSanta Monica — 1,243\n\n가 높은 listing 수를 보였습니다.\n이를 통해 Airbnb listing이 Los Angeles County 전체에 균등하게 분포하기보다 특정 지역에 집중되어 있다는 패턴을 확인했습니다.\n특히 해안 지역과 관광·문화 시설이 많은 지역에서 높은 listing count가 관찰되었습니다.\n하지만 여기에는 한 가지 문제가 있었습니다."
+  },
+  {
+    "objectID": "projects/05-project.html#절대-개수만-비교해도-될까",
+    "href": "projects/05-project.html#절대-개수만-비교해도-될까",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "절대 개수만 비교해도 될까?",
+    "text": "절대 개수만 비교해도 될까?\n지역마다 전체 housing stock의 규모가 다릅니다.\n예를 들어 Airbnb listing이 많은 지역이라도 전체 주택 수가 매우 많다면, 지역 규모를 고려했을 때의 상대적인 비중은 낮을 수 있습니다.\n반대로 listing 수가 더 적더라도 전체 주택 수가 작은 지역이라면 상대적인 비중은 더 클 수 있습니다.\n그래서 프로젝트에서는 CCD별로 다음과 같은 비교 지표를 계산했습니다.\nAirbnb listing 수 ÷ total housing units\n이 지표는 서로 다른 규모의 지역을 단순 listing count만으로 비교하는 문제를 줄이기 위해 사용했습니다.\n중요하게도, 이 값이 실제 housing unit 중 동일한 비율이 반드시 short-term rental로 전환되었다는 것을 직접 의미하는 것은 아닙니다.\n프로젝트에서 사용한 지역 간 비교 지표로 이해하는 것이 정확합니다."
+  },
+  {
+    "objectID": "projects/05-project.html#지역-규모를-고려하자-다른-패턴이-나타났습니다",
+    "href": "projects/05-project.html#지역-규모를-고려하자-다른-패턴이-나타났습니다",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "지역 규모를 고려하자 다른 패턴이 나타났습니다",
+    "text": "지역 규모를 고려하자 다른 패턴이 나타났습니다\n프로젝트의 계산에서는 Santa Monica CCD의 Airbnb-listing-to-housing-unit ratio가 약 9.5%로 가장 높게 나타났습니다.\n그 뒤로는\n\nAgoura Hills–Malibu CCD — 약 4.8%\nSouth Bay Cities CCD — 약 4.2%\n\n가 나타났습니다.\n반면 San Fernando Valley CCD는 Airbnb listing의 절대 개수가 6,000개를 넘었지만, 전체 housing units가 620,000개 이상이었기 때문에 같은 방식으로 계산한 비율은 약 0.9%였습니다.\n즉,\nAirbnb listing이 가장 많은 지역과 지역 규모를 고려했을 때 listing 비중이 높은 지역은 같지 않을 수 있었습니다.\n이 차이가 프로젝트의 중요한 분석 결과 중 하나였습니다."
+  },
+  {
+    "objectID": "projects/05-project.html#airbnb-위치에-지역사회-정보를-연결했습니다",
+    "href": "projects/05-project.html#airbnb-위치에-지역사회-정보를-연결했습니다",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "Airbnb 위치에 지역사회 정보를 연결했습니다",
+    "text": "Airbnb 위치에 지역사회 정보를 연결했습니다\n프로젝트는 listing 위치만 보여주는 데서 끝나지 않았습니다.\nACS 정보를 이용해 20개 CCD의 demographic profile을 구성했습니다.\nDP05에서는 median age와 8개의 mutually exclusive racial and ethnic group 가운데 가장 큰 population group을 정리했습니다.\nS1901에서는 median household income과 가장 큰 비중을 차지하는 income bracket을 사용했습니다.\nS1501에서는 25세 이상 인구의 educational attainment를 확인하고, poverty measure를 교육 수준에 따라 나누어 살펴봤습니다.\n이를 통해 Airbnb listing의 공간적 분포를 해당 지역의 인구·소득·교육 특성과 함께 비교할 수 있었습니다.\n다만 이러한 지역 수준의 관계가 개별 Airbnb host나 resident의 특성을 직접 의미하는 것은 아닙니다."
+  },
+  {
+    "objectID": "projects/05-project.html#santa-monica를-case-study로-살펴봤습니다",
+    "href": "projects/05-project.html#santa-monica를-case-study로-살펴봤습니다",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "Santa Monica를 case study로 살펴봤습니다",
+    "text": "Santa Monica를 case study로 살펴봤습니다\nSanta Monica CCD는 프로젝트에서 계산한 Airbnb-listing-to-housing-unit ratio가 가장 높았던 지역이었습니다.\n따라서 프로젝트에서는 Santa Monica와 주변 지역을 case study로 삼아 Airbnb의 공간적 집중, housing context, 지역의 demographic profile, 그리고 관련 연구에서 논의된 관광과 도시 변화의 관계를 함께 살펴봤습니다.\n원래 프로젝트의 Narrative에서는 이를 tourism gentrification 등의 개념과 연결해 해석했습니다.\n하지만 프로젝트의 데이터만으로 Airbnb가 주택가격 상승이나 resident displacement와 같은 현상을 직접적으로 일으켰다고 입증한 것은 아닙니다.\n이 프로젝트에서 데이터가 직접 보여주는 것은 Airbnb listing의 공간적 분포와 지역별 demographic·housing characteristics가 어떻게 함께 나타나는가입니다."
+  },
+  {
+    "objectID": "projects/05-project.html#데이터의-한계도-함께-검토했습니다",
+    "href": "projects/05-project.html#데이터의-한계도-함께-검토했습니다",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "데이터의 한계도 함께 검토했습니다",
+    "text": "데이터의 한계도 함께 검토했습니다\nInside Airbnb는 listing, host, location, platform-visible activity에 대한 정보는 제공하지만, 해당 지역 주민이나 guest의 연령, 인종, 소득, household characteristics를 직접 제공하지 않습니다.\n또한 사용한 listings.csv.gz만으로는 rent, housing price, resident displacement 같은 off-platform outcome을 직접 측정할 수 없습니다.\nACS 역시 sample survey이기 때문에 수치는 exact count가 아니라 estimate이며, Margin of Error를 동반합니다.\n따라서 작은 지역 간 차이를 해석할 때는 이러한 불확실성을 고려해야 합니다.\n이 프로젝트에서는 데이터가 보여줄 수 있는 것뿐 아니라 데이터가 보여주지 못하는 것까지 함께 검토했습니다."
+  },
+  {
+    "objectID": "projects/05-project.html#이-프로젝트에서-배운-점",
+    "href": "projects/05-project.html#이-프로젝트에서-배운-점",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "이 프로젝트에서 배운 점",
+    "text": "이 프로젝트에서 배운 점\n이 프로젝트에서 가장 중요했던 것은 시각화를 많이 만드는 것이 아니었습니다.\n처음에는 listing의 절대 개수만으로도 지역별 차이를 설명할 수 있을 것처럼 보였습니다.\n하지만 지역마다 housing 규모가 다르다는 점을 고려하면서, 같은 숫자도 어떤 기준으로 비교하느냐에 따라 전혀 다른 의미를 가질 수 있다는 점을 확인했습니다.\n또한 서로 다른 단위로 만들어진 데이터를 하나의 분석 구조로 연결하고, 그 결과를 비전공자도 이해할 수 있는 visualization과 설명으로 전달하는 과정까지 경험했습니다.\n이 프로젝트를 통해 데이터 분석에서는 계산 자체뿐 아니라 비교 기준을 정하고, 데이터의 한계를 확인하고, 결과를 정확하게 전달하는 과정도 중요하다는 점을 배웠습니다."
+  },
+  {
+    "objectID": "projects/05-project.html#사용한-도구-및-방법",
+    "href": "projects/05-project.html#사용한-도구-및-방법",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "사용한 도구 및 방법",
+    "text": "사용한 도구 및 방법\n\nR / RStudio\nTableau\nInside Airbnb\nU.S. Census Bureau American Community Survey\nData Cleaning\nData Integration\nExploratory Data Analysis\nGeographic Mapping\nRatio / Proportion Analysis\nData Visualization\nDigital Humanities Research\nWordPress"
+  },
+  {
+    "objectID": "projects/05-project.html#전체-프로젝트-웹사이트",
+    "href": "projects/05-project.html#전체-프로젝트-웹사이트",
+    "title": "Project 5 — Beyond Airbnb: LA County의 Airbnb 분포와 지역사회 특성 분석 (DGT HUM 101)",
+    "section": "전체 프로젝트 웹사이트",
+    "text": "전체 프로젝트 웹사이트\n전체 프로젝트에서는 데이터 출처와 processing, interactive visualization, Narrative, Chronology, References를 확인할 수 있습니다.\n🌐 Beyond Airbnb — An Archive of Airbnb in Los Angeles County\n데이터 출처와 cleaning, geographic mapping 과정에 대한 상세 설명:\n🌐 About the Data"
   }
 ]

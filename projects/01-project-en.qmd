@@ -1,0 +1,138 @@
+---
+title: "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)"
+format:
+  html:
+    toc: true
+---
+
+[**← 한국어 버전**](01-project.html)
+
+# How Much Can Weather Data Explain Wind Speed?
+
+This project examined how much changes in wind speed could be explained using commonly available weather information such as **Temperature, Humidity, Visibility, and Pressure**.
+
+Using weather data from **Szeged, Hungary, between 2006 and 2016**, we built and compared several regression models to identify which weather factors were meaningfully related to wind speed.
+
+---
+
+## Project Overview
+
+The analysis used **Wind Speed** as the outcome and the following four meteorological variables:
+
+- Temperature
+- Humidity
+- Visibility
+- Pressure
+
+We first built a multiple linear regression model using all four variables.
+
+We then examined whether each variable meaningfully contributed to explaining wind speed, compared the full model with a simpler model, and evaluated both the explanatory power and statistical limitations of the final model.
+
+---
+
+## My Role
+
+I was responsible for **topic selection, data preprocessing, statistical analysis, and final report writing**.
+
+I prepared the dataset, built and interpreted the multiple linear regression models, and documented the model comparisons, diagnostic results, and limitations in the final report.
+
+---
+
+## Analysis Approach
+
+### 1. Building a model with all four weather variables
+
+We first built a multiple linear regression model using Temperature, Humidity, Visibility, and Pressure.
+
+In the full model, **Temperature, Humidity, and Pressure** showed statistically significant relationships with wind speed, while **Visibility** did not.
+
+### 2. Determining whether Visibility was necessary
+
+To determine whether Visibility was necessary in the model, we compared a model that included Visibility with one that excluded it.
+
+The Partial F-test produced a p-value of **0.6459**, suggesting that removing Visibility did not significantly reduce the explanatory power of the model.
+
+We therefore selected the reduced model using:
+
+**Temperature · Humidity · Pressure**
+
+### 3. Evaluating the model
+
+After selecting the final model, we examined residual plots and additional diagnostic measures to determine whether the assumptions of the regression model were reasonable.
+
+We also calculated the Variance Inflation Factor (VIF) to check whether the predictor variables contained excessive overlapping information.
+
+---
+
+## Key Findings
+
+The final model used:
+
+**Temperature · Humidity · Pressure**
+
+The model explained approximately **18% of the variation in wind speed**.
+
+This suggested that the selected weather variables were related to wind speed, but they were not sufficient to explain most of its variation.
+
+The final regression equation was:
+
+**Wind Speed = 282.486  
+− 0.295(Temperature)  
+− 17.426(Humidity)  
+− 0.251(Pressure)**
+
+---
+
+## Model Diagnostics
+
+The residuals generally did not show a strong systematic pattern, although their spread increased in some regions with higher fitted values.
+
+A Breusch–Pagan test also produced a very small p-value, indicating that **heteroscedasticity**, or non-constant residual variance, remained a limitation of the model.
+
+In contrast, all VIF values were **below 2**, suggesting that severe multicollinearity was not a concern.
+
+The Residuals vs. Leverage plot also did not indicate any clearly influential observations that substantially distorted the model.
+
+---
+
+## Exploring an Alternative Model
+
+We also examined whether a **Box-Cox transformation** could improve the model.
+
+However, the transformed model produced a slightly lower Adjusted R² and introduced additional deviation in part of the Q-Q plot.
+
+Because the transformation increased model complexity without providing a meaningful improvement, we retained the untransformed reduced model.
+
+---
+
+## Limitations
+
+This project also demonstrated that identifying statistically meaningful relationships is different from achieving strong predictive performance.
+
+Only a limited set of weather variables was included in the analysis.
+
+Date information was not incorporated into the model, preventing us from accounting for seasonal patterns in wind speed.
+
+Other potentially relevant variables, such as **Wind Bearing**, were also excluded.
+
+Therefore, the relatively low R² of approximately 0.18 suggests that much of the variation in wind speed may be influenced by factors not included in the model.
+
+---
+
+## Methods Used
+
+- Multiple Linear Regression
+- Full Model / Reduced Model Comparison
+- Partial F-test
+- Residual Diagnostics
+- Variance Inflation Factor (VIF)
+- Breusch–Pagan Test
+- Box-Cox Transformation
+
+---
+
+## Full Project Report
+
+The full report includes exploratory data analysis, regression model development, model comparison, residual diagnostics, variable selection, transformation analysis, and a more detailed discussion of the results and limitations.
+
+📄 **[View Full Project Report (PDF)](STATS%20101A%20Project.pdf)**

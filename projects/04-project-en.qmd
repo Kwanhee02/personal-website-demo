@@ -1,0 +1,606 @@
+---
+title: "Project 4 — Predicting State-Year-Month Amazon Customer Spending (STATS 101C)"
+format:
+  html:
+    toc: true
+---
+
+[**← 한국어 버전**](04-project.html)
+
+# How Accurately Can Customer and Order Data Predict Amazon Spending Across States and Time?
+
+Online shopping data contain much more than final purchase totals.
+
+Customer characteristics, purchase timing, product categories,
+prices, and quantities can all provide useful information for prediction.
+
+In this project, we used survey and order records from approximately
+**5,000 Amazon customers** to build regression models that predict
+**state × year × month-level `log_total`**
+from January 2018 through December 2022.
+
+The response does **not** represent Amazon's company-wide sales.
+It represents spending aggregated from the customer and order data
+provided for the project at the state-year-month level.
+
+The main goal was not simply to fit one model.
+We created additional predictors from detailed order data,
+compared different preprocessing strategies,
+and evaluated several regression models
+to identify the workflow with the lowest prediction error.
+
+---
+
+## What Information Was Available?
+
+The project included three broad types of information.
+
+The first was **time and geography**:
+
+- Year
+- Month
+- State
+
+The second consisted of **customer characteristics and Amazon usage information**.
+
+According to the report, these included variables related to
+gender, age, income, customer and household counts,
+and Amazon usage.
+
+The third source was the separate
+`amazon_order_details` dataset.
+
+This dataset contained detailed order information such as:
+
+- Product category
+- Unit price
+- Quantity
+- Order date
+
+The team used these detailed records
+to create additional predictors that were not available
+in the original main dataset.
+
+---
+
+## Creating New Predictors from Detailed Order Data
+
+The team first calculated
+the average price and price variability
+for each product category.
+
+The order data were then aggregated to the
+**state × year × month** level
+to construct additional predictors.
+
+### `month_est`
+
+This was a monthly spending estimate
+based on product-category average prices and purchase quantities.
+
+In the implemented R code,
+the category mean price, `cat_mean`,
+was multiplied by `quantity`
+and then summed within each state-year-month group.
+
+Rather than directly using the actual target value,
+this created a separate spending estimate
+from category-level price information.
+
+### `month_var_ratio`
+
+For each product category,
+the project calculated:
+
+**price variance ÷ average price**
+
+to create `cat_var_ratio`.
+
+These ratios were then averaged
+within each state-year-month observation.
+
+The variable was used as a measure
+of the relative price variability
+of the categories represented in that group of orders.
+
+### `bin1_count`–`bin5_count`
+
+The project divided **1,818 product categories**
+into five price tiers based on their average prices.
+
+- Bin 1 represented relatively higher-priced categories
+- Bin 5 represented relatively lower-priced categories
+
+For each state-year-month,
+the code counted the number of
+**order-detail records**
+assigned to each price tier.
+
+This provided the models with information
+about the price composition of the orders,
+rather than relying only on overall spending estimates.
+
+### `month_est_low_var`
+
+This predictor was similar to `month_est`,
+but only included categories
+with relatively low price variability.
+
+The implemented code used the condition:
+
+`cat_var_ratio < 45`
+
+to determine which categories were included.
+
+---
+
+## Combining the Data
+
+The engineered predictors were joined
+to the original training and test datasets
+using:
+
+- State
+- Year
+- Month
+
+as the matching keys.
+
+This created the expanded datasets:
+
+- `train_expanded`
+- `test_expanded`
+
+The final modeling data therefore combined
+customer, geographic, temporal,
+and engineered order-level information
+within a common state-year-month structure.
+
+---
+
+## Preventing Data Leakage
+
+The original dataset contained a variable called `order_totals`.
+
+However, the report and code identified this variable
+as being too directly related to the target `log_total`.
+
+Including it would allow the model
+to use information that effectively reveals
+the quantity it is supposed to predict.
+
+To prevent this **data leakage**,
+`order_totals` was removed before model training.
+
+This was important because
+a high model score is not meaningful
+if the model relies on information
+that would not be appropriately available
+in a genuine prediction setting.
+
+---
+
+## Examining the Response Variable
+
+The response variable was `log_total`.
+
+The report describes it as
+the total spending for each state-year-month observation
+expressed on a **log10 scale**.
+
+After the log transformation,
+the response distribution showed
+a much less extreme shape
+than raw spending values would typically produce.
+
+The models therefore predicted `log_total`,
+and model errors were also evaluated
+on this log scale.
+
+---
+
+## Most Numeric Predictors Were Right-Skewed
+
+The team examined the distributions
+of 30 numeric predictors
+from the original training dataset.
+
+Most showed a clear **right-skewed distribution**.
+
+Log transformations were explored during EDA
+as a possible way to reduce skewness.
+
+However, the final modeling workflows
+did not apply a log transformation
+to all numeric predictors.
+
+The final comparison instead focused on
+the Generic Recipe and Interaction Recipe.
+
+---
+
+## Treating Month as a Category
+
+Month was originally stored
+as the numbers 1 through 12.
+
+If it remained numeric,
+a model could treat January, February, March, and later months
+as points along a single numerical line.
+
+The EDA showed that the distribution of `log_total`
+differed across months.
+
+The project therefore converted Month
+into a **categorical factor**.
+
+This allowed the models
+to learn separate effects for individual months
+without assuming one simple linear relationship
+from January through December.
+
+---
+
+## Two Preprocessing Strategies
+
+### 1. Generic Recipe
+
+The Generic Recipe performed three main steps:
+
+- Converted Month into a factor
+- Converted categorical predictors such as State and Month into dummy variables
+- Replaced missing numeric values with the median
+
+Median imputation was selected
+because many numeric predictors were right-skewed,
+making the median less sensitive to extreme values
+than the mean.
+
+---
+
+### 2. Interaction Recipe
+
+The Interaction Recipe started with the Generic Recipe
+and added explicit interactions among three engineered predictors:
+
+- `month_est`
+- `month_var_ratio`
+- `month_est_low_var`
+
+The recipe created:
+
+- Three 2-way interactions
+- One 3-way interaction
+
+This allowed the models
+to explicitly represent situations
+where the effect of one engineered predictor
+might depend on the value of another.
+
+---
+
+## Models Compared
+
+The project compared three regression approaches.
+
+### Linear Regression
+
+Linear Regression served as
+the simplest baseline model.
+
+It models the response
+mainly as an additive combination
+of the predictors.
+
+### Random Forest
+
+Random Forest builds
+many decision trees independently
+and averages their predictions.
+
+This allows it to capture
+more complex and nonlinear patterns
+than a simple linear model.
+
+### XGBoost
+
+XGBoost builds decision trees sequentially.
+
+Each new tree attempts
+to correct prediction errors
+left by the previous trees.
+
+This structure allows the model
+to capture complex nonlinear relationships
+and interactions among predictors.
+
+---
+
+## How Were the Models Evaluated?
+
+The team did not select a model
+from a single train/test split.
+
+Instead, the project used
+**10-fold cross-validation**.
+
+The training data were divided
+into ten folds.
+
+For each iteration,
+the model was trained on nine folds
+and evaluated on the remaining fold.
+
+This process was repeated
+until each fold had served
+as the validation set.
+
+The report and code also used
+stratification on `log_total`
+when constructing the folds.
+
+---
+
+## Evaluation Metric: RMSE
+
+The primary evaluation metric was **RMSE**.
+
+RMSE summarizes the difference
+between predicted and observed values.
+
+**Lower RMSE means smaller prediction error.**
+
+Because the response variable was `log_total`,
+the reported RMSE values
+were also calculated on the `log_total` scale.
+
+---
+
+## Model Comparison
+
+| Workflow | 10-Fold CV RMSE |
+|---|---:|
+| Generic Linear Regression | 0.1385 |
+| Interaction Linear Regression | 0.1300 |
+| Generic Random Forest | 0.0960 |
+| Interaction Random Forest | 0.0966 |
+| **Generic XGBoost** | **0.0927** |
+| Interaction XGBoost | 0.0932 |
+
+Among the six workflows,
+**Generic XGBoost achieved the lowest RMSE**.
+
+Its exact cross-validation result was:
+
+**RMSE = 0.09271658**
+
+with a standard error of approximately:
+
+**0.00252**
+
+---
+
+## Explicit Interactions Did Not Help Every Model
+
+The effect of the interaction terms
+differed across model types.
+
+For Linear Regression:
+
+- Generic: approximately 0.1385
+- Interaction: approximately 0.1300
+
+The lower RMSE suggests that
+explicit interaction terms improved
+the linear model's predictive performance.
+
+For Random Forest:
+
+- Generic: approximately 0.0960
+- Interaction: approximately 0.0966
+
+The interaction recipe
+did not improve performance.
+
+The same pattern appeared with XGBoost:
+
+- Generic: approximately 0.0927
+- Interaction: approximately 0.0932
+
+The project interpreted this as evidence
+that tree-based models such as XGBoost
+can already learn important nonlinear relationships
+and interactions through their tree splits,
+making the explicitly added interaction columns
+unnecessary in this case.
+
+---
+
+## Final Model
+
+The final selected workflow was
+**Generic XGBoost**.
+
+The report lists the selected hyperparameters as:
+
+- Trees: approximately 2,829
+- Tree depth: 7
+- Learning rate: approximately 0.01076
+- Minimum node size (`min_n`): 14
+- Loss reduction: approximately 1.95 × 10⁻⁴
+- Sample proportion: approximately 0.9858
+- `mtry`: 28
+
+Without the additional interaction columns,
+this workflow achieved
+the lowest cross-validated RMSE
+among the six workflows evaluated.
+
+---
+
+## My Role
+
+This was a team project.
+
+According to the team contribution record,
+I worked on **Model Selection and Hyperparameter Tuning**
+and also contributed to the **final report**.
+
+The data mining,
+data manipulation,
+and pre-preprocessing work
+were handled by other team members.
+
+My role focused on comparing
+the cross-validation performance of
+Linear Regression,
+Random Forest,
+and XGBoost
+under the Generic and Interaction preprocessing strategies.
+
+I also reviewed tuning results
+and participated in selecting
+the final model and hyperparameter configuration.
+
+Finally,
+I contributed to interpreting
+the model's performance and limitations
+and documenting those findings
+in the final report.
+
+---
+
+## Looking Beyond the Lowest RMSE
+
+Although Generic XGBoost
+achieved the lowest RMSE,
+not every XGBoost configuration performed well.
+
+During cross-validation,
+some hyperparameter combinations
+produced much larger prediction errors.
+
+This showed that XGBoost performance
+could be sensitive to its parameter settings.
+
+The tuning search was also relatively small,
+with only five parameter combinations
+evaluated per workflow.
+
+This reduced computation time,
+but it also meant that
+a better configuration may have existed
+outside the tested grid.
+
+For this reason,
+the project did not treat
+“XGBoost is always the best model”
+as a general conclusion.
+
+Instead, it highlighted the importance of
+**careful tuning and validation,
+even when using a powerful algorithm**.
+
+---
+
+## Possible Improvements
+
+The report identified several directions
+for improving the modeling process.
+
+With greater computational resources,
+a wider hyperparameter search
+could be performed around
+the best-performing region.
+
+The predictions from
+Generic XGBoost and Interaction XGBoost
+could also be combined
+in a simple ensemble.
+
+Because the dataset contains
+both year and month information,
+a future version could replace
+standard cross-validation
+with **time-aware cross-validation**.
+
+For example,
+models could be trained on earlier periods
+and validated on later periods.
+
+The project also suggested
+exploring lagged and rolling predictors,
+such as:
+
+- Previous month's `month_est`
+- Rolling averages over recent months
+- Changes in `month_var_ratio` over time
+
+These approaches were proposed
+as future improvements
+and were not part of the final model used in this project.
+
+---
+
+## What I Learned
+
+The most important part of this project
+was not simply using a complex model.
+
+The workflow required several decisions:
+
+turning detailed order records
+into usable predictors,
+removing a leaking variable,
+comparing preprocessing strategies,
+evaluating multiple model types,
+and tuning the final model
+under the same validation framework.
+
+Even within XGBoost,
+performance varied substantially
+depending on the hyperparameter configuration.
+
+This project reinforced that
+**model selection is not just about finding the lowest error number.
+The entire process — from feature construction
+to validation and tuning —
+must be evaluated together.**
+
+---
+
+## Methods & Tools
+
+- R
+- tidyverse
+- tidymodels
+- workflowsets
+- Feature Engineering
+- Multiple Linear Regression
+- Random Forest
+- XGBoost
+- 10-Fold Cross-Validation
+- Hyperparameter Tuning
+- RMSE
+- Dummy Encoding
+- Median Imputation
+- Interaction Terms
+- Kaggle Submission Workflow
+
+---
+
+## Full Project Report
+
+The full report includes
+exploratory data analysis,
+feature engineering from detailed order records,
+Generic and Interaction preprocessing strategies,
+comparisons of Linear Regression,
+Random Forest,
+and XGBoost,
+10-fold cross-validation,
+hyperparameter tuning,
+limitations and proposed improvements,
+and the annotated R code used in the project.
+
+📄 **[View Full Project Report (PDF)](Team%2010%20Regression%20Project%20Report.pdf)**

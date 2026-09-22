@@ -1,0 +1,277 @@
+---
+title: "Project 2 — Does Music Genre Affect Short-Term Muscle Performance? (STATS 101B)"
+format:
+  html:
+    toc: true
+---
+
+[**← 한국어 버전**](02-project.html)
+
+# Can the Music You Hear Before Exercise Change Your Performance?
+
+Many people feel that listening to music helps them exercise harder or perform better.
+
+This project examined whether that perception could be observed as a measurable difference by testing whether **the genre of music heard before exercise affects short-term muscle performance**.
+
+Rather than recruiting real human participants,
+we conducted the experiment using **The Islands**,
+a virtual human population designed for learning and teaching experimental design and statistical reasoning.
+
+---
+
+## What Is The Islands?
+
+**The Islands** is a virtual population developed at
+The University of Queensland for teaching experimental design,
+epidemiology, and statistical reasoning.
+
+Its virtual population lives across three islands:
+**Ironbard, Providence, and Bonne Santé**.
+
+The environment allows students to select participants,
+design experiments, apply experimental conditions,
+and collect resulting data from virtual subjects.
+
+We used this environment to construct our sample
+and collect the experimental observations used in this project.
+
+---
+
+## Project Overview
+
+Short-term muscle performance was measured by
+the **number of arm curls completed in 30 seconds using a 2kg weight**.
+
+The experiment compared five conditions:
+
+- Classical
+- Country
+- Dance
+- Heavy Metal
+- No Music
+
+Because baseline physical ability may differ with age,
+participants were divided into five age groups:
+
+- 18–24
+- 25–31
+- 32–38
+- 39–45
+- 46–52
+
+The final sample consisted of **175 virtual male participants**,
+with 35 participants in each age group.
+
+---
+
+## Building the Dataset
+
+This project did not begin with a ready-made dataset.
+
+We were involved in the process of
+**selecting the sample and producing the data used for analysis**.
+
+Following the random-sampling procedure described in our study,
+we first randomly selected one of the three Islands,
+then selected a city within that Island,
+and finally selected eligible virtual participants within the required age group.
+
+We repeated this procedure to construct the study sample.
+
+The experimental outcomes were then collected from The Islands
+and recorded manually in **Excel** to create the dataset used for analysis.
+
+---
+
+## My Role
+
+This was a team project.
+
+My responsibilities included
+**collecting and organizing the simulated experimental data in Excel,
+conducting part of the statistical analysis,
+interpreting the results,
+and contributing to the final report**.
+
+I followed the sampling procedure to collect participant-level observations
+from the virtual population and organized them into a dataset suitable for analysis.
+
+The statistical work was divided among team members.
+I completed the analyses assigned to me
+and documented the corresponding results and interpretations in the final report.
+
+---
+
+## Why Block by Age?
+
+The primary question was whether
+**music genre affects exercise performance**.
+
+However, differences in baseline physical ability could make it difficult
+to separate a music effect from differences between participants.
+
+Because age may influence physical performance,
+we used a **Randomized Complete Block Design (RCBD)**
+with age range as the blocking factor.
+
+In simpler terms,
+we accounted for differences associated with age
+before asking whether music genre explained any additional variation.
+
+---
+
+## Key Findings
+
+The analysis found
+**no statistically significant difference in arm curl performance across music genres**.
+
+The ANOVA p-value for music genre was **0.933**.
+
+Therefore, under the conditions of this experiment,
+we did not find sufficient statistical evidence
+that Classical, Country, Dance, Heavy Metal, or No Music
+produced different levels of short-term muscle performance.
+
+In contrast,
+differences across age groups were much more visible.
+
+In this dataset,
+participant characteristics such as age
+were more clearly associated with performance differences
+than the genre of music heard before exercise.
+
+---
+
+## Did Any Specific Music Conditions Differ?
+
+We also used **Tukey pairwise comparisons**
+to examine whether specific pairs of music conditions differed.
+
+None of the pairwise comparisons between music conditions
+were statistically significant.
+
+Some comparisons involving the Dance condition
+produced relatively lower p-values than other pairs,
+but they still did not reach the threshold for statistical significance.
+
+We therefore did not interpret this pattern
+as evidence that Dance improved exercise performance.
+
+Instead, it was treated only as a possible direction
+for future investigation.
+
+---
+
+## Model Diagnostics
+
+Before interpreting the ANOVA results,
+we examined whether the major model assumptions were reasonable.
+
+The Normal Q-Q Plot showed that most residuals
+were close to the reference line.
+
+Although there were minor deviations in the tails,
+the report did not identify a serious violation of normality.
+
+The Residuals vs. Fitted Plot also showed
+no clear funnel shape or systematic curvature.
+
+Therefore, the diagnostic results did not reveal
+major concerns regarding normality or constant variance
+for the data analyzed.
+
+---
+
+## Additional Analysis
+
+We also examined a linear model containing
+both music genre and age range.
+
+The individual music-genre coefficients
+were not statistically significant relative to the reference genre.
+
+This result was consistent with the ANOVA:
+the data did not provide clear evidence
+that a specific music genre changed short-term arm curl performance.
+
+The model including both genre and age range
+had an Adjusted R² of approximately **0.435**.
+
+This should not be interpreted as music explaining 43.5% of performance variation.
+
+The value represents the explanatory power of the combined model,
+and the observed differences associated with age
+were substantially clearer than those associated with music genre.
+
+---
+
+## What We Learned
+
+Our initial hypothesis was that
+different music genres might produce measurable differences
+in exercise performance.
+
+The data did not support that hypothesis.
+
+Instead, variation among participants,
+particularly differences associated with age,
+was much more visible than variation between music conditions.
+
+This project demonstrated that
+**a non-significant result can still be an important result**.
+
+Rather than forcing the data to support our initial expectation,
+we focused on what the experiment actually showed
+and considered other sources of variation and study limitations.
+
+---
+
+## Limitations
+
+Age was used as a blocking factor,
+but people within the same age group can still differ substantially
+in physical ability.
+
+The experiment did not fully control for factors such as:
+
+- Regular exercise habits
+- Physically demanding occupations
+- Underlying health conditions
+- Day-to-day physical condition
+- Recent illness or recovery
+
+Therefore, age alone may not have captured
+all individual differences affecting arm curl performance.
+
+The sample was also restricted to virtual male participants aged 18–52,
+so the findings should not be generalized directly
+to all ages or sexes.
+
+---
+
+## Methods Used
+
+- Randomized Complete Block Design (RCBD)
+- Multi-stage Random Sampling
+- Power Analysis
+- Analysis of Variance (ANOVA)
+- Linear Model
+- Residual Diagnostics
+- Tukey HSD Pairwise Comparison
+- Data Collection and Organization in Excel
+
+---
+
+## Full Project Report
+
+The full report includes
+the sampling procedure,
+experimental design,
+power analysis,
+ANOVA results,
+residual diagnostics,
+linear-model analysis,
+Tukey comparisons,
+and a detailed discussion of the study's limitations.
+
+📄 **[View Full Project Report (PDF)](STATS%20101B%20Project.pdf)**

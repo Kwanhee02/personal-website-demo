@@ -1,48 +1,169 @@
 ---
-title: "Project 1 — Wind Speed Prediction Using Weather Data (STATS 101A)"
+title: "Project 1 — 기상 데이터를 활용한 풍속 예측 (STATS 101A)"
 format:
   html:
-    toc: false
+    toc: true
 ---
 
-## Overview
+[**English Version →**](01-project-en.html)
 
-A statistical modeling project predicting **daily wind speed** in Szeged, Hungary\
-using four meteorological variables (Temperature, Humidity, Visibility, Pressure)\
-from **10 years of daily weather data (2006–2016)**.
+# 기상 정보만으로 풍속을 어느 정도 설명할 수 있을까?
 
-The goal was to build, compare, and interpret multiple linear regression models\
-and determine which weather factors significantly influence wind speed.
+기온, 습도, 가시거리, 기압처럼 우리가 흔히 접하는 기상정보만으로
+풍속의 변화를 어느 정도 설명할 수 있는지 분석한 프로젝트입니다.
 
-------------------------------------------------------------------------
+헝가리 **Szeged** 지역의 2006년부터 2016년까지의 기상 데이터를 활용해
+여러 회귀모형을 비교하고, 어떤 기상 요소가 풍속과 관계가 있는지 살펴봤습니다.
 
-## Key Insights (Preview)
+---
 
--   Humidity and Pressure were strong, statistically significant predictors.\
--   Visibility showed **no significance** in predicting wind speed.\
--   The final model explained **18% of wind speed variation** (R² = 0.18).\
--   Diagnostic checks confirmed:
-    -   mostly normal residuals\
-    -   mild heteroscedasticity\
-    -   no influential outliers\
-    -   no multicollinearity (VIF \< 2)
 
-This summary highlights only the main findings —\
-the full modeling process, diagnostics, and detailed interpretation\
-are included in the complete PDF report.
+## 프로젝트 개요
 
-------------------------------------------------------------------------
+분석에서는 **풍속(Wind Speed)**을 결과값으로 두고
+다음 네 가지 기상정보를 활용했습니다.
 
-## Want the full analysis?
+- 기온 (Temperature)
+- 습도 (Humidity)
+- 가시거리 (Visibility)
+- 기압 (Pressure)
 
-The complete report includes:
+먼저 네 가지 변수를 모두 포함한 다중선형회귀모형을 만든 뒤,
+각 변수가 풍속을 설명하는 데 실제로 도움이 되는지 확인했습니다.
 
--   Exploratory data analysis\
--   Model comparison (full vs reduced)\
--   Residual diagnostics\
--   Mathematical interpretation of coefficients\
--   Discussion of modeling assumptions\
--   Study limitations and future improvements
+이후 불필요한 변수를 제외한 더 단순한 모형과 비교하고,
+최종 모델의 설명력과 통계적 한계까지 함께 검토했습니다.
 
-📄 **Download Full Project Report (PDF)**\
-👉 [Click here to read the full analysis](STATS%20101A%20Project.pdf)
+---
+
+## 나의 역할
+
+프로젝트의 **주제 선정, 데이터 전처리, 통계 분석, 최종 보고서 작성**을 담당했습니다.
+
+분석에 사용할 데이터를 정리하고 다중선형회귀모형을 구축해 결과를 해석했으며,
+모형 비교와 진단 결과, 분석의 한계를 최종 보고서에 정리했습니다.
+
+---
+
+## 어떻게 분석했는가
+
+### 1. 네 가지 기상 변수를 모두 포함한 모델 구축
+
+먼저 Temperature, Humidity, Visibility, Pressure를 모두 사용해
+풍속을 설명하는 회귀모형을 만들었습니다.
+
+분석 결과, 다중회귀모형에서는
+**Temperature, Humidity, Pressure**가 풍속과 통계적으로 유의한 관계를 보였지만,
+**Visibility**는 그렇지 않았습니다.
+
+### 2. Visibility가 정말 필요한지 확인
+
+Visibility가 모델에 필요한 변수인지 확인하기 위해
+Visibility를 포함한 모델과 제외한 모델을 비교했습니다.
+
+Partial F-test 결과 p-value가 **0.6459**로 나타나,
+Visibility를 제외하더라도 모델의 설명력이 유의미하게 나빠지지 않는다고 판단했습니다.
+
+따라서 최종적으로는 Visibility를 제외하고
+**Temperature, Humidity, Pressure**를 사용하는 모델을 선택했습니다.
+
+### 3. 모델이 통계적으로 적절한지 확인
+
+모델을 선택한 뒤에는 결과만 보는 데서 끝내지 않고,
+잔차 그래프와 여러 검정 방법을 이용해 모델의 가정을 확인했습니다.
+
+또한 변수끼리 지나치게 비슷한 정보를 제공하고 있는지도
+VIF(Variance Inflation Factor)를 이용해 점검했습니다.
+
+---
+
+## 주요 결과
+
+최종 모델은 다음 세 가지 변수를 사용했습니다.
+
+**Temperature · Humidity · Pressure**
+
+이 모델은 풍속 변화의 약 **18%를 설명했습니다.**
+
+즉, 세 가지 기상정보가 풍속과 일정한 관계를 보이기는 했지만,
+이 변수들만으로 풍속의 대부분을 설명하기에는 한계가 있었습니다.
+
+최종 회귀식은 다음과 같습니다.
+
+**Wind Speed = 282.486  
+− 0.295(Temperature)  
+− 17.426(Humidity)  
+− 0.251(Pressure)**
+
+---
+
+## 모델 진단에서 확인한 점
+
+잔차는 전반적으로 일정한 패턴 없이 분포했지만,
+예측값이 커지는 일부 구간에서 잔차의 퍼짐도 커지는 모습이 나타났습니다.
+
+Breusch–Pagan test에서도 매우 작은 p-value가 나타나
+잔차의 분산이 일정하지 않은 **이분산성(heteroscedasticity)**이
+모델의 한계 중 하나임을 확인했습니다.
+
+반면 VIF는 모든 변수에서 **2 미만**으로 나타나,
+변수들 사이의 심각한 다중공선성 문제는 확인되지 않았습니다.
+
+Residuals vs. Leverage Plot에서도
+모델 결과를 크게 왜곡할 정도의 뚜렷한 영향점은 확인되지 않았습니다.
+
+---
+
+## 다른 방법도 검토했습니다
+
+모델을 개선할 수 있는지 확인하기 위해
+**Box-Cox transformation**을 적용한 대안 모델도 검토했습니다.
+
+그러나 변환 후 Adjusted R²가 소폭 감소했고,
+Q-Q Plot의 일부 구간에서 새로운 편차가 나타났습니다.
+
+모델을 더 복잡하게 만드는 것에 비해
+성능 개선이 크지 않다고 판단해,
+최종적으로는 변환하지 않은 reduced model을 유지했습니다.
+
+---
+
+## 프로젝트의 한계
+
+이 프로젝트를 통해
+**통계적으로 의미 있는 관계를 찾는 것과 높은 예측력을 확보하는 것은 다른 문제**라는 점도 확인했습니다.
+
+이번 분석에는 제한된 수의 기상 변수만 사용했습니다.
+
+또한 날짜 정보를 모델에 포함하지 않아
+계절에 따른 풍속의 변화를 충분히 반영하지 못했습니다.
+
+**Wind Bearing**과 같이 풍속과 관련될 수 있는 다른 변수들도
+최종 분석에 포함하지 않았습니다.
+
+따라서 R²가 약 0.18에 머문 것은
+현재 모델에 포함되지 않은 여러 요인이
+풍속 변화에 영향을 주고 있기 때문일 가능성이 있습니다.
+
+---
+
+## 사용한 분석 방법
+
+- Multiple Linear Regression
+- Full Model / Reduced Model 비교
+- Partial F-test
+- Residual Diagnostics
+- Variance Inflation Factor (VIF)
+- Breusch–Pagan Test
+- Box-Cox Transformation
+
+---
+
+## 전체 프로젝트 보고서
+
+전체 보고서에서는 데이터 탐색부터 회귀모형 구축,
+모형 비교, 잔차 진단, 변수 선택, transformation 검토,
+분석 결과와 한계를 보다 자세히 확인할 수 있습니다.
+
+📄 **[전체 프로젝트 보고서 보기 (PDF)](STATS%20101A%20Project.pdf)**
+

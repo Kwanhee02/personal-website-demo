@@ -1,0 +1,339 @@
+---
+title: "Project 3 — County-Level 2020 U.S. Presidential Election Classification (STATS 101C)"
+format:
+  html:
+    toc: true
+---
+
+[**← 한국어 버전**](03-project.html)
+
+# Can County Characteristics Help Classify the 2020 Election Winner?
+
+U.S. counties differ substantially in population size,
+age composition, education, and other demographic characteristics.
+
+In this project, we built machine-learning classifiers to predict
+whether the county-level winner in the provided 2020 presidential election dataset
+was Biden or Trump using county-level demographic and education information.
+
+Rather than focusing on a single model,
+we compared multiple preprocessing strategies and classification algorithms
+to identify a workflow that performed consistently on unseen data.
+
+---
+
+## Project Overview
+
+According to the project report,
+the primary predictors included demographic and education estimates
+from the U.S. Census Bureau.
+
+One of the main challenges was the large difference
+in population size across counties.
+
+For example, a raw count of people in an age group
+can be much larger in a large metropolitan county
+simply because more people live there.
+
+To make counties more comparable,
+many raw population counts were converted into
+**within-group or population-based proportions**.
+
+This allowed the models to focus more on population composition
+rather than county size alone.
+
+---
+
+## Exploring the Data
+
+Before training the models,
+we examined the distributions of the predictors.
+
+Many of the original variables were strongly right-skewed.
+
+Raw population counts also showed substantial scale differences across counties,
+making direct comparisons difficult.
+
+After expressing many population variables as proportions,
+the predictors became more comparable across counties.
+
+---
+
+## No Single Predictor Was Enough
+
+We also examined the relationship between individual predictors
+and the binary election outcome.
+
+Point-biserial correlations were calculated
+between the predictors and the target variable.
+
+No individual predictor had a correlation exceeding 0.5.
+
+This suggested that the classification problem
+was unlikely to be explained well by a single variable alone.
+
+We therefore compared models capable of using
+many predictors simultaneously.
+
+---
+
+## Class Imbalance
+
+The labeled training data were not evenly distributed between the two classes.
+
+The EDA in the report showed:
+
+- Biden-winning counties: 389
+- Trump-winning counties: 1,942
+
+The team chose to preserve the original class distribution
+rather than applying over- or undersampling.
+
+---
+
+## Two Preprocessing Strategies
+
+We compared two preprocessing recipes.
+
+### 1. Generic Recipe
+
+The first recipe converted many population counts
+into proportions based on the appropriate population or subgroup totals.
+
+It also created growth variables for
+income per capita and GDP between 2016 and 2020,
+removed several identifiers and total columns,
+and used median imputation for missing numeric values.
+
+### 2. Log Recipe
+
+The second recipe began with the Generic Recipe
+and additionally applied:
+
+- Log transformation
+- Standardization
+
+Because many predictors were right-skewed,
+we tested whether these additional transformations
+would improve models such as Logistic Regression and KNN.
+
+---
+
+## Models Compared
+
+We evaluated three classification algorithms.
+
+### Logistic Regression
+
+A relatively simple classification model
+that served as an interpretable baseline.
+
+### K-Nearest Neighbors (KNN)
+
+A model that classifies a new observation
+based on nearby observations with similar predictor values.
+
+### XGBoost
+
+A boosting algorithm that builds decision trees sequentially,
+with later trees attempting to correct errors made by earlier ones.
+
+This structure allows XGBoost to capture
+more complex and nonlinear patterns.
+
+---
+
+## Model Evaluation
+
+We used **5-fold stratified cross-validation**
+rather than relying on a single train/test split.
+
+The training data were divided into five folds.
+
+The model was trained on four folds and evaluated on the remaining fold,
+and this process was repeated so that each fold served as the validation set.
+
+Stratification helped maintain similar class distributions across folds.
+
+The primary model-selection metric was **ROC-AUC**,
+which measures how well a classifier separates the two classes.
+
+---
+
+## Model Comparison
+
+| Workflow | Cross-Validated ROC-AUC |
+|---|---:|
+| Generic XGBoost | 0.973 |
+| Log XGBoost | 0.973 |
+| Generic KNN | 0.960 |
+| Log KNN | 0.959 |
+| Generic Logistic Regression | 0.959 |
+| Log Logistic Regression | 0.966 |
+
+The highest ROC-AUC was shared by
+**Generic XGBoost and Log XGBoost**,
+both achieving approximately **0.973**.
+
+The additional log transformation did not improve
+XGBoost performance.
+
+The team therefore selected
+**Generic XGBoost** as the final workflow
+because it achieved the same performance
+with the simpler preprocessing pipeline.
+
+The selected XGBoost configuration used:
+
+- 889 trees
+- Tree depth of 4
+- Minimum node size of 2
+
+---
+
+## Hold-Out Evaluation
+
+After model selection,
+we performed an additional 80/20 hold-out evaluation
+using the labeled training dataset.
+
+The Generic XGBoost workflow achieved
+an accuracy of approximately **0.944**
+on the 20% hold-out portion.
+
+However, after refitting the workflow
+on the full training dataset,
+training accuracy reached **1.000**.
+
+The gap between perfect training performance
+and lower performance on unseen observations
+raised a concern about potential overfitting.
+
+---
+
+## Looking Beyond a High Validation Score
+
+The internal validation results were strong,
+but the project also highlighted
+the importance of evaluating model generalization carefully.
+
+According to the report,
+after the Kaggle private leaderboard was released,
+the team's ranking fell from first to eleventh.
+
+Although the model performed consistently
+during cross-validation and the internal hold-out evaluation,
+its performance did not transfer perfectly
+to the hidden Kaggle test data.
+
+This led the team to consider the sensitivity
+of the model to the particular training and test samples
+and the possibility of overfitting.
+
+The report also noted that a more stable approach,
+such as an ensemble of multiple models,
+could be worth exploring in future work.
+
+---
+
+## My Role
+
+This was a five-person team project.
+
+According to the team-contribution record,
+I worked on **Model Selection and Hyperparameter Tuning**
+and also contributed to the **final report**.
+
+I participated in comparing the cross-validation results
+of Logistic Regression, KNN, and XGBoost workflows
+under both preprocessing strategies,
+reviewing tuning results,
+and selecting the final modeling workflow.
+
+I also contributed to interpreting the model performance
+and documenting the results and limitations in the final report.
+
+---
+
+## What I Learned
+
+At first,
+the high ROC-AUC and hold-out accuracy
+made XGBoost appear extremely robust.
+
+However,
+the perfect training accuracy
+and later private-leaderboard performance
+showed why a single strong metric
+is not enough to evaluate a model.
+
+The project reinforced the importance of considering
+cross-validation,
+hold-out performance,
+training performance,
+and truly unseen data together
+when evaluating how well a model generalizes.
+
+---
+
+## Limitations
+
+The project had several limitations.
+
+First,
+the tuning process searched only a limited grid
+of 10 candidate hyperparameter configurations per workflow.
+
+A wider search may have identified stronger settings,
+particularly for XGBoost.
+
+Second,
+the final workflow was selected primarily using ROC-AUC.
+
+The report notes that additional metrics,
+such as accuracy or Brier score,
+could provide a more complete evaluation.
+
+Finally,
+the perfect training accuracy
+and the change in private-leaderboard performance
+suggested that the final XGBoost model
+required additional evaluation of its generalization ability.
+
+---
+
+## Methods & Tools
+
+- R
+- tidyverse
+- tidymodels
+- workflowsets
+- Logistic Regression
+- K-Nearest Neighbors (KNN)
+- XGBoost
+- 5-Fold Stratified Cross-Validation
+- Hyperparameter Tuning
+- ROC-AUC
+- Hold-Out Evaluation
+- Log Transformation
+- Standardization
+- Median Imputation
+- Feature Engineering
+- Kaggle Submission Workflow
+
+---
+
+## Full Project Report
+
+The full report includes
+exploratory data analysis,
+preprocessing pipelines,
+six workflow comparisons,
+cross-validation,
+hyperparameter tuning,
+ROC curves,
+hold-out evaluation,
+a discussion of overfitting,
+and the complete annotated R workflow.
+
+📄 **[View Full Project Report (PDF)](Team%2010%20Classification%20Project%20Report.pdf)**
